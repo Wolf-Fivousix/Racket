@@ -23,13 +23,15 @@ Servers:    Selvagens
 Schema:
     
 Users
-    id
-    username
-    email
-    password_digest
-    Session_token
-    friends (other users)
-    servers
+    t.string :username, null: false
+    t.string :email, null: false
+    t.string :password_digest, null: false
+    t.string :session_token, null: false
+    t.integer :friends_ids
+    t.integer :servers_ids
+
+    add_index :users, :email, unique: true
+    add_index :users, :session_token, unique: true
 Servers
     id
     members (users)
