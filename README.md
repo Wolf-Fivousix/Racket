@@ -32,14 +32,16 @@ Users
 
     add_index :users, :email, unique: true
     add_index :users, :session_token, unique: true
+    
 Servers
-    id
-    members (users)
-    messages (by users)
+    t.string :name, null: false
+    t.integer :members, null: false
+    t.integer :messages
+
+    add_index :servers, :name, unique: true
 Message
-    id
-    author (user)
-    body
+    t.integer :author, null: false
+    t.text :body, null: false
 
 ================================
 
