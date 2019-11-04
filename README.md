@@ -1,17 +1,18 @@
 Possible Names:
-Conflict
-Confusion
-Dissonance
+###### Conflict
+###### Confusion
+###### Dissonance
 Racket
-Turbulance
+###### Turbulance
 
 ================================
 Possible components
 
 
-Home:       Friends List
-            Direct Message to Friends
 Servers:    Selvagens
                 Channels
                     Message History
                 Members
+                
+Home:       Friends List
+            Direct Message to Friends
