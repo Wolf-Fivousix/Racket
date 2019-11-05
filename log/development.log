@@ -1,0 +1,34 @@
+Started GET "/" for ::1 at 2019-11-04 18:02:47 -0800
+
+PG::ConnectionBad - FATAL:  database "Racket_development" does not exist
+:
+
+Started POST "/__better_errors/ac94fbb6694f5acd/variables" for ::1 at 2019-11-04 18:02:47 -0800
+  [1m[35m (326.7ms)[0m  [1m[35mCREATE DATABASE "Racket_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (253.0ms)[0m  [1m[35mCREATE DATABASE "Racket_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-11-04 18:03:28 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 0.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'jquery-ujs' with type 'application/javascript'
+Checked in these paths: 
+  /Users/appacademy/Downloads/Racket/app/assets/config
+  /Users/appacademy/Downloads/Racket/app/assets/images
+  /Users/appacademy/Downloads/Racket/app/assets/javascripts
+  /Users/appacademy/Downloads/Racket/app/assets/stylesheets
+  /Users/appacademy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.3.5/vendor/assets/javascripts
+  /Users/appacademy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/appacademy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.3/lib/assets/compiled
+  /Users/appacademy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.3/app/assets/javascripts
+  /Users/appacademy/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.3/lib/assets/compiled
+  /Users/appacademy/Downloads/Racket/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___112015515331189343_70233606510880'
+  app/controllers/static_pages_controller.rb:3:in `root'
+
+Started POST "/__better_errors/81427acb4b1b7871/variables" for ::1 at 2019-11-04 18:03:29 -0800
