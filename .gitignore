@@ -1,4 +1,5 @@
-node-modules/
+node_modules/
 tmp/
 bundle.js
 bundle.js.map
+node_modules
