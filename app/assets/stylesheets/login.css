@@ -1,0 +1,109 @@
+body {
+  background: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+  display: block;
+}
+
+a {
+  color: #7289da;
+}
+
+span {
+  color: #72767d
+}
+
+h5 {
+  margin-bottom: 8px;
+}
+
+.authBox {
+  width: 480px;
+  padding: 40px;
+  margin: auto;
+  margin-top: 200px;
+  background: #36393f;
+  border-radius: 5px;
+}
+
+.authBox * {
+  width: 100%;
+}
+
+.loginText {
+  color: #8e9297;
+}
+
+.loginTitle, .loginSubtitle {
+  text-align: center;
+}
+
+.loginTitle {
+  color: white;
+  font-size: 26px;
+  line-height: 32px;
+}
+
+.loginSubtitle {
+  color: #72767d;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.passwordResetLinkButton:hover,
+.registerLinkButton:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.passwordResetLinkButton {
+  margin-top: 4px;
+  margin-bottom: 20px;
+  color: #7289da;
+  font-size: 14px;
+}
+
+.registerLinkButton {
+  color: #7289da;
+  width: auto;
+}
+
+.loginButton {
+  display: flex;
+  justify-content: center;
+  background-color: #7289da;
+  color: white;
+  height: 44px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+
+.loginButton:hover {
+  background-color: #7289dad0;
+  cursor: pointer;
+}
+
+input {
+  background-color: rgba(0,0,0,0.1);
+  color: #dcddde;
+  border: 1px solid rgba(0,0,0,0.3);
+  height: 40px;
+  border-radius: 3px;
+}
+
+input:hover {
+  border: 1px solid black;
+}
+
+input:focus {
+  border: 1px solid #7289da;
+}
+
+
+--text-normal: #dcddde;
+--channels-default: #8e9297;
+--deprecated-text-input-bg: rgba(0,0,0,0.1);
+--deprecated-text-input-border: rgba(0,0,0,0.3);
+--deprecated-text-input-border-hover: #040405;
