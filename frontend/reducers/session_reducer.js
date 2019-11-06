@@ -4,6 +4,7 @@ import {
 } from '../actions/session_actions';
 
 const _nullUser = Object.freeze({
+  
   id: null
 });
 

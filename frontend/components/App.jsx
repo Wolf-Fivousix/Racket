@@ -1,9 +1,9 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
-import { AuthRoute } from "../util/route_util";
+import { Route, Link, Switch } from "react-router-dom";
+import { AuthRoute, Protected } from "../util/route_util";
 import LoginFormContainer from "./authentication/login_form_container";
 import SignupFormContainer from "./authentication/signup_form_container";
-
+import ServerContainer from "./server/server_container";
 
 const App = () => (
   <div>
@@ -12,11 +12,18 @@ const App = () => (
     <Link to="/login">Login</Link>
     <br />
     <Link to="/signup">Sign Up</Link>
+    <br />
+    <Link to="/servers">Servers</Link>
+    <br />
+    <br />
 
+    <Switch>
+      <AuthRoute exact path="/login" component={LoginFormContainer}/>
+      <AuthRoute exact path="/signup" component={SignupFormContainer}/>
+      <Protected exact path ="/servers" component={ServerContainer}/>
+    </Switch>
+    <h1>Welcome to RacketEXPLOOOosiiooonnssss !!! .......</h1>
 
-    <AuthRoute exact path="/login" component={LoginFormContainer}/>
-    <AuthRoute exact path="/signup" component={SignupFormContainer}/>
-    <h1>Welcome to RACKETPLOSIOOOOOOOONNNNNSSSssss !!!</h1>
 
   </div>
 );
