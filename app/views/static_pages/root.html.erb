@@ -1,1 +1,10 @@
+<% if logged_in? %>
+  <script type="text/javascript">
+    window.user = <%= render(
+      "api/users/user.json.jbuilder",
+      user: current_user
+    ).html_safe %>
+  </script>
+<% end %>
+
 <main id="root"><h1>React Stopped working! Oh noooOOOOEEEes!! Come back soon, it should be back up. =)</h1></main>
