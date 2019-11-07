@@ -1,0 +1,82 @@
+.spalshWrapper {
+    background: #26262b;
+    color:white;
+}
+
+.navBar {
+    height: 40px;
+    box-sizing: border-box;
+    padding: 4px;
+}
+
+.splashContent {
+    min-width: 340px;
+}
+
+.splashMessage,
+.splashImages {
+    height: 410px;
+}
+
+
+.footer {
+    color: orange;
+    height: 100px;
+}
+
+.title {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 18x;
+    margin-bottom: 30px;
+    color: gray;
+}
+
+.callToActionButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.githubButton,
+.contactButton {
+    box-sizing: border-box;
+    height: 45px;
+    width: 250px;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+.githubButton {
+    background: #43b581;
+}
+
+.contactButton {
+    background: #7289da;
+}
+
+.deviceImages {
+    width: auto;
+}
+
+.androidPhoneImage {
+    height: 256px;
+}
+
+.applePhoneImage {
+    height: 251px;
+}
+
+
+
+
+@media (min-width: 848px) {
+    .callToActionButtons {
+        flex-direction: row;
+
+    }
+}
