@@ -1,3 +1,149 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.needAccountText,
+.alreadyAccountLinkButton,
+.userAgreementText {
+    color: #72767d
+}
+
+.loginText,
+.loginTitle,
+.loginSubtitle {
+    display: block;
+}
+
+.authBox * {
+    width: 100%;
+}
+
+.loginText {
+    margin-bottom: 8px;
+}
+
+.authForm {
+    margin-top: 20px;
+}
+
+.loginText {
+    color: #8e9297;
+}
+
+.loginTitle,
+.loginSubtitle {
+    text-align: center;
+}
+
+.loginTitle {
+    color: white;
+    font-size: 26px;
+    line-height: 32px;
+    margin-bottom: 8px;
+}
+
+.loginSubtitle {
+    color: #72767d;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.passwordResetLinkButton:hover,
+.alreadyAccountLinkButton:hover,
+.registerLinkButton:hover {
+    text-decoration: underline;
+cursor: pointer;
+}
+
+.passwordResetLinkButton,
+.alreadyAccountLinkButton {
+    margin-top: 4px;
+    margin-bottom: 20px;
+    color: #7289da;
+    font-size: 14px;
+}
+
+.registerLinkButton {
+    color: #7289da;
+    width: auto;
+    margin-left: 8px;
+}
+
+.loginButton {
+    display: flex;
+    justify-content: center;
+    background-color: #7289da;
+    color: white;
+    height: 44px;
+    border-radius: 3px;
+    margin-bottom: 8px;
+}
+
+.loginButton:hover {
+    background-color: #7289dad0;
+cursor: pointer;
+}
+
+.authInput {
+    box-sizing: border-box;
+    margin-top: 8px;
+    background-color: rgba(0,0,0,0.1);
+    color: #dcddde;
+    border: 1px solid rgba(0,0,0,0.3);
+    height: 40px;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.authInput:hover {
+    border: 1px solid black;
+}
+
+.authInput:focus {
+    border: 1px solid #7289da;
+}
+
+.userAgreementText {
+    margin-top: 10px;
+    color: #72767d;
+    font-size: 14px;
+}
+
+.wrapper {
+    background: linear-gradient(to left bottom,#3d4046,#1e1e23);
+}
+
+.authBox {
+    padding: 40px;
+}
+
+@media (min-width: 486px) {
+    .wrapper {
+        background-image: image-url("authBackgroundImage.jpg");
+        background-position: right bottom;
+        background-attachment: fixed;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+
+    .authFlexing {
+        height: 100%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .authBox {
+        box-sizing: border-box;
+        width: 486px;
+        background: #36393f;
+        border-radius: 5px;
+    }
+}
+
+
+// --text-normal: #dcddde;
+// --channels-default: #8e9297;
+// --deprecated-text-input-bg: rgba(0,0,0,0.1);
+// --deprecated-text-input-border: rgba(0,0,0,0.3);
+// --deprecated-text-input-border-hover: #040405;

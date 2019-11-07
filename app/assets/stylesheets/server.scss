@@ -1,0 +1,28 @@
+.serverChatWrapper {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+.serverBar {
+    background-color: black;
+    width: 10%;
+    color: white;
+}
+
+.content {
+    height: inherit;
+    width: inherit;
+    display: inherit;
+    width: 90%;
+}
+
+.sideBar {
+    background-color: gray;
+    width: 30%
+}
+
+.chat {
+    background: skyblue;
+    width: 70%;
+}
