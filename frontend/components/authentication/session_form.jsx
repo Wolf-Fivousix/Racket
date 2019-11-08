@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.clearErrors = this.clearErrors.bind(this);
   }
 
   handleInput(field) {
@@ -23,32 +24,87 @@ class SessionForm extends React.Component {
     this.props.authentication(this.state);
   }
 
+  clearErrors() {
+    this.props.clearErrors();
+  }
+
   render() {
     let loginTitle = "Welcome back!";
     let loginSubtitle = "We're so excited to see you again!";
     let usernameField = "";
     let forgotPassword = <button className="passwordResetLinkButton">
-        <Link to="/">Forgot your password?</Link>
+        <Link
+          onClick={this.clearErrors}
+          to="/"
+          >Forgot your password?
+        </Link>
       </button>;
     let buttonText = "Login";
     let needAnAccount = (
       <span className="needAccountText">Need an accout?
         <button className="registerLinkButton">
-          <Link to="/signup">Register</Link>
+          <Link
+            onClick={this.clearErrors}
+            to="/signup">
+            Register
+          </Link>
         </button>
       </span>
     )
     let alreadyHaveAccount = "";
     let userAgreement = "";
 
+
+    let errorsMessageHash = {};
+    // let loginTextClass = "loginText";
+    let loginEmailTextClass = "loginText";
+    let loginUsernameTextClass = "loginText";
+    let loginPasswordTextClass = "loginText";
+    // let authInputClass = "authInput";
+    let authInputEmailClass = "authInput";
+    let authInputUsernameClass = "authInput";
+    let authInputPasswordClass = "authInput";
+    // If there are errors.
+    const errorsArray = this.props.errors.session.responseJSON;
+    if (errorsArray) {
+      for (let i = 0; i < errorsArray.length; ++i) {
+        if (errorsArray[i].includes("Email")) {
+          authInputEmailClass += " authInputErrors";
+          loginEmailTextClass += " authErrors";
+          errorsMessageHash["EMAIL"] = ` - ${errorsArray[i]}`
+        }
+        if (errorsArray[i].includes("Username")) {
+          authInputUsernameClass += " authInputErrors";
+          loginUsernameTextClass += " authErrors";
+          errorsMessageHash["USERNAME"] = ` - ${errorsArray[i]}`
+        }
+        if (errorsArray[i].includes("Password")) {
+          authInputPasswordClass += " authInputErrors";
+          loginPasswordTextClass += " authErrors";
+          errorsMessageHash["PASSWORD"] = ` - ${errorsArray[i]}`
+        }
+      }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
     if (this.props.formType === "SIGNUP") {
       loginTitle = "Create an account";
       loginSubtitle = "";
       usernameField = (
-        <label className="loginText">USERNAME
+        <label className={loginUsernameTextClass}>USERNAME{[errorsMessageHash["USERNAME"]]}
           <input
             type="text"
-            className="authInput"
+            className={authInputUsernameClass}
             value={this.state.username}
             onChange={this.handleInput("username")}
           />
@@ -58,10 +114,16 @@ class SessionForm extends React.Component {
       buttonText = "Continue";
       needAnAccount = "";
       alreadyHaveAccount = <button className="alreadyAccountLinkButton">
-          <Link to="/login">Already have an account?</Link>
+          <Link
+            onClick={this.clearErrors}
+            to="/login">Already have an account?
+          </Link>
         </button>;
       userAgreement = <div className="userAgreementText">By registering, you agree to Racket your socks off! =)</div>
     }
+
+    
+
 
     return (
       <div className="wrapper">
@@ -80,25 +142,25 @@ class SessionForm extends React.Component {
               onSubmit={this.handleSubmit}
             >
 
-              <label className="loginText">EMAIL
+              <label className={loginEmailTextClass}>EMAIL{[errorsMessageHash["EMAIL"]]}
               <input
                   type="text"
-                  className="authInput"
+                  className={authInputEmailClass}
                   value={this.state.email}
                   onChange={this.handleInput("email")}
                 />
               </label>
               {usernameField}
-              <label className="loginText">PASSWORD
+              <label className={loginPasswordTextClass}>PASSWORD{[errorsMessageHash["PASSWORD"]]}
               <input
                   type="password"
-                  className="authInput"
+                  className={authInputPasswordClass}
                   value={this.state.password}
                   onChange={this.handleInput("password")}
                 />
               </label>
               {forgotPassword}
-              <button className="loginButton">{buttonText}</button>
+              <button className="authLoginButton">{buttonText}</button>
               {needAnAccount}
               {alreadyHaveAccount}
               {userAgreement}
