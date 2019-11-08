@@ -68,7 +68,7 @@ cursor: pointer;
     margin-left: 8px;
 }
 
-.loginButton {
+.authLoginButton {
     display: flex;
     justify-content: center;
     background-color: #7289da;
@@ -78,7 +78,7 @@ cursor: pointer;
     margin-bottom: 8px;
 }
 
-.loginButton:hover {
+.authLoginButton:hover {
     background-color: #7289dad0;
 cursor: pointer;
 }
@@ -108,6 +108,13 @@ cursor: pointer;
     font-size: 14px;
 }
 
+.authErrors {
+    color: red;
+}
+
+.authInputErrors {
+    border: 1px solid red;
+}
 
 .wrapper {
     background: linear-gradient(to left bottom,#3d4046,#1e1e23);

@@ -4,20 +4,37 @@
 }
 
 .navBar {
+    display: flex;
+    justify-content: space-between;
     height: 40px;
     box-sizing: border-box;
     padding: 4px;
+}
+
+.splashLoginButton {
+    color: hsla(0,0%,100%,.8);
+    border: 2px solid hsla(0,0%,100%,.8);
+    border-radius: 20px;
+    width: 66px;
+    text-align: center;
+    font-size: 13px;
+    margin-right: 18px;
 }
 
 .splashContent {
     min-width: 340px;
 }
 
-.splashMessage,
-.splashImages {
-    height: 410px;
+.splashMessage {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-width: 215px;
+    padding: 72px 50px 0px 50px;
+    text-align: center;
 }
-
 
 .footer {
     color: orange;
@@ -25,7 +42,8 @@
 }
 
 .title {
-    font-size: 30px;
+    font-weight: 700;
+    font-size: 36px;
     margin-bottom: 20px;
 }
 
@@ -49,6 +67,7 @@
     width: 250px;
     margin: 10px;
     border-radius: 3px;
+    text-align: center;
 }
 
 .githubButton {
@@ -59,24 +78,82 @@
     background: #7289da;
 }
 
+.splashImages {
+    box-sizing: border-box;
+    padding-top: 40px;
+    height: 410px;
+    position: relative;
+    overflow: hidden;
+}
+
 .deviceImages {
     width: auto;
+    position: absolute;
+    transition: all .5s ease;
+    bottom: 10px;
 }
 
 .androidPhoneImage {
-    height: 256px;
+    margin-left: 10px;
 }
 
 .applePhoneImage {
-    height: 251px;
+    margin-left: 180px;
 }
 
+.laptopImage {
+    margin-left: 280px;
+}
 
+.headsetImage {
+    margin-left: 550px;
+    bottom: 115px;
+}
 
+.potionImage,
+.controllerImage,
+.desktopImage,
+.shieldImage {
+    display: none;
+}
+
+.laptopImage,
+.headsetImage {
+    display: initial;
+}
 
 @media (min-width: 848px) {
+    .potionImage,
+    .controllerImage,
+    .desktopImage,
+    .shieldImage {
+        display: initial;
+    }
+
+    .splashImages {
+        height: 643px;
+    }
     .callToActionButtons {
         flex-direction: row;
+    }
+}
 
+@media (max-width: 699px){
+    .laptopImage,
+    .headsetImage {
+        display: none;
+    }
+
+    .androidPhoneImage,
+    .applePhoneImage {
+        bottom: auto;
+    }
+
+    .androidPhoneImage {
+        margin-left: 130px;
+    }
+
+    .applePhoneImage {
+        margin-left: 350px;
     }
 }

@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
       login(user)
       render json: user
     else
-      render json: "Username and/or Password invalid", status: 404
+      render json: ["Email and/or Password invalid"], status: 404
     end
 
   end
