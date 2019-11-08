@@ -8,7 +8,7 @@ import ServerContainer from "./server/server_container";
 
 const App = () => (
   <div>
-    <Link to="/">Racket Home</Link>
+    {/* <Link to="/">Racket Home</Link>
     <br/>
     <Link to="/login">Login</Link>
     <br />
@@ -16,7 +16,7 @@ const App = () => (
     <br />
     <Link to="/servers">Servers</Link>
     <br />
-    <br />
+    <br /> */}
 
     <Switch>
       <Route exact path="/" component={SplashContainer} />

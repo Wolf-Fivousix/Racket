@@ -127,11 +127,11 @@ class SessionForm extends React.Component {
 
     return (
       <div className="wrapper">
-        <img
+        {/* <img
           className="logo"
           src="/assets/logo.jpg"
           alt="Racket Logo Image"
-        />
+        /> */}
       
         <div className="authFlexing">
           <div className="authBox">
