@@ -20,4 +20,9 @@ Home:       Friends List
 window.navigator.appVersion <= Has some interesting information if you look at it in console
 window.navigator.platform <= this might be better
 
-For Heroku: make Bundler 2.0.2 instad of 2.0.1!
+## Questions:
+1. How to absolute an element based on a fixed point in the center of screen.
+2. Modal scrolling for New Server.
+
+## Current Known Bugs:
+1. Guest Login setState for blanking out password works, but not for email field.
