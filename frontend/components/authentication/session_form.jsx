@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.clearErrors = this.clearErrors.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
   }
 
   handleInput(field) {
@@ -24,6 +25,28 @@ class SessionForm extends React.Component {
     this.props.authentication(this.state);
   }
 
+  handleGuestLogin(e) {
+    e.preventDefault();
+
+    let email = "guest@guest.com".split("");
+    let password = "secretWord".split("");
+    return this.logInGuest(email, password);
+  }
+
+  logInGuest(email, password) {
+    if(email.length > 0) {
+      this.setState({ "email": [this.state.email] + email.shift() },
+        () => setTimeout(() => this.logInGuest(email, password), 50)
+      );
+    }
+    else if(password.length > 0) {
+      this.setState({ "password": [this.state.password] + password.shift() },
+        () => setTimeout(() => this.logInGuest(email, password), 50)
+      );
+    }
+    else return this.props.authentication(this.state);
+  }
+
   clearErrors() {
     this.props.clearErrors();
   }
@@ -32,13 +55,15 @@ class SessionForm extends React.Component {
     let loginTitle = "Welcome back!";
     let loginSubtitle = "We're so excited to see you again!";
     let usernameField = "";
-    let forgotPassword = <button className="passwordResetLinkButton">
+    let forgotPassword = (
+      <button className="passwordResetLinkButton">
         <Link
           onClick={this.clearErrors}
           to="/"
           >Forgot your password?
         </Link>
-      </button>;
+      </button>
+    );
     let buttonText = "Login";
     let needAnAccount = (
       <span className="needAccountText">Need an accout?
@@ -50,10 +75,16 @@ class SessionForm extends React.Component {
           </Link>
         </button>
       </span>
-    )
+    );
     let alreadyHaveAccount = "";
     let userAgreement = "";
-
+    let guestLoginButton = (
+        <button
+            onClick={this.handleGuestLogin}
+            className="authLoginButton button authGuestLoginButton"
+            > Guest Login
+        </button>
+    )
 
     let errorsMessageHash = {};
     // let loginTextClass = "loginText";
@@ -87,16 +118,6 @@ class SessionForm extends React.Component {
 
     }
 
-
-
-
-
-
-
-
-
-
-
     if (this.props.formType === "SIGNUP") {
       loginTitle = "Create an account";
       loginSubtitle = "";
@@ -120,10 +141,8 @@ class SessionForm extends React.Component {
           </Link>
         </button>;
       userAgreement = <div className="userAgreementText">By registering, you agree to Racket your socks off! =)</div>
+      guestLoginButton = "";
     }
-
-    
-
 
     return (
       <div className="wrapper">
@@ -160,10 +179,11 @@ class SessionForm extends React.Component {
                 />
               </label>
               {forgotPassword}
-              <button className="authLoginButton">{buttonText}</button>
+              <button className="authLoginButton button">{buttonText}</button>
               {needAnAccount}
               {alreadyHaveAccount}
               {userAgreement}
+              {guestLoginButton}
             </form>
           </div>
         </div>
