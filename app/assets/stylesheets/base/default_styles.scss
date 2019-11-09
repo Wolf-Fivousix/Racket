@@ -1,0 +1,13 @@
+.button {
+    text-align: center;
+    color: white;
+    background-color: var(--logo-primary);
+    height: 44px;
+    border-radius: 3px;
+    transition: background-color .2s ease;
+}
+
+.button:hover {
+    background-color: var(--logo-primary-hover);
+    cursor: pointer;
+}

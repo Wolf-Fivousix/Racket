@@ -66,21 +66,20 @@ cursor: pointer;
     color: #7289da;
     width: auto;
     margin-left: 8px;
+    margin-bottom: 15px;
 }
 
 .authLoginButton {
-    display: flex;
-    justify-content: center;
-    background-color: #7289da;
-    color: white;
-    height: 44px;
-    border-radius: 3px;
     margin-bottom: 8px;
+}
+
+.authGuestLoginButton {
+    margin-top: 8px;
 }
 
 .authLoginButton:hover {
     background-color: #7289dad0;
-cursor: pointer;
+    cursor: pointer;
 }
 
 .authInput {
@@ -150,10 +149,3 @@ cursor: pointer;
         border-radius: 5px;
     }
 }
-
-
-// --text-normal: #dcddde;
-// --channels-default: #8e9297;
-// --deprecated-text-input-bg: rgba(0,0,0,0.1);
-// --deprecated-text-input-border: rgba(0,0,0,0.3);
-// --deprecated-text-input-border-hover: #040405;
