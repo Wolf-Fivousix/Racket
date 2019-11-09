@@ -1,15 +1,39 @@
 import React from "react";
+import ModalContainer from "../modal/modal_container";
+import NewServerFormContainer from "../server/new_server_form_container";
 
 class ServerIndex extends React.Component {
+    constructor(props) {
+        super(props);
+        this.addServerRequest = this.addServerRequest.bind(this);
+    }
+
+
+    addServerRequest() {
+        this.props.openModal(() => <NewServerFormContainer />);
+    }
+
     render() {
         return (
             <div className="serverChatWrapper">
-                <div className="serverBar">Servers</div>
+                <ModalContainer />
+                <div className="serverBar">
+                    <div className="serverTitle">Servers</div>
+                    <button
+                        className="addServerButton"
+                        onClick={this.addServerRequest}
+                        >
+                        +
+                    </button>
+                </div>
                 <div className="content">
                     <div className="sideBar">Channel 1</div>
                     <div className="chat">
                         <h1>Server Page</h1>
                         <h2>Get RACKEEETTTT! =D</h2>
+                        <img
+                            className="createServerImage"
+                            src="https://discordapp.com/assets/845d431ebfc24e13a0b31f7e64fc612b.png" alt=""/>
                     </div>
                 </div>
 

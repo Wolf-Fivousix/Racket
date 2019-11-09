@@ -3,12 +3,17 @@ import { Link } from "react-router-dom";
 
 class Splash extends React.Component {
     render () {
+        let splashLoginButton = "Login";
+        if(this.props.loggedIn) {
+            splashLoginButton = "Open";
+        }
+
         const loginOpenButton = (
             <button
                 className="splashLoginButton">
                 <Link
                     to="/login"
-                    >Login
+                    >{splashLoginButton}
                 </Link>
             </button>
         );
