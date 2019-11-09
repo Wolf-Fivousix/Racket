@@ -1,11 +1,15 @@
 import React from "react";
-
+import CreateServerFormContainer from "./create_server_form_container";
 
 class NewServerForm extends React.Component {
+  constructor(props) {
+    super(props);
+    this.addNewServer = this.addNewServer.bind(this);
+  }
   
-  addNewSerer() {
+  addNewServer() {
     console.log("you have a new server");
-    this.props.openModal(() => {});
+    this.props.openModal(() => <CreateServerFormContainer />);
   }
 
   render() {
@@ -14,7 +18,7 @@ class NewServerForm extends React.Component {
         <h1 className="newServerMessage">OH, ANOTHER SERVER HUH?</h1>
         <div className="newServerChoiceBoxes">
           <button
-            onClick={this.addNewSerer}
+            onClick={this.addNewServer}
             className="createANewServerButton button">
             Create a server
           </button>

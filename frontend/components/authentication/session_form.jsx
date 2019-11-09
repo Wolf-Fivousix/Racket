@@ -27,7 +27,9 @@ class SessionForm extends React.Component {
 
   handleGuestLogin(e) {
     e.preventDefault();
-
+    // @@BUG
+    // this.setState({ email: "", password: "" });
+    // debugger;
     let email = "guest@guest.com".split("");
     let password = "secretWord".split("");
     return this.logInGuest(email, password);
@@ -35,12 +37,12 @@ class SessionForm extends React.Component {
 
   logInGuest(email, password) {
     if(email.length > 0) {
-      this.setState({ "email": [this.state.email] + email.shift() },
+      this.setState({ email: [this.state.email] + email.shift() },
         () => setTimeout(() => this.logInGuest(email, password), 50)
       );
     }
     else if(password.length > 0) {
-      this.setState({ "password": [this.state.password] + password.shift() },
+      this.setState({ password: [this.state.password] + password.shift() },
         () => setTimeout(() => this.logInGuest(email, password), 50)
       );
     }
