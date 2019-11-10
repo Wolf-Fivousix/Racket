@@ -5,7 +5,7 @@ class CreateServerForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            serverName: ""
+            name: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.backToNewServerForm = this.backToNewServerForm.bind(this);
@@ -14,6 +14,7 @@ class CreateServerForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createServer(this.state);
+        
     }
 
     handleInput(field) {
@@ -44,7 +45,7 @@ class CreateServerForm extends React.Component {
                     <input
                         className="createServerInputField"
                         type="text"
-                        onChange={this.handleInput("serverName")}
+                        onChange={this.handleInput("name")}
                         placeholder="Enter a Name" />
                     <button
                         className="goBackButton"
