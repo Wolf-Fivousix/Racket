@@ -20,7 +20,7 @@ class Splash extends React.Component {
 
 
         return (
-            <div className="spalshWrapper">
+            <div className="splashWrapper">
                 <header>
                     <nav className="navBar">
                         Logo
@@ -127,7 +127,7 @@ class Splash extends React.Component {
                                 alt="Floppy Disk Image" /> 
 
 
-                                
+
                             <img
                                 className="desktopImage deviceImages"
                                 src="https://discordapp.com/assets/0d82411c439e3558f8b2f6fb12eccbc1.svg"

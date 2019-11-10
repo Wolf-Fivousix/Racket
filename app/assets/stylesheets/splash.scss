@@ -1,4 +1,4 @@
-.spalshWrapper {
+.splashWrapper {
     background: #26262b;
     color:white;
 }
@@ -45,6 +45,7 @@
     max-width: 1200px;
     padding: 72px 50px 0px 50px;
     text-align: center;
+    margin: auto;
 }
 
 .footer {
@@ -132,7 +133,28 @@
 .potionImage,
 .controllerImage,
 .desktopImage,
-.shieldImage {
+.shieldImage,
+.triangleImage1,
+.triangleImage2,
+.triangleImage3,
+.xImage1,
+.xImage2,
+.circleImage1,
+.circleImage2,
+.circleImage3,
+.squareImage1,
+.squareImage2,
+.squareImage3,
+.dotImage1,
+.dotImage2,
+.dotImage3,
+.dotImage4,
+.dotImage5,
+.bombImage,
+.questionBoxImage,
+.goldenCoinImage1,
+.goldenCoinImage2,
+.floppyDiskImage {
     display: none;
 }
 
@@ -145,7 +167,28 @@
     .potionImage,
     .controllerImage,
     .desktopImage,
-    .shieldImage {
+    .shieldImage,
+    .triangleImage1,
+    .triangleImage2,
+    .triangleImage3,
+    .xImage1,
+    .xImage2,
+    .circleImage1,
+    .circleImage2,
+    .circleImage3,
+    .squareImage1,
+    .squareImage2,
+    .squareImage3,
+    .dotImage1,
+    .dotImage2,
+    .dotImage3,
+    .dotImage4,
+    .dotImage5,
+    .bombImage,
+    .questionBoxImage,
+    .goldenCoinImage1,
+    .goldenCoinImage2,
+    .floppyDiskImage {
         display: initial;
     }
 
@@ -329,6 +372,11 @@
     .laptopImage,
     .headsetImage {
         display: none;
+    }
+
+    .androidPhoneImage,
+    .applePhoneImage {
+        bottom: 70px;
     }
 
     .androidPhoneImage {
