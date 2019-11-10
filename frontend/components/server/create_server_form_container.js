@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import CreateServerForm from "./create_server_form";
 import { openModal, closeModal } from "../../actions/modal_actions";
+import { createServer } from "../../actions/server_actions";
 
 const mapStateToProps = state => ({
 });
