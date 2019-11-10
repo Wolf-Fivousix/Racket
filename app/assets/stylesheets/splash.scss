@@ -12,13 +12,23 @@
 }
 
 .splashLoginButton {
-    color: hsla(0,0%,100%,.8);
-    border: 2px solid hsla(0,0%,100%,.8);
+    color: white;
+    border: 2px solid white;
+    opacity: 0.8;
     border-radius: 20px;
     width: 66px;
     text-align: center;
     font-size: 13px;
     margin-right: 18px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.splashLoginButton:hover {
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.25s;
+    will-change: opacity;
 }
 
 .splashContent {
@@ -32,6 +42,7 @@
     align-items: center;
     flex-direction: column;
     min-width: 215px;
+    max-width: 1200px;
     padding: 72px 50px 0px 50px;
     text-align: center;
 }
@@ -48,9 +59,10 @@
 }
 
 .subtitle {
-    font-size: 18x;
+    font-size: 16px;
     margin-bottom: 30px;
     color: gray;
+    max-width: 710px;
 }
 
 .callToActionButtons {
@@ -93,21 +105,28 @@
     bottom: 10px;
 }
 
+.deviceImagesContainer {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+}
+
 .androidPhoneImage {
-    margin-left: 10px;
+    margin-left: -384px;
 }
 
 .applePhoneImage {
-    margin-left: 180px;
+    margin-left: -229.5px;
 }
 
 .laptopImage {
-    margin-left: 280px;
+    margin-left: -124px;
 }
 
 .headsetImage {
-    margin-left: 550px;
-    bottom: 115px;
+    margin-left: 179px;
+    bottom: 142px;
+    transform: scale(0.75)
 }
 
 .potionImage,
@@ -136,6 +155,174 @@
     .callToActionButtons {
         flex-direction: row;
     }
+
+    .potionImage {
+        margin-left: -609px;
+    }
+
+    .androidPhoneImage {
+        margin-left: -548px;
+    }
+
+    .applePhoneImage {
+        margin-left: -401.5px;
+    }
+
+    .controllerImage {
+        margin-left: -255px;
+    }
+
+    .desktopImage {
+        margin-left: -289.5px;
+    }
+
+    .laptopImage {
+        margin-left: -4px;
+    }
+
+    .headsetImage {
+        margin-left: 270px;
+    }
+
+    .shieldImage {
+        margin-left: 423px;
+    }
+
+    .goldenCoinImage1 {
+        margin-left: -428px;
+        bottom: 300px;
+    }
+
+    .goldenCoinImage2 {
+        margin-left: 80px;
+        bottom: 530px;
+    }
+
+    .bombImage { 
+        margin-left: -481px;
+        bottom: 335px;
+    }
+
+    .questionBoxImage {
+        margin-left: -239px;
+        bottom: 462px;
+    }
+
+    .floppyDiskImage {
+        margin-left: 250px;
+        bottom: 392px;
+    }
+
+    .triangleImage1,
+    .triangleImage2,
+    .triangleImage3,
+    .xImage1,
+    .xImage2,
+    .circleImage1,
+    .circleImage2,
+    .circleImage3,
+    .squareImage1,
+    .squareImage2,
+    .squareImage3,
+    .dotImage1,
+    .dotImage2,
+    .dotImage3,
+    .dotImage4,
+    .dotImage5 {
+        opacity: 0.3;
+    }
+
+    .bombImage,
+    .goldenCoinImage1,
+    .goldenCoinImage2,
+    .floppyDiskImage {
+        animation-name: floatingAnimation;
+        animation-delay: .4s;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
+    }
+
+    .triangleImage1 {
+        margin-left: -579px;
+        bottom: 300px;
+    }
+
+    .triangleImage2 {
+        margin-left: 31px;
+        bottom: 550px;
+    }
+
+    .triangleImage3 {
+        margin-left: -289px;
+        bottom: 448px;
+    }
+
+    .xImage1 {
+        margin-left: -579px;
+        bottom: 510px;
+    }
+
+    .xImage2{
+        margin-left: 541px;
+        bottom: 220px;
+    }
+
+    .circleImage1 {
+        margin-left: -359px;
+        bottom: 530px;
+    }
+
+    .circleImage2 {
+        margin-left: -199px;
+        bottom: 88px;
+    }
+    
+    .circleImage3 {
+        margin-left: 576px;
+        bottom: 280px;
+    }
+
+    .squareImage1 {
+        margin-left: 331px;
+        bottom: 600px;
+    }
+
+    .squareImage2 {
+        margin-left: 431px;
+        bottom: 400px;
+    }
+
+    .squareImage3 {
+        margin-left: 17px;
+        bottom: 92px;
+    }
+
+    .dotImage1 {
+        margin-left: -599px;
+        bottom: 200px;
+    }
+
+    .dotImage2 {
+        margin-left: -319px;
+        bottom: 600px;
+    }
+
+    .dotImage3 {
+        margin-left: 181px;
+        bottom: 500px;
+    }
+
+    .dotImage4 {
+        margin-left: 531px;
+        bottom: 600px;
+    }
+
+    .dotImage5 {
+        margin-left: 621px;
+        bottom: 140px;
+    }
 }
 
 @media (max-width: 699px){
@@ -144,16 +331,20 @@
         display: none;
     }
 
-    .androidPhoneImage,
-    .applePhoneImage {
-        bottom: auto;
-    }
-
     .androidPhoneImage {
-        margin-left: 130px;
+        margin-left: -178px;
     }
 
     .applePhoneImage {
-        margin-left: 350px;
+        margin-left: 34.5px;
+    }
+}
+
+@keyframes floatingAnimation {
+    0% {
+        transform: translate3d(0,-4px,0);
+    }
+    100% {
+        transform: translate3d(0,4px,0);
     }
 }
