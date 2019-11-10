@@ -8,12 +8,13 @@
     display: flex;
 }
 .serverBar {
-    background-color: black;
-    width: 10%;
+    background-color: #202225;
     color: white;
     display: flex;
     flex-flow: column;
     align-items: center;
+    padding: 12px 0 0;
+    width: 72px;
 }
 
 .content {
@@ -24,12 +25,12 @@
 }
 
 .sideBar {
-    background-color: gray;
-    width: 30%
+    background-color: #2f3136;
+    width: 30%;
 }
 
 .chat {
-    background: skyblue;
+    background: #36393f;
     width: 70%;
 }
 
