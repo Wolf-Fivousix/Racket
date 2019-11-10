@@ -21,8 +21,9 @@ window.navigator.appVersion <= Has some interesting information if you look at i
 window.navigator.platform <= this might be better
 
 ## Questions:
-1. How to absolute an element based on a fixed point in the center of screen.
-2. Modal scrolling for New Server.
+1. Modal scrolling for New Server.
+2. Create Server form "back" buttom giving a warning.
+3. How does the form know which button is the "Submit" button?
 
 ## Current Known Bugs:
 1. Guest Login setState for blanking out password works, but not for email field.

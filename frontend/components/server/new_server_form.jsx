@@ -14,7 +14,7 @@ class NewServerForm extends React.Component {
 
   render() {
     return(
-      <div className="newServerFormBackground">
+      <div className="newServerFormBackground modalDefault">
         <h1 className="newServerMessage">OH, ANOTHER SERVER HUH?</h1>
         <div className="newServerChoiceBoxes">
           <button
