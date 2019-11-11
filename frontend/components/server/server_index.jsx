@@ -14,11 +14,11 @@ class ServerIndex extends React.Component {
     }
 
     showServer(serverId) {
-        this.props.showServer(1);
+        this.props.showServer(5);
     }
 
     deleteServer(serverId) {
-        this.props.deleteServer(1);
+        this.props.deleteServer(6);
     }
 
     render() {

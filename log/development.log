@@ -28740,3 +28740,160 @@ Completed 200 OK in 251ms (Views: 0.3ms | ActiveRecord: 8.0ms)
 
 
   [1m[36mServer Load (0.3ms)[0m  [1m[34mSELECT "servers".* FROM "servers"[0m
+  [1m[36mServer Load (0.2ms)[0m  [1m[34mSELECT "servers".* FROM "servers"[0m
+Started GET "/" for ::1 at 2019-11-11 13:28:23 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Dal5W4OEHkP5HN9Cz_PgOQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 1043ms (Views: 1040.9ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/servers/" for ::1 at 2019-11-11 13:28:33 -0800
+Processing by ServersController#create as */*
+  Parameters: {"server"=>{"name"=>"five"}}
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Dal5W4OEHkP5HN9Cz_PgOQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/servers_controller.rb:15
+  [1m[36mServer Exists (2.7ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."name" = $1 LIMIT $2[0m  [["name", "five"], ["LIMIT", 1]]
+  ↳ app/controllers/servers_controller.rb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/servers_controller.rb:15
+  [1m[36mServer Create (0.5ms)[0m  [1m[32mINSERT INTO "servers" ("owner_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["owner_id", 2], ["name", "five"], ["created_at", "2019-11-11 21:28:33.654873"], ["updated_at", "2019-11-11 21:28:33.654873"]]
+  ↳ app/controllers/servers_controller.rb:15
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/servers_controller.rb:15
+Completed 200 OK in 47ms (Views: 0.2ms | ActiveRecord: 12.8ms)
+
+
+  [1m[36mServer Load (0.3ms)[0m  [1m[34mSELECT "servers".* FROM "servers"[0m
+Started DELETE "/servers/6" for ::1 at 2019-11-11 13:28:42 -0800
+Processing by ServersController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mServer Load (0.3ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" WHERE "servers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/servers_controller.rb:23
+Completed 404 Not Found in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/servers/5" for ::1 at 2019-11-11 13:28:44 -0800
+Processing by ServersController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mServer Load (2.1ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" WHERE "servers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/servers_controller.rb:3
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/servers/" for ::1 at 2019-11-11 13:28:50 -0800
+Processing by ServersController#create as */*
+  Parameters: {"server"=>{"name"=>"six"}}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Dal5W4OEHkP5HN9Cz_PgOQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/servers_controller.rb:15
+  [1m[36mServer Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."name" = $1 LIMIT $2[0m  [["name", "six"], ["LIMIT", 1]]
+  ↳ app/controllers/servers_controller.rb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/servers_controller.rb:15
+  [1m[36mServer Create (2.5ms)[0m  [1m[32mINSERT INTO "servers" ("owner_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["owner_id", 2], ["name", "six"], ["created_at", "2019-11-11 21:28:50.108641"], ["updated_at", "2019-11-11 21:28:50.108641"]]
+  ↳ app/controllers/servers_controller.rb:15
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/servers_controller.rb:15
+Completed 200 OK in 18ms (Views: 0.2ms | ActiveRecord: 10.2ms)
+
+
+Started DELETE "/servers/6" for ::1 at 2019-11-11 13:28:54 -0800
+Processing by ServersController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mServer Load (0.2ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" WHERE "servers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/servers_controller.rb:23
+  [1m[36mServer Destroy (6.3ms)[0m  [1m[31mDELETE FROM "servers" WHERE "servers"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/servers_controller.rb:25
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 6.6ms)
+
+
+  [1m[36mServer Load (0.2ms)[0m  [1m[34mSELECT "servers".* FROM "servers"[0m
+Started GET "/" for ::1 at 2019-11-11 13:29:57 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Dal5W4OEHkP5HN9Cz_PgOQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 807ms (Views: 803.7ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/servers/" for ::1 at 2019-11-11 13:30:05 -0800
+Processing by ServersController#create as */*
+  Parameters: {"server"=>{"name"=>"sete"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Dal5W4OEHkP5HN9Cz_PgOQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/servers_controller.rb:15
+  [1m[36mServer Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "servers" WHERE "servers"."name" = $1 LIMIT $2[0m  [["name", "sete"], ["LIMIT", 1]]
+  ↳ app/controllers/servers_controller.rb:15
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/servers_controller.rb:15
+  [1m[36mServer Create (14.7ms)[0m  [1m[32mINSERT INTO "servers" ("owner_id", "name", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["owner_id", 2], ["name", "sete"], ["created_at", "2019-11-11 21:30:05.587029"], ["updated_at", "2019-11-11 21:30:05.587029"]]
+  ↳ app/controllers/servers_controller.rb:15
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/servers_controller.rb:15
+Completed 200 OK in 47ms (Views: 0.3ms | ActiveRecord: 30.3ms)
+
+
+Started GET "/" for ::1 at 2019-11-11 13:49:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Dal5W4OEHkP5HN9Cz_PgOQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 1058ms (Views: 1056.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2019-11-11 13:50:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Dal5W4OEHkP5HN9Cz_PgOQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 970ms (Views: 968.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/servers/5" for ::1 at 2019-11-11 13:50:43 -0800
+Processing by ServersController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mServer Load (2.5ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" WHERE "servers"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/servers_controller.rb:3
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 2.5ms)
+
+
+Started DELETE "/servers/6" for ::1 at 2019-11-11 13:50:58 -0800
+Processing by ServersController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mServer Load (1.5ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" WHERE "servers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/servers_controller.rb:23
+Completed 404 Not Found in 7ms (Views: 0.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2019-11-11 13:57:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Dal5W4OEHkP5HN9Cz_PgOQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 105ms (Views: 102.2ms | ActiveRecord: 2.9ms)
+
+
+Started DELETE "/servers/6" for ::1 at 2019-11-11 13:57:02 -0800
+Processing by ServersController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mServer Load (0.2ms)[0m  [1m[34mSELECT  "servers".* FROM "servers" WHERE "servers"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/servers_controller.rb:23
+Completed 404 Not Found in 14ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+
+

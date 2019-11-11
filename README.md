@@ -26,6 +26,7 @@ window.navigator.platform <= this might be better
 3. Entering server name and pressing "enter" goes back instead of creating new server. How do I select the default button that should be pressed?
 4. How does the form know which button is the "Submit" button?
 5. What factors would make a route through API?
+6. Why is my Servers Errors returning a full object instead of just an array, like Session Errors?
 
 ## Current Known Bugs:
 1. Guest Login setState for blanking out password works, but not for email field.

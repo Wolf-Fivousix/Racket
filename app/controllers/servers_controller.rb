@@ -4,7 +4,7 @@ class ServersController < ApplicationController
         if @server
             render json: @server
         else
-            render json: "Server not found", status: 404
+            render json: ["Server not found"], status: 404
         end
     end
 
@@ -25,7 +25,7 @@ class ServersController < ApplicationController
             @server.delete
             render json: @server
         else
-            render json: "Server non existent", status: 404
+            render json: ["Server non existent"], status: 404
         end
     end
 
