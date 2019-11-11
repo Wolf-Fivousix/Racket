@@ -14,7 +14,7 @@ class CreateServerForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createServer(this.state)
-            .then(this.props.closeModal());
+            .then(() => this.props.closeModal());
         
     }
 
@@ -30,6 +30,13 @@ class CreateServerForm extends React.Component {
     }
 
     render () {
+        let createServerLabel = "serverNameLabel";
+        let createServerErrorMessage = "";
+        if (this.props.errors.servers.responseJSON) {
+            createServerLabel += " serverWithErrors";
+            createServerErrorMessage = " - " + this.props.errors.servers.responseJSON;
+        }
+
         return (
             <div className="modalDefault">
                 <form
@@ -40,8 +47,8 @@ class CreateServerForm extends React.Component {
                         <h3 className="createServerSubMessage">By creating a server, you will have access to <strong>free</strong>  voice and text chat to use amongst your friends.</h3>
                     </div>
                 
-                    <label className="serverNameLabel">
-                        SERVER NAME
+                    <label className={createServerLabel}>
+                        {`SERVER NAME${createServerErrorMessage}`}
                     </label>
                     <input
                         className="createServerInputField"

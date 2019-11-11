@@ -4,6 +4,7 @@ import { openModal, closeModal } from "../../actions/modal_actions";
 import { createServer } from "../../actions/server_actions";
 
 const mapStateToProps = state => ({
+    errors: state.errors
 });
 
 const mapDispatchToProps = dispatch => ({
