@@ -8,7 +8,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     createServer: (serverName) => dispatch(createServer(serverName)),
-    // createServer: (serverName) => console.log(serverName),
     openModal: (modalType) => dispatch(openModal(modalType)),
     closeModal: () => dispatch(closeModal())
 });

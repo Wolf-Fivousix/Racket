@@ -6,8 +6,23 @@ const createNewServer = server => ({
     server
 })
 
+// const showServer
+// const deleteServer
+
 export const createServer = server => dispatch => (
-    serverUtils.create(server)
+    serverUtils.createServer(server)
         .then(server => dispatch(createNewServer(server)))
         .fail(errors => console.log(errors))
+);
+
+export const showServer = serverId => dispatch => (
+    serverUtils.showServer(serverId)
+        .then(server => console.log(server))
+        .fail(errors => console.log(errors.responseText))
+);
+
+export const deleteServer = serverId => dispatch => (
+    serverUtils.deleteServer(serverId)
+        .then(server => console.log(server))
+        .fail(errors => console.log(errors.responseText))
 );

@@ -13,6 +13,14 @@ class ServerIndex extends React.Component {
         this.props.openModal(() => <NewServerFormContainer />);
     }
 
+    showServer(serverId) {
+        this.props.showServer(1);
+    }
+
+    deleteServer(serverId) {
+        this.props.deleteServer(1);
+    }
+
     render() {
         return (
             <div className="serverChatWrapper">
@@ -24,6 +32,15 @@ class ServerIndex extends React.Component {
                         onClick={this.addServerRequest}
                         >
                         +
+                    </button>
+                    <button
+                        onClick={this.showServer.bind(this)}>
+                        Show
+                    </button>
+                    <br/>
+                    <button
+                        onClick={this.deleteServer.bind(this)}>
+                        Delete
                     </button>
                 </div>
                 <div className="content">

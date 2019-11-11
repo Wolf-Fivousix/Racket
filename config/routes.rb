@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
   end
 
-  resources :servers, only: [:create]
+  resources :servers, only: [:create, :show, :destroy]
 end
