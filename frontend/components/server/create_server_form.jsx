@@ -25,16 +25,16 @@ class CreateServerForm extends React.Component {
     }
 
     backToNewServerForm() {
-        console.log("going baaaaaaack");
         this.props.openModal(() => <NewServerFormContainer />)
     }
 
     render () {
         let createServerLabel = "serverNameLabel";
         let createServerErrorMessage = "";
-        if (this.props.errors.servers.responseJSON) {
+        const errorsArray = this.props.errors.servers.responseJSON;
+        if (errorsArray) {
             createServerLabel += " serverWithErrors";
-            createServerErrorMessage = " - " + this.props.errors.servers.responseJSON;
+            createServerErrorMessage = " - " + errorsArray;
         }
 
         return (
