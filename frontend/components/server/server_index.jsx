@@ -51,11 +51,16 @@ class ServerIndex extends React.Component {
                         onClick={this.deleteServer.bind(this)}>
                         Delete
                     </button>
+                    <button
+                        className="logoutButton button"
+                        onClick={this.props.logout}>
+                        Logout
+                    </button>
                 </div>
                 <div className="content">
                     <Route path="/servers/:serverId" component={serverShowContainer}/>
                     {/* This will go inside the next component. */}
-                    <div className="sideBar">Channel 1</div>
+                    <div className="channelList">Channel 1</div>
                     <div className="chat">
                         <h1>Server Page</h1>
                         <h2>Get RACKEEETTTT! =D</h2>
@@ -65,7 +70,6 @@ class ServerIndex extends React.Component {
                     </div>
                 </div>
 
-                <button onClick={this.props.logout}>Logout</button>
             </div>
         );
     }

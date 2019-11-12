@@ -5,33 +5,40 @@
     position: fixed;
     height: 100%;
     width: 100%;
-    display: flex;
+
 }
 .serverBar {
     background-color: #202225;
     color: white;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     padding: 12px 0 0;
     width: 72px;
 }
 
 .content {
-    height: inherit;
-    width: inherit;
-    display: inherit;
-    width: 90%;
+
 }
 
-.sideBar {
+.channelList {
     background-color: #2f3136;
-    width: 30%;
+    position: absolute;
+    top: 0px;
+    left: 72px;
+    width: 240px;
+    bottom: 0;
 }
 
 .chat {
     background: #36393f;
-    width: 70%;
+    position: absolute;
+    top: 0;
+    left: 312px;
+    right: 0;
+    bottom: 0;
 }
 
 .addServerButton {
@@ -61,4 +68,22 @@
 
 .serverWithErrors {
     color: red;
+}
+
+.logoutButton {
+    box-sizing: border-box;
+    padding: 1px;
+    text-align: center;
+    color: black;
+    font-weight: 700;
+    background: red;
+    width: inherit;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.logoutButton:hover {
+    background: red;
+    opacity: 0.8;
 }
