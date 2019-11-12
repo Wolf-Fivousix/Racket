@@ -1,6 +1,9 @@
 import React from "react";
 import ModalContainer from "../modal/modal_container";
 import NewServerFormContainer from "../server/new_server_form_container";
+import { Route } from "react-router-dom";
+import serverShowContainer from "./server_show_container";
+import ServerIndexItem from "./server_index_item";
 
 class ServerIndex extends React.Component {
     constructor(props) {
@@ -22,11 +25,17 @@ class ServerIndex extends React.Component {
     }
 
     render() {
+        // debugger;
+        // const serverList = Object.values(this.props.servers).map(server => <ServerIndexItem server={server}/>);
+        const serverList = [];
         return (
             <div className="serverChatWrapper">
                 <ModalContainer />
                 <div className="serverBar">
                     <div className="serverTitle">Servers</div>
+                    <ul>
+                        {serverList}
+                    </ul>
                     <button
                         className="addServerButton"
                         onClick={this.addServerRequest}
@@ -44,6 +53,8 @@ class ServerIndex extends React.Component {
                     </button>
                 </div>
                 <div className="content">
+                    <Route path="/servers/:serverId" component={serverShowContainer}/>
+                    {/* This will go inside the next component. */}
                     <div className="sideBar">Channel 1</div>
                     <div className="chat">
                         <h1>Server Page</h1>

@@ -5,7 +5,7 @@ import { openModal, closeModal } from "../../actions/modal_actions";
 import { showServer, deleteServer } from "../../actions/server_actions";
 
 const mapStateToProps = state => ({
-
+    servers: state.servers
 });
 
 const mapDispatchToProps = dispatch => ({
