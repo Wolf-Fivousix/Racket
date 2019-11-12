@@ -2,16 +2,22 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/session_actions";
 import ServerIndex from "./server_index";
 import { openModal, closeModal } from "../../actions/modal_actions";
-import { showServer, deleteServer } from "../../actions/server_actions";
+import {
+    showServer,
+    deleteServer,
+    getUserServers
+} from "../../actions/server_actions";
 
 const mapStateToProps = state => ({
-    servers: state.servers
+    userId: Object.values(state.entities.user)[0].id,
+    servers: state.entities.servers
 });
 
 const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logoutUser()),
     openModal: (modalType) => dispatch(openModal(modalType)),
     closeModal: () => dispatch(closeModal()),
+    getUserServers: (userId) => dispatch(getUserServers(userId)),
     showServer: (serverId) => dispatch(showServer(serverId)),
     deleteServer: (serverId) => dispatch(deleteServer(serverId))
 })

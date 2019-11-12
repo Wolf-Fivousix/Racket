@@ -24,8 +24,15 @@ class ServerIndex extends React.Component {
         this.props.deleteServer(6);
     }
 
+    getUserServers() {
+        // I'm only getting the first one. I need to fix the Controller to,
+        // return all the results.
+        this.props.getUserServers(this.props.userId);
+    }
+
     render() {
         // debugger;
+        // I need to put the Users servers into the State before I can access them.
         // const serverList = Object.values(this.props.servers).map(server => <ServerIndexItem server={server}/>);
         const serverList = [];
         return (
@@ -50,6 +57,10 @@ class ServerIndex extends React.Component {
                     <button
                         onClick={this.deleteServer.bind(this)}>
                         Delete
+                    </button>
+                    <button
+                        onClick={this.getUserServers.bind(this)}>
+                        Get Servers
                     </button>
                     <button
                         className="logoutButton button"

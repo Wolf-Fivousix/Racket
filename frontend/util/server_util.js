@@ -19,3 +19,11 @@ export const deleteServer = (serverId) => (
         url: `/servers/${serverId}`
     })
 );
+
+export const getUserServers = (ownerId) => (
+    $.ajax({
+        method: "GET",
+        url: "/servers/",
+        data: { ownerId }
+    })
+);

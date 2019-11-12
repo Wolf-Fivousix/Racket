@@ -27,6 +27,8 @@ window.navigator.platform <= this might be better
 4. How does the form know which button is the "Submit" button?
 5. What factors would make a route through API?
 6. Why is my Servers Errors returning a full object instead of just an array, like Session Errors?
+7. How to add servers to the State when the user logs in.
+8. Also, go through the server mess I made, check if it is proper.
 
 ## Current Known Bugs:
 1. Guest Login setState for blanking out password works, but not for email field.

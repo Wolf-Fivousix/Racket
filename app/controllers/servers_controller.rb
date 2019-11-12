@@ -8,6 +8,16 @@ class ServersController < ApplicationController
         end
     end
 
+    def index
+        @servers = Server.find_by(owner_id: params[:ownerId])
+
+        if @servers
+            render json: @servers
+        else
+            render json: ["User has no servers"], status: 404
+        end
+    end
+
     def create
         @server = Server.new(server_params)
         @server.owner_id = current_user.id
