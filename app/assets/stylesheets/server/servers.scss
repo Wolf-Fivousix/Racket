@@ -76,7 +76,7 @@
     text-align: center;
     color: black;
     font-weight: 700;
-    background: red;
+    background-color: red;
     width: inherit;
     position: absolute;
     bottom: 0px;
@@ -84,6 +84,33 @@
 }
 
 .logoutButton:hover {
-    background: red;
+    background-color: darkred;
     opacity: 0.8;
+}
+
+.serversList {
+    display: flex;
+    flex-flow: column;
+    // align-content: center;
+    // justify-content: center;
+    // height: 100%;
+}
+
+.serverIndexItemBox {
+    margin: auto;   // This is not how it should work.
+    // margin-right: 8px;
+    margin-bottom: 8px;
+    height: 48px;
+    width: 48px;
+    background: #36393f;
+    transition: .15s ease-out,color .15s ease-out;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.serverIndexItemBox:hover {
+    cursor: pointer;
+    border-radius: 15px;
+    background-color: #43b581;
+    border-left: 5px solid white;
 }
