@@ -53,6 +53,10 @@ class SessionForm extends React.Component {
     this.props.clearErrors();
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   render() {
     let loginTitle = "Welcome back!";
     let loginSubtitle = "We're so excited to see you again!";
@@ -60,7 +64,6 @@ class SessionForm extends React.Component {
     let forgotPassword = (
       <button className="passwordResetLinkButton">
         <Link
-          onClick={this.clearErrors}
           to="/"
           >Forgot your password?
         </Link>
@@ -71,7 +74,6 @@ class SessionForm extends React.Component {
       <span className="needAccountText">Need an accout?
         <button className="registerLinkButton">
           <Link
-            onClick={this.clearErrors}
             to="/signup">
             Register
           </Link>
@@ -138,7 +140,6 @@ class SessionForm extends React.Component {
       needAnAccount = "";
       alreadyHaveAccount = <button className="alreadyAccountLinkButton">
           <Link
-            onClick={this.clearErrors}
             to="/login">Already have an account?
           </Link>
         </button>;

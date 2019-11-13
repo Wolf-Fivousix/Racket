@@ -41,6 +41,5 @@ export const deleteServer = serverId => dispatch => (
 
 export const getUserServers = userId => dispatch => (
     serverUtils.getUserServers(userId)
-        // .then(servers => dispatch(receiveUserServers(servers)))
-        .then(servers => console.log(servers))
+        .then(servers => dispatch(receiveUserServers(servers)))
 );

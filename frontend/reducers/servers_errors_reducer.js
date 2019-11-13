@@ -2,6 +2,7 @@ import {
     RECEIVE_SERVERS_ERRORS,
     CLEAR_ERRORS
 } from "../actions/server_actions";
+import { CLOSE_MODAL } from "../actions/modal_actions";
 
 const serversErrorsReducer = (state = [], action) => {
     switch(action.type) {
@@ -9,6 +10,9 @@ const serversErrorsReducer = (state = [], action) => {
             return action.errors;
 
         case CLEAR_ERRORS:
+            return [];
+        
+        case CLOSE_MODAL:
             return [];
 
         default:

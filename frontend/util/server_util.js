@@ -1,7 +1,7 @@
 export const createServer = (server) => (
     $.ajax({
         method: "POST",
-        url: "/servers/",
+        url: "/api/servers/",
         data: { server }
     })
 );
@@ -9,21 +9,21 @@ export const createServer = (server) => (
 export const showServer = (serverId) => (
     $.ajax({
         method: "GET",
-        url: `/servers/${serverId}`
+        url: `/api/servers/${serverId}`
     })
 );
 
 export const deleteServer = (serverId) => (
     $.ajax({
         method: "DELETE",
-        url: `/servers/${serverId}`
+        url: `/api/servers/${serverId}`
     })
 );
 
 export const getUserServers = (ownerId) => (
     $.ajax({
         method: "GET",
-        url: "/servers/",
+        url: "/api/servers/",
         data: { ownerId }
     })
 );

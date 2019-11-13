@@ -24,7 +24,8 @@ class CreateServerForm extends React.Component {
         );
     }
 
-    backToNewServerForm() {
+    backToNewServerForm(e) {
+        e.preventDefault();
         this.props.openModal(() => <NewServerFormContainer />)
     }
 
@@ -55,19 +56,23 @@ class CreateServerForm extends React.Component {
                         type="text"
                         onChange={this.handleInput("name")}
                         placeholder="Enter a Name" />
-                    <button
-                        className="goBackButton"
-                        onClick={this.backToNewServerForm}>
-                        <img
-                            className="goBackButtonImage"
-                            src="https://discordapp.com/assets/eb57a76361c43375bf23207ad2acc631.svg"
-                            alt="Go Back Button Image" />
-                        <p className="goBackButtonText">BACK</p>
-                    </button>
-                    <button
-                        className="button">
-                        CREATE
-                    </button>
+                    <div className="createServerFormButtonsBar">
+                        <button
+                            type="button"
+                            className="goBackButton"
+                            onClick={this.backToNewServerForm}>
+                            <img
+                                className="goBackButtonImage"
+                                src="https://discordapp.com/assets/eb57a76361c43375bf23207ad2acc631.svg"
+                                alt="Go Back Button Image" />
+                            <p className="goBackButtonText">BACK</p>
+                        </button>
+
+                        <button
+                            className="createServerSubmitButton button">
+                            Create
+                        </button>
+                    </div>
                 </form>
             </div>
         );
