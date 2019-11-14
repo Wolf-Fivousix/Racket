@@ -11,3 +11,26 @@
     background-color: var(--logo-primary-hover);
     cursor: pointer;
 }
+
+.defaultInput {
+    box-sizing: border-box;
+    margin-top: 8px;
+    background-color: rgba(0,0,0,0.1);
+    color: #dcddde;
+    border: 1px solid rgba(0,0,0,0.3);
+    height: 40px;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.defaultInput:hover {
+    border: 1px solid black;
+}
+
+.defaultInput:focus {
+    border: 1px solid #7289da;
+}
+
+.defaultInputErrors {
+    border: 1px solid red;
+}

@@ -17,6 +17,9 @@
     right: 0;
     padding: 12px 0 0;
     width: 72px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
 
 .content {
@@ -39,26 +42,6 @@
     left: 312px;
     right: 0;
     bottom: 0;
-}
-
-.addServerButton {
-    font-weight: 900;
-    font-size: 40px;
-    border: 3px solid white;
-    text-align: center;
-    border-radius: 100%;
-    width: 75%;
-    height: 70px;
-    box-sizing: border-box;
-    padding: 5px;
-}
-
-.addServerButton:hover {
-    cursor: pointer;
-}
-
-.serverTitle {
-    margin-bottom: 20px;
 }
 
 .createServerImage {
@@ -89,28 +72,94 @@
 }
 
 .serversList {
-    display: flex;
-    flex-flow: column;
+    // display: flex;
+    // flex-flow: column;
     // align-content: center;
     // justify-content: center;
     // height: 100%;
 }
 
 .serverIndexItemBox {
-    margin: auto;   // This is not how it should work.
+    // width: 72px;
+}
+
+.serverIndexItemButton,
+.serverIndexSystemButton {
     // margin-right: 8px;
     margin-bottom: 8px;
     height: 48px;
     width: 48px;
     background: #36393f;
     transition: .15s ease-out,color .15s ease-out;
-    text-align: center;
     border-radius: 25px;
+    text-align: center;
+    position: relative;
 }
 
-.serverIndexItemBox:hover {
+.serverIndexItemButton:hover,
+.serverIndexSystemButton:hover {
     cursor: pointer;
     border-radius: 15px;
+    // border-left: 5px solid white;
+}
+
+.serverIndexItemButton:hover {
+    background-color: var(--logo-primary);
+}
+.serverIndexSystemButton:hover {
     background-color: #43b581;
-    border-left: 5px solid white;
+}
+
+.serverIndexSystemButton:hover .addServerButtonText {
+    color: white;
+}
+
+.addServerButtonText {
+    position: absolute;
+    left: 14px;
+    bottom: 7px;
+    font-weight: 150;
+    font-size: 34px;
+    color: #43b581;
+}
+
+.menuSeparator {
+    height: 2px;
+    width: 32px;
+    border-radius: 1px;
+    background: #36393f;
+    opacity: 0.6;
+    margin-bottom: 8px;
+}
+
+.racketLogoIcon {
+    color: #dcddde;
+}
+
+.serverNameHeader {
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+}
+
+.updateButton {
+    background: rgb(0, 49, 0);
+}
+
+.deleteButton {
+    background: black;
+}
+
+.updateButton:hover,
+.deleteButton:hover {
+    opacity: 0.8;
+}
+
+.updateButton:hover {
+    background: rgb(0, 49, 0);
+}
+
+.deleteButton:hover {
+    background: black;
 }

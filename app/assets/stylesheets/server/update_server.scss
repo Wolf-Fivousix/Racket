@@ -1,0 +1,33 @@
+.updateServerModal {
+    background: #36393f;
+    height: 200px;
+    width: 300px;
+}
+
+.UpdateServerForm {
+    text-align: center;
+}
+
+.updateServerLabel {
+    color: gray;
+    font-weight: 700;
+}
+
+.updateServerInput {
+    font-weight: 500;
+    text-align: start;
+}
+
+.updateServerButton {
+    background-color: #43b581;
+    box-sizing: border-box;
+    padding: 10px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.updateServerButton:hover {
+    background-color: #43b581;
+    opacity: 0.8;
+}
