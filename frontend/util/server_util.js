@@ -6,7 +6,7 @@ export const createServer = (server) => (
     })
 );
 
-export const showServer = (serverId) => (
+export const getServer = (serverId) => (
     $.ajax({
         method: "GET",
         url: `/api/servers/${serverId}`

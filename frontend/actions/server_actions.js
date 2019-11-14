@@ -3,6 +3,8 @@ export const CREATE_SERVER = "CREATE_SERVER";
 export const RECEIVE_SERVERS_ERRORS = "RECEIVE_SERVERS_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
 export const RECEIVE_USER_SERVERS = "RECEIVE_USER_SERVERS";
+export const RECEIVE_CURRENT_SERVER = "RECEIVE_CURRENT_SERVER";
+export const DESTROY_SERVER = "DESTORY_SERVER";
 
 const createNewServer = server => ({
     type: CREATE_SERVER,
@@ -18,8 +20,16 @@ const receiveUserServers = (servers) => ({
     type: RECEIVE_USER_SERVERS,
     servers
 });
-// const showServer
-// const deleteServer
+
+const receiveCurrentServer = (server) => ({
+    type: RECEIVE_CURRENT_SERVER,
+    server
+});
+
+const destroyServer = (serverId) => ({
+    type: DESTROY_SERVER,
+    serverId
+});
 
 export const createServer = server => dispatch => (
     serverUtils.createServer(server)
@@ -27,15 +37,15 @@ export const createServer = server => dispatch => (
         .fail(errors => dispatch(receiveServersErrors(errors)))
 );
 
-export const showServer = serverId => dispatch => (
-    serverUtils.showServer(serverId)
-        .then(server => console.log(server))
+export const getServer = serverId => dispatch => (
+    serverUtils.getServer(serverId)
+        .then(server => dispatch(receiveCurrentServer(server)))
         .fail(errors => dispatch(receiveServersErrors(errors)))
 );
 
 export const deleteServer = serverId => dispatch => (
     serverUtils.deleteServer(serverId)
-        .then(server => console.log(server))
+        .then(serverId => dispatch(destroyServer(serverId)))
         .fail(errors => dispatch(receiveServersErrors(errors)))
 );
 
