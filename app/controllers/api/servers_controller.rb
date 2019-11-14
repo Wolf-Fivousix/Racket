@@ -12,7 +12,7 @@ class Api::ServersController < ApplicationController
         @servers = current_user.servers
 
         if @servers.length > 0
-            render json: @servers
+            render :servers
         else
             render json: ["User has no servers"], status: 404
         end
@@ -33,7 +33,7 @@ class Api::ServersController < ApplicationController
         @server = current_user.servers.find_by(id: params[:id])
         if @server
             @server.delete
-            render json: @server
+            render json: @server.id
         else
             render json: ["Server non existent"], status: 404
         end
