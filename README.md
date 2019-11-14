@@ -21,6 +21,7 @@ window.navigator.appVersion <= Has some interesting information if you look at i
 window.navigator.platform <= this might be better
 
 ## Questions:
+1. 
 
 ## Current Known Bugs:
 1. Guest Login setState for blanking out password works, but not for email field.
