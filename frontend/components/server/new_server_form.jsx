@@ -8,7 +8,6 @@ class NewServerForm extends React.Component {
   }
   
   addNewServer() {
-    console.log("you have a new server");
     this.props.openModal(() => <CreateServerFormContainer />);
   }
 

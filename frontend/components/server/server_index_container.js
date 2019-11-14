@@ -3,8 +3,6 @@ import { logoutUser } from "../../actions/session_actions";
 import ServerIndex from "./server_index";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import {
-    showServer,
-    deleteServer,
     getUserServers
 } from "../../actions/server_actions";
 
@@ -17,9 +15,7 @@ const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logoutUser()),
     openModal: (modalType) => dispatch(openModal(modalType)),
     closeModal: () => dispatch(closeModal()),
-    getUserServers: (userId) => dispatch(getUserServers(userId)),
-    showServer: (serverId) => dispatch(showServer(serverId)),
-    deleteServer: (serverId) => dispatch(deleteServer(serverId))
+    getUserServers: (userId) => dispatch(getUserServers(userId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(ServerIndex);

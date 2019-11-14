@@ -1,21 +1,54 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
+import UpdateServer from "./update_server";
 
 class ServerShow extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {}
+        this.deleteSelf = this.deleteSelf.bind(this);
+        this.updateName = this.updateName.bind(this);
+        this.state = { name: "" };
     }
 
-    componentDidMount() {
-        console.log(this.props.servers);
-        // this.props.servers[this.props.match.params.serverId]
+    // componentDidUpdate(prevProps) {
+    //     if(this.props.match.params.serverId !== prevProps.match.params.serverId) {
+    //         this.props.getServer(this.props.match.params.serverId)
+    //             .then(() => this.setState({ name: this.props.servers[this.props.match.params.serverId].name}))
+    //     }
+    // }
+    updateName() {
+        console.log(`You tried to update ${this.props.servers[this.props.match.params.serverId].name} name`);
+        this.props.openModal(() => <UpdateServer />);
+    }
+    
+    deleteSelf() {
+        this.props.deleteServer(this.props.match.params.serverId);
+        this.props.history.push("/servers/");
     }
 
     render() {
+        if (!this.props.servers[this.props.match.params.serverId]) return null;
+
         return(
             <div className="content">
-                <div className="channelList" >{"aaaaa"}</div >
+                <div className="channelList" >
+                    <h1 className="serverNameHeader">
+                        {this.props.servers[this.props.match.params.serverId].name}
+                    </h1>
+                    {/* <h1>{this.state.name}</h1> */}
+                    <br/>
+                    <button
+                        className="updateButton button"
+                        onClick={this.updateName}>
+                        NEW NAME Dovakin
+                    </button>
+                    <br/>
+                    <button
+                        className="deleteButton button"
+                        onClick={this.deleteSelf}>
+                        DELETE ME
+                    </button>
+                </div >
                 <div className="chat">
                     <h1>Server messages</h1>
                 </div>
@@ -24,4 +57,4 @@ class ServerShow extends React.Component {
     }
 };
 
-export default ServerShow;
+export default withRouter(ServerShow);

@@ -91,30 +91,30 @@ class SessionForm extends React.Component {
     )
 
     let errorsMessageHash = {};
-    // let loginTextClass = "loginText";
+
     let loginEmailTextClass = "loginText";
     let loginUsernameTextClass = "loginText";
     let loginPasswordTextClass = "loginText";
-    // let authInputClass = "authInput";
-    let authInputEmailClass = "authInput";
-    let authInputUsernameClass = "authInput";
-    let authInputPasswordClass = "authInput";
+
+    let authInputEmailClass = "defaultInput";
+    let authInputUsernameClass = "defaultInput";
+    let authInputPasswordClass = "defaultInput";
     // If there are errors.
     const errorsArray = this.props.errors.session.responseJSON;
     if (errorsArray) {
       for (let i = 0; i < errorsArray.length; ++i) {
         if (errorsArray[i].includes("Email")) {
-          authInputEmailClass += " authInputErrors";
+          authInputEmailClass += " defaultInputErrors";
           loginEmailTextClass += " authErrors";
           errorsMessageHash["EMAIL"] = ` - ${errorsArray[i]}`
         }
         if (errorsArray[i].includes("Username")) {
-          authInputUsernameClass += " authInputErrors";
+          authInputUsernameClass += " defaultInputErrors";
           loginUsernameTextClass += " authErrors";
           errorsMessageHash["USERNAME"] = ` - ${errorsArray[i]}`
         }
         if (errorsArray[i].includes("Password")) {
-          authInputPasswordClass += " authInputErrors";
+          authInputPasswordClass += " defaultInputErrors";
           loginPasswordTextClass += " authErrors";
           errorsMessageHash["PASSWORD"] = ` - ${errorsArray[i]}`
         }

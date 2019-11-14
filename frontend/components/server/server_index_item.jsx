@@ -8,19 +8,19 @@ class ServerIndexItem extends React.Component {
     }
 
     handleClick() {
-        // console.log(this.props);
-        // this.props.history.push(`/servers/${this.props.server.id}`);
+        this.props.history.push(`/servers/${this.props.server.id}`);
     }
 
     render() {
         const server = this.props.server;
         return(
-            <Link
-                to={`/servers/${this.props.server.id}`}
-                className="serverIndexItemBox"
-                >
-                {server.name}
-            </Link>
+            <div className="serverIndexItemBox">
+                <button
+                    className="serverIndexItemButton"
+                    onClick={this.handleClick}>
+                        {server.name}
+                </button>
+            </div>
         );
     }
 }
