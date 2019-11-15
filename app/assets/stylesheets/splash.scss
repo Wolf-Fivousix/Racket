@@ -6,9 +6,32 @@
 .navBar {
     display: flex;
     justify-content: space-between;
-    height: 40px;
+    align-items: center;
+    height: 72px;
     box-sizing: border-box;
-    padding: 4px;
+    padding: 8px;
+}
+
+.logoIcon {
+    height: 125%;
+    width: auto;
+    transform: rotateY(180deg);
+    margin-left: 14px;
+    margin-top: 14px;
+}
+
+.rightSideNav {
+    display: inherit;
+    justify-content: inherit;
+    align-items: inherit;
+}
+
+.splashNavSeparator {
+    width: 2px;
+    height: 14px;
+    border-radius: 1px;
+    background-color: hsla(0,0%,100%,.2);
+    margin-right: 12px;
 }
 
 .splashLoginButton {
@@ -17,6 +40,7 @@
     opacity: 0.8;
     border-radius: 20px;
     width: 66px;
+    height: 32px;
     text-align: center;
     font-size: 13px;
     margin-right: 18px;
@@ -43,14 +67,32 @@
     flex-direction: column;
     min-width: 215px;
     max-width: 1200px;
-    padding: 72px 50px 0px 50px;
+    padding: 50px 50px 0px 50px;
     text-align: center;
     margin: auto;
 }
 
 .footer {
     color: orange;
-    height: 100px;
+    margin-top: 72px;
+    box-sizing: border-box;
+    padding: 40px 240px 48px;
+}
+
+.skillsBar {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.splashFooterSeparator {
+    height: 2px;
+    width: 80%;
+    background-color: hsla(0,0%,100%,.1);
+    margin: auto;
+    margin-top: 36px;
+    margin-bottom: 34px;
 }
 
 .title {
@@ -66,6 +108,17 @@
     max-width: 710px;
 }
 
+.footerTitle {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 13px;
+}
+
+.footerEntry {
+    color: gray;
+    line-height: 20px;
+    font-size: 14px;
+}
 .callToActionButtons {
     display: flex;
     flex-direction: column;
@@ -76,19 +129,27 @@
 .githubButton,
 .contactButton {
     box-sizing: border-box;
-    height: 45px;
     width: 250px;
     margin: 10px;
     border-radius: 3px;
     text-align: center;
+    box-sizing: border-box;
+    padding: 12px;
+    font-weight: 600;
 }
 
 .githubButton {
-    background: #43b581;
+    background-color: var(--button-secondary);
 }
 
-.contactButton {
-    background: #7289da;
+.githubButton:hover,
+.contactButton:hover {
+    cursor: pointer;
+    transform: translateY(2px);
+}
+
+.githubButton:hover {
+    background-color: var(--button-secondary-hover);
 }
 
 .splashImages {
@@ -368,7 +429,7 @@
     }
 }
 
-@media (max-width: 699px){
+@media (max-width: 699px) {
     .laptopImage,
     .headsetImage {
         display: none;

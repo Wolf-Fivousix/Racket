@@ -33,6 +33,10 @@
     left: 72px;
     width: 240px;
     bottom: 0;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .chat {
@@ -42,11 +46,6 @@
     left: 312px;
     right: 0;
     bottom: 0;
-}
-
-.createServerImage {
-    height: 100px;
-    width: auto;
 }
 
 .serverWithErrors {
@@ -123,6 +122,10 @@
     color: #43b581;
 }
 
+.addServerButtonText:hover {
+    cursor: pointer;
+}
+
 .menuSeparator {
     height: 2px;
     width: 32px;
@@ -141,25 +144,31 @@
     font-weight: 900;
     color: white;
     text-align: center;
+    margin-top: 10px;
+}
+
+.updateButton,
+.deleteButton {
+    width: 70%;
+    position: absolute;
+    right: 0;
 }
 
 .updateButton {
-    background: rgb(0, 49, 0);
+    background-color: var(--button-secondary);
+    bottom: 80px;
 }
 
 .deleteButton {
-    background: black;
-}
-
-.updateButton:hover,
-.deleteButton:hover {
-    opacity: 0.8;
+    background: rgb(65, 65, 65);
+    bottom: 30px;
+    right: 40px;
 }
 
 .updateButton:hover {
-    background: rgb(0, 49, 0);
+    background-color: var(--button-secondary-hover);
 }
 
 .deleteButton:hover {
-    background: black;
+    background: rgb(32, 32, 32);
 }

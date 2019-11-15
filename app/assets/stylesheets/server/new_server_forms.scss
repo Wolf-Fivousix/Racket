@@ -1,7 +1,7 @@
 .createANewServerButton,
 .joinAnExistingServerButton {
   width: 198px;
-  margin: 0px 15px 0px 15px
+  margin: 0px 15px 0px 15px;
 }
 
 .joinAnExistingServerButton {
@@ -19,12 +19,27 @@
 }
 
 .newServerMessage {
-  color: #7289da;
+  color: var(--logo-primary);
   font-weight: 900;
   font-size: 18px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .newServerChoiceBoxes {
+  display: flex;
+  height: 80%;
+}
 
+.newServerCard {
+  border: 2px solid lightgray;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px 10px;
+}
+
+.createServerImage {
+    height: auto;
+    width: 50%;
 }

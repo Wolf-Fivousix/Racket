@@ -17,16 +17,18 @@
     width: 100%;
 }
 
-.loginText {
-    margin-bottom: 8px;
-}
-
 .authForm {
     margin-top: 20px;
 }
 
 .loginText {
+    margin-bottom: 8px;
     color: #8e9297;
+    margin-bottom: 20px;
+}
+
+.passwordInputBox {
+    margin-bottom: 0px;
 }
 
 .loginTitle,
@@ -73,10 +75,6 @@ cursor: pointer;
     margin-bottom: 8px;
 }
 
-.authGuestLoginButton {
-    margin-top: 8px;
-}
-
 .authLoginButton:hover {
     background-color: #7289dad0;
     cursor: pointer;
@@ -108,6 +106,15 @@ cursor: pointer;
 
 .authBox {
     padding: 40px;
+}
+
+.authGuestLoginButton {
+    margin-top: 8px;
+    background-color: var(--button-secondary);
+}
+
+.authGuestLoginButton:hover {
+    background-color: var(--button-secondary-hover);
 }
 
 @media (min-width: 486px) {
