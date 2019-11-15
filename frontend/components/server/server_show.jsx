@@ -36,17 +36,16 @@ class ServerShow extends React.Component {
                         {this.props.servers[this.props.match.params.serverId].name}
                     </h1>
                     {/* <h1>{this.state.name}</h1> */}
-                    <br/>
+                    
                     <button
                         className="updateButton button"
                         onClick={this.updateName}>
-                        NEW NAME Dovakin
+                        New Name
                     </button>
-                    <br/>
                     <button
                         className="deleteButton button"
                         onClick={this.deleteSelf}>
-                        DELETE ME
+                        DESTROY!
                     </button>
                 </div >
                 <div className="chat">

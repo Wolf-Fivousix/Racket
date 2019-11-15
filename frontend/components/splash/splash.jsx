@@ -23,20 +23,31 @@ class Splash extends React.Component {
             <div className="splashWrapper">
                 <header>
                     <nav className="navBar">
-                        Logo
-                        {loginOpenButton}
+                        {/* <div className="logoIcon"></div> */}
+                        <img className="logoIcon" src="./assets/racketLogo.png"/>
+                        <div className="rightSideNav">
+                            {loginOpenButton}
+                            <span className="splashNavSeparator"></span>
+                        </div>
                     </nav>
                 </header>
 
                 <section className="splashContent">
                     <article className="splashMessage">
                         <div className="splashText">
-                            <h1 className="title">It's time to ditch Skype and TeamSpeak.</h1>
-                            <h3 className="subtitle">All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone. Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life.</h3>
+                            <h1 className="title">It's time to ditch second hand apps.</h1>
+                            <h3 className="subtitle">This pixel perfect clone will change your life! Looks familiar, those with high perception might wonder, but is nothing more than your imagination! =) </h3>
                         </div>
                         <div className="callToActionButtons">
-                            <button className="githubButton">Check my Github</button>
-                            <button className="contactButton">Contact Me =)</button>
+                            <a
+                                className="githubButton button"
+                                href="https://github.com/Wolf-Fivousix/Racket"
+                                target="_blank">
+                                    Racket's GitHub
+                            </a>
+                            <a
+                                className="contactButton button"
+                                href="mailto:DiegoFranciscoBueno@gmail.com">Contact Me</a>
                         </div>
                     </article>
                     <article className="splashImages">
@@ -164,7 +175,26 @@ class Splash extends React.Component {
                     </article>
                 </section>
                 <footer className="footer">
-                    Footer
+                    <div className="skillsBar">
+                        <ul>
+                            <li className="footerTitle">Features</li>
+                            
+                            <li className="footerEntry">User Authentication</li>
+                            <li className="footerEntry">User Bootstrapping</li>
+                            <li className="footerEntry">Responsive Design</li>
+                            <li className="footerEntry">CRUD Server Funcionality</li>
+                        </ul>
+                        <ul>
+                            <li className="footerTitle">Skills</li>
+
+                            <li className="footerEntry">React</li>
+                            <li className="footerEntry">Redux</li>
+                            <li className="footerEntry">JavaScript</li>
+                            <li className="footerEntry">Ruby on Rails</li>
+                            <li className="footerEntry">PostgreSQL</li>
+                        </ul>
+                    </div>
+                    <div className="splashFooterSeparator"></div>
                 </footer>
             </div>
         );

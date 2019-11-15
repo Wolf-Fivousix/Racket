@@ -27,18 +27,15 @@ class SessionForm extends React.Component {
 
   handleGuestLogin(e) {
     e.preventDefault();
-    // @@BUG
-    // this.setState({ email: "", password: "" });
-    // debugger;
     let email = "guest@guest.com".split("");
     let password = "secretWord".split("");
-    return this.logInGuest(email, password);
+    this.setState({ email: "", password: "" }, () => this.logInGuest(email, password));
   }
 
   logInGuest(email, password) {
     if(email.length > 0) {
       this.setState({ email: [this.state.email] + email.shift() },
-        () => setTimeout(() => this.logInGuest(email, password), 50)
+        () => setTimeout(() => this.logInGuest(email, password), 25)
       );
     }
     else if(password.length > 0) {
@@ -65,7 +62,7 @@ class SessionForm extends React.Component {
       <button className="passwordResetLinkButton">
         <Link
           to="/"
-          >Forgot your password?
+          >Back to Home Page
         </Link>
       </button>
     );
@@ -94,7 +91,7 @@ class SessionForm extends React.Component {
 
     let loginEmailTextClass = "loginText";
     let loginUsernameTextClass = "loginText";
-    let loginPasswordTextClass = "loginText";
+    let loginPasswordTextClass = "loginText passwordInputBox";
 
     let authInputEmailClass = "defaultInput";
     let authInputUsernameClass = "defaultInput";
