@@ -8,7 +8,7 @@
 User.destroy_all
 Server.destroy_all
 
-User.create(email: "guest@guest.com", username: "Guest", password: "secretWord")
-Server.create(name: "First", owner_id: 1)
-Server.create(name: "#2", owner_id: 1)
-Server.create(name: "Terceiro", owner_id: 1)
+guestUser = User.create(email: "guest@guest.com", username: "Guest", password: "secretWord")
+Server.create(name: "First", owner_id: guestUser.id)
+Server.create(name: "#2", owner_id: guestUser.id)
+Server.create(name: "Terceiro", owner_id: guestUser.id)
