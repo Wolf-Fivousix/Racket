@@ -10,7 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+ // The original import of all files is removed in order to preserver overriding
+ //of cascading styles. RESPECT this order. If you need to override a basic style,
+ //move the @import further down the line.
+ // *= require_tree .
  *= require_self
  */
 
@@ -21,7 +24,7 @@
 @import "base/colors.scss";
 @import "base/default_styles.scss";
 
-// Everything else should come after this.
+// Everything else should come in here.
 @import "modal.scss";
 @import "splash.scss";
 @import "api/*";

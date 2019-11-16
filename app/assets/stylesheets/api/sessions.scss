@@ -59,7 +59,6 @@ cursor: pointer;
 .passwordResetLinkButton,
 .alreadyAccountLinkButton {
     margin-top: 4px;
-    margin-bottom: 20px;
     color: #7289da;
     font-size: 14px;
 }
@@ -68,10 +67,10 @@ cursor: pointer;
     color: #7289da;
     width: auto;
     margin-left: 8px;
-    margin-bottom: 15px;
 }
 
 .authLoginButton {
+    margin-top: 20px;
     margin-bottom: 8px;
 }
 
@@ -109,7 +108,6 @@ cursor: pointer;
 }
 
 .authGuestLoginButton {
-    margin-top: 8px;
     background-color: var(--button-secondary);
 }
 

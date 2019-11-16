@@ -75,7 +75,7 @@
     color: orange;
     margin-top: 72px;
     box-sizing: border-box;
-    padding: 40px 240px 48px;
+    padding: 40px 10% 48px;
 }
 
 .skillsBar {
@@ -83,6 +83,10 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.skillsList {
+    margin: 10px 20px;
 }
 
 .splashFooterSeparator {
