@@ -29,6 +29,16 @@ class Api::ServersController < ApplicationController
         end
     end
 
+    def update
+        @server = current_user.servers.find_by(id: params[:id])
+
+        if @server.update(server_params)
+            render json: @server
+        else
+            render json: @server.errors.full_messages, status: 404
+        end
+    end
+
     def destroy
         @server = current_user.servers.find_by(id: params[:id])
         if @server

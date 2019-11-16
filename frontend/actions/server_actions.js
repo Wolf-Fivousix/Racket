@@ -5,6 +5,7 @@ export const CLEAR_ERRORS = "CLEAR_ERRORS";
 export const RECEIVE_USER_SERVERS = "RECEIVE_USER_SERVERS";
 export const RECEIVE_CURRENT_SERVER = "RECEIVE_CURRENT_SERVER";
 export const DESTROY_SERVER = "DESTORY_SERVER";
+export const UPDATE_SERVER = "UPDATE_SERVER";
 
 const createNewServer = server => ({
     type: CREATE_SERVER,
@@ -52,4 +53,10 @@ export const deleteServer = serverId => dispatch => (
 export const getUserServers = userId => dispatch => (
     serverUtils.getUserServers(userId)
         .then(servers => dispatch(receiveUserServers(servers)))
+);
+
+export const updateServerName = (serverId, name) => dispatch => (
+    serverUtils.updateServer(serverId, name)
+        .then((server) => dispatch(receiveCurrentServer(server)))
+        .fail((errors) => console.log(`update FAILED : ${errors}`))
 );

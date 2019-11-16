@@ -27,3 +27,11 @@ export const getUserServers = (ownerId) => (
         data: { ownerId }
     })
 );
+
+export const updateServer = (serverId, name) => (
+    $.ajax({
+        method: "PATCH",
+        url: `/api/servers/${serverId}`,
+        data: { server: { name } }
+    })
+)
