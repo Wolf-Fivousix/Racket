@@ -47,7 +47,7 @@ class Splash extends React.Component {
                             </a>
                             <a
                                 className="contactButton button"
-                                href="mailto:DiegoFranciscoBueno@gmail.com">Contact Me</a>
+                                href="mailto:DiegoFranciscoBueno+Racket@gmail.com">Contact Me</a>
                         </div>
                     </article>
                     <article className="splashImages">
@@ -176,7 +176,7 @@ class Splash extends React.Component {
                 </section>
                 <footer className="footer">
                     <div className="skillsBar">
-                        <ul>
+                        <ul className="skillsList">
                             <li className="footerTitle">Features</li>
                             
                             <li className="footerEntry">User Authentication</li>
@@ -185,7 +185,7 @@ class Splash extends React.Component {
                             <li className="footerEntry">CRUD Server Funcionality</li>
                         </ul>
                         <ul>
-                            <li className="footerTitle">Skills</li>
+                            <li className="footerTitle">Technologies</li>
 
                             <li className="footerEntry">React</li>
                             <li className="footerEntry">Redux</li>

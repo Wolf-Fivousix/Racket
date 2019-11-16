@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import UpdateServer from "./update_server";
+import UpdateServerContainer from "./update_server_container";
+import TemporaryComponent from "./temporary_component";
 
 class ServerShow extends React.Component {
     constructor(props) {
@@ -10,15 +11,17 @@ class ServerShow extends React.Component {
         this.state = { name: "" };
     }
 
+    // This will probably be needed once Chatting functionality starts to kick in.
     // componentDidUpdate(prevProps) {
     //     if(this.props.match.params.serverId !== prevProps.match.params.serverId) {
     //         this.props.getServer(this.props.match.params.serverId)
     //             .then(() => this.setState({ name: this.props.servers[this.props.match.params.serverId].name}))
     //     }
     // }
+
     updateName() {
-        console.log(`You tried to update ${this.props.servers[this.props.match.params.serverId].name} name`);
-        this.props.openModal(() => <UpdateServer />);
+        const serverId = this.props.match.params.serverId;
+        this.props.openModal(() => <UpdateServerContainer serverId={serverId}/>);
     }
     
     deleteSelf() {
@@ -27,7 +30,7 @@ class ServerShow extends React.Component {
     }
 
     render() {
-        if (!this.props.servers[this.props.match.params.serverId]) return null;
+        if (!this.props.servers[this.props.match.params.serverId]) return <TemporaryComponent />;
 
         return(
             <div className="content">

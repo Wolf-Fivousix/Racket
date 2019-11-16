@@ -53,8 +53,8 @@ class ServerIndex extends React.Component {
                         Logout
                     </button>
                 </div>
-                <Route path="/servers/:serverId" component={serverShowContainer}/>
                 <Route exact path="/servers/" component={temporaryComponent}/>
+                <Route path="/servers/:serverId" component={serverShowContainer}/>
 
             </div>
         );
