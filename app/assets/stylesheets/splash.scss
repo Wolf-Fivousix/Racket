@@ -13,10 +13,12 @@
 }
 
 .logoIcon {
-    height: 125%;
+    height: 65px;
     width: auto;
-    margin-left: 14px;
-    margin-top: 14px;
+    transform: rotateY(180deg);
+    fill: white;
+    margin-top: 10px;
+    margin-left: 5px;
 }
 
 .rightSideNav {

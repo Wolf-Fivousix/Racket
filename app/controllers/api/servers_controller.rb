@@ -11,11 +11,7 @@ class Api::ServersController < ApplicationController
     def index
         @servers = current_user.servers
 
-        if @servers.length > 0
-            render :servers
-        else
-            render json: ["User has no servers"], status: 404
-        end
+        render :servers
     end
 
     def create

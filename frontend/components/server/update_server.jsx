@@ -43,4 +43,3 @@ class UpdateServer extends React.Component {
 }
 
 export default withRouter(UpdateServer);
-export default withRouter(UpdateServer);

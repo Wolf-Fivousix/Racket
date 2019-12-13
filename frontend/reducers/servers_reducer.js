@@ -4,6 +4,7 @@ import {
     RECEIVE_CURRENT_SERVER,
     DESTROY_SERVER
 } from "../actions/server_actions";
+import { LOGOUT_CURRENT_USER } from "../actions/session_actions";
 
 const serversReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -22,6 +23,9 @@ const serversReducer = (state = {}, action) => {
             let newState = Object.assign({}, state);
             delete newState[action.serverId];
             return newState;
+
+        case LOGOUT_CURRENT_USER:
+            return Object.assign({});
 
         default:
             return state;
