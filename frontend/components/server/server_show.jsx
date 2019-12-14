@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import UpdateServerContainer from "./update_server_container";
 import TemporaryComponent from "./temporary_component";
+import Channel from "../channel/channel";
 
 class ServerShow extends React.Component {
     constructor(props) {
@@ -39,7 +40,7 @@ class ServerShow extends React.Component {
                         {this.props.servers[this.props.match.params.serverId].name}
                     </h1>
                     {/* <h1>{this.state.name}</h1> */}
-                    
+                    <Channel />
                     <button
                         className="updateButton button"
                         onClick={this.updateName}>
