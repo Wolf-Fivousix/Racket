@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
-    resources :servers, only: [:create, :show, :index, :update, :destroy]
+    resources :servers, only: [:index,:show, :create, :update, :destroy]
+    resources :channels, only: [:index, :show, :create, :update, :destroy]
   end
   # Nest this inside API and update all the AJAX calls.
 end
