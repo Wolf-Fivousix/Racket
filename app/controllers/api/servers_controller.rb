@@ -19,7 +19,7 @@ class Api::ServersController < ApplicationController
         @server.owner_id = current_user.id
         
         if @server.save
-            render json: @server
+            render :server
         else
             render json: @server.errors.full_messages, status: 404
         end
@@ -38,7 +38,7 @@ class Api::ServersController < ApplicationController
     def destroy
         @server = current_user.servers.find_by(id: params[:id])
         if @server
-            @server.delete
+            @server.destroy
             render json: @server.id
         else
             render json: ["Server non existent"], status: 404

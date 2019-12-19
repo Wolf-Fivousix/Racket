@@ -4,5 +4,5 @@ class Server < ApplicationRecord
 
   belongs_to :owner,
     class_name: :User
-  has_many :channels
+  has_many :channels, dependent: :destroy
 end
