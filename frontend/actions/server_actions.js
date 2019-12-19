@@ -10,7 +10,7 @@ export const UPDATE_SERVER = "UPDATE_SERVER";
 const createNewServer = server => ({
     type: CREATE_SERVER,
     server
-})
+});
 
 const receiveServersErrors = (errors) => ({
     type: RECEIVE_SERVERS_ERRORS,

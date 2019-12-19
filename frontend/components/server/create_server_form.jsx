@@ -14,8 +14,13 @@ class CreateServerForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createServer(this.state)
-            .then(() => this.props.closeModal());
-        
+            .then((response) => 
+                this.props.createChannel({
+                    title: "General",
+                    server_id: response.server.id
+                }))
+            .then(response => this.props.history.push(`/servers/${response.channel.server_id}`))
+            .then(() => this.props.closeModal())
     }
 
     handleInput(field) {

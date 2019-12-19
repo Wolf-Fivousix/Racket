@@ -23,7 +23,8 @@ class ServerIndex extends React.Component {
     render() {
         const serverList = Object.values(this.props.servers)
                         .map((server, index) =>
-                            <ServerIndexItem key={index} server={server}/>);
+                            <ServerIndexItem key={index} server={server}/>
+                        );
         const serverMenuSeparator = <div className="menuSeparator"></div>;
         return (
             <div className="serverChatWrapper">
