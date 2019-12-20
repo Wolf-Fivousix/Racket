@@ -1,11 +1,12 @@
 class Api::ServersController < ApplicationController
     def show
-        @server = current_user.servers.find_by(id: params[:id])
-        if @server
-            render json: @server
-        else
-            render json: ["Server not found"], status: 404
-        end
+        # I think I dont need this at all! 19/12/2019
+        # @server = current_user.servers.find_by(id: params[:id])
+        # if @server
+        #     render json: @server
+        # else
+        #     render json: ["Server not found"], status: 404
+        # end
     end
 
     def index
