@@ -1,9 +1,17 @@
-.channelPlate {
-    color: gray;
+.channelIndex {
     display: flex;
     justify-content: left;
     width: 100%;
     margin: 1px 0px 1px 16px;
+}
+
+.channelIndex:hover {
+    background: rgba(1,1,1,0.4);
+}
+
+.channelPlate {
+    color: gray;
+    display: flex;
 }
 
 .channelIcon {
