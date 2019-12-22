@@ -1,5 +1,9 @@
 import { connect } from "react-redux";
-import { getAllChannels } from "../../actions/channel_actions";
+import {
+    getAllChannels,
+    createChannel,
+    destroyChannel
+} from "../../actions/channel_actions";
 import ChannelIndex from "./channel_index";
 
 const mapStateToProps = state => ({
@@ -7,7 +11,9 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    getAllChannels: (serverId) => dispatch(getAllChannels(serverId))
+    getAllChannels: (serverId) => dispatch(getAllChannels(serverId)),
+    createChannel: (channel) => dispatch(createChannel(channel)),
+    destroyChannel: (channelId) => dispatch(destroyChannel(channelId))
 });
 
 
