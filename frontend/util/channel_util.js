@@ -13,3 +13,10 @@ export const getAllChannels = (serverId) => (
         data: { serverId }
     })
 );
+
+export const destroyChannel = channelId => (
+    $.ajax({
+        method: "DELETE",
+        url: `/api/channels/${channelId}`,
+    })
+);
