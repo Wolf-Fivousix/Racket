@@ -1,21 +1,39 @@
 .channelIndex {
     display: flex;
+    flex-flow: column;
     justify-content: left;
     width: 100%;
     margin: 1px 0px 1px 16px;
 }
 
-.channelIndex:hover {
-    background: rgba(1,1,1,0.4);
-}
-
 .channelPlate {
-    color: gray;
+    color: var(--channels-default);
     display: flex;
 }
 
+.channelPlate:hover {
+    background: rgba(1,1,1,0.4);
+}
+
 .channelIcon {
-    fill: gray;
+    fill: var(--channels-default);
     width: 20px;
     margin-right: 6px;
+}
+
+.channelGearIcon {
+    position: absolute;
+    right: 10px;
+    margin-top: 3px;
+    fill: var(--channels-default);
+    height: 16px;
+    cursor: pointer;
+}
+
+.createChannel {
+    align-self: center;
+    cursor: pointer;
+    color: var(--channels-default);
+    font-weight: bold;
+    font-size: 24px;
 }
