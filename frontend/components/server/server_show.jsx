@@ -2,7 +2,6 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import UpdateServerContainer from "./update_server_container";
 import TemporaryComponent from "./temporary_component";
-import Channel from "../channel/channel";
 import ChannelIndexContainer from "../channel/channel_index_container";
 
 class ServerShow extends React.Component {
