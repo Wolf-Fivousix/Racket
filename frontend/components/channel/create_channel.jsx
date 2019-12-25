@@ -21,18 +21,21 @@ export default function CreateChannel(props) {
 
     return(
         <div className="channelModal">
-            <p>New Channel Name:</p>
-            <input 
-                className="channelNameInputField defaultInput" 
-                type="text"
-                onChange={handleNameChange}
-            />
-            <button
-                className="createChannelButton button"
-                onClick={createNewChannel}
-                >
-                Create Channel
-            </button>
+            <form>
+                <label>New Channel Name:</label>
+                <input 
+                    className="channelNameInputField defaultInput" 
+                    type="text"
+                    placeholder="Enter a name"
+                    onChange={handleNameChange}
+                />
+                <button
+                    className="createChannelButton button"
+                    onClick={createNewChannel}
+                    >
+                    Create Channel
+                </button>
+            </form>
         </div>
     ); 
 };
