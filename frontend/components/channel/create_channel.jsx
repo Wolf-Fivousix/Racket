@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import {  useDispatch } from "react-redux";
 import { createChannel } from "../../actions/channel_actions";
+import { closeModal } from "../../actions/modal_actions";
 
 export default function CreateChannel(props) {
     const [channelName, setChannelName] = useState("");
@@ -11,12 +12,11 @@ export default function CreateChannel(props) {
     }
 
     function newChannel() {
-        console.log(channelName);
-        console.log(props);
         dispatch(createChannel({
             title: channelName,
             server_id: Number(props.serverId)
-        }));
+        }))
+            .then(() => dispatch(closeModal()));
     }
 
     return(

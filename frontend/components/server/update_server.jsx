@@ -15,7 +15,6 @@ class UpdateServer extends React.Component {
     }
 
     handleSubmit() {
-        debugger;
         this.props.updateServer(this.props.serverId, this.state.name)
             .then(() => this.props.closeModal());
     }
