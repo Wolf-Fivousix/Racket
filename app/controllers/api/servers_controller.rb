@@ -30,7 +30,7 @@ class Api::ServersController < ApplicationController
         @server = current_user.servers.find_by(id: params[:id])
 
         if @server.update(server_params)
-            render json: @server
+            render :server
         else
             render json: @server.errors.full_messages, status: 404
         end
