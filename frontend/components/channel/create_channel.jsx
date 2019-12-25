@@ -11,7 +11,7 @@ export default function CreateChannel(props) {
         setChannelName(e.target.value);
     }
 
-    function newChannel() {
+    function createNewChannel() {
         dispatch(createChannel({
             title: channelName,
             server_id: Number(props.serverId)
@@ -29,7 +29,7 @@ export default function CreateChannel(props) {
             />
             <button
                 className="createChannelButton button"
-                onClick={newChannel}
+                onClick={createNewChannel}
                 >
                 Create Channel
             </button>

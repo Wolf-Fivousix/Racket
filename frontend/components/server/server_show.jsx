@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import UpdateServerContainer from "./update_server_container";
 import TemporaryComponent from "./temporary_component";
-import ChannelIndexContainer from "../channel/channel_index_container";
+import ChannelIndex from "../channel/channel_index";
 
 class ServerShow extends React.Component {
     constructor(props) {
@@ -40,7 +40,7 @@ class ServerShow extends React.Component {
                         {this.props.servers[this.props.match.params.serverId].name}
                     </h1>
                     {/* <h1>{this.state.name}</h1> */}
-                    <ChannelIndexContainer serverId={this.props.match.params.serverId}/>
+                    <ChannelIndex serverId={this.props.match.params.serverId}/>
                     <button
                         className="updateButton button"
                         onClick={this.updateName}>
