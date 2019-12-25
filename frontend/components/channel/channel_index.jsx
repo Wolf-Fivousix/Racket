@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import ChannelIndexItemContainer from "./channel_index_item_container";
+import ChannelIndexItem from "./channel_index_item";
 import CreateChannel from "./create_channel";
 import { getAllChannels } from "../../actions/channel_actions";
 import { openModal } from "../../actions/modal_actions";
@@ -21,7 +21,7 @@ export default function ChannelIndex(props) {
     const channelsList = Object
                                 .values(channels)
                                 .map((channel, index) =>
-                                    <ChannelIndexItemContainer key={index} channel={channel} />
+                                    <ChannelIndexItem key={index} channel={channel} />
                                 );
 
     return (

@@ -6,10 +6,6 @@ import ChannelOptions from "./channel_options";
 export default function ChannelIndexItem (props) {
     const dispatch = useDispatch();
 
-    function destroyChannel(channelId) {
-        return () => props.destroyChannel(channelId);
-    }
-
     function openOptionsPannel() {
         dispatch(openModal(() => <ChannelOptions channelId={props.channel.id}/>));
     }
