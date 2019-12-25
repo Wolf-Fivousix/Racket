@@ -1,6 +1,23 @@
 .channelModal {
     background: #36393f;
     height: 200px;
-    width: 300px;
-    color: white;
+    width: 400px;
+    color: var(--channels-default);
+}
+
+.channelNameInputField {
+    margin: 10px 30px;
+    width: 70%;
+}
+
+.createChannelButton {
+    background-color: var(--button-secondary);
+    padding: 0px 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+.createChannelButton:hover {
+    background-color: var(--button-secondary-hover);
 }
