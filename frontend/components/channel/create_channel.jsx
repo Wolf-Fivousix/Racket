@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {  useDispatch } from "react-redux";
 import { createChannel } from "../../actions/channel_actions";
 
-export default function ChannelOptions(props) {
+export default function CreateChannel(props) {
     const [channelName, setChannelName] = useState("");
     const dispatch = useDispatch();
 
@@ -17,10 +17,6 @@ export default function ChannelOptions(props) {
             title: channelName,
             server_id: Number(props.serverId)
         }));
-        // props.createChannel({
-        //     title: channelName,
-        //     server_id: Number(props.serverId)
-        // });
     }
 
     return(
