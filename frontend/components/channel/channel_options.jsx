@@ -1,18 +1,26 @@
 import React, { useState } from "react";
+import {  useDispatch } from "react-redux";
+import { createChannel } from "../../actions/channel_actions";
 
 export default function ChannelOptions(props) {
-    const [channeLName, setChannelName] = useState("");
+    const [channelName, setChannelName] = useState("");
+    const dispatch = useDispatch();
 
     function handleNameChange(e) {
         setChannelName(e.target.value);
     }
 
-    function createChannel() {
-        console.log(channeLName);
-        props.createChannel({
-            title: "Beep Boop",
+    function newChannel() {
+        console.log(channelName);
+        console.log(props);
+        dispatch(createChannel({
+            title: channelName,
             server_id: Number(props.serverId)
-        });
+        }));
+        // props.createChannel({
+        //     title: channelName,
+        //     server_id: Number(props.serverId)
+        // });
     }
 
     return(
@@ -25,7 +33,7 @@ export default function ChannelOptions(props) {
             />
             <button
                 className="createChannelButton button"
-                onClick={createChannel}
+                onClick={newChannel}
                 >
                 Create Channel
             </button>

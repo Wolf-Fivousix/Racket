@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import ChannelIndexItemContainer from "./channel_index_item_container";
-import ChannelOptions from "./channel_options";
+import CreateChannelContainer from "./channel_options";
 
 export default function ChannelIndex(props) {
     useEffect(() => {
@@ -9,7 +9,7 @@ export default function ChannelIndex(props) {
 
 
     function createChannel() {
-        props.openModal(() => <ChannelOptions />);
+        props.openModal(() => <CreateChannelContainer serverId={props.serverId}/>);
         // This function call is going to be part of the modal, now!
         // props.createChannel({
         //     title: "Beep Boop",
