@@ -57,7 +57,7 @@
     text-align: center;
     color: black;
     font-weight: 700;
-    background-color: red;
+    background-color: var(--button-danger);
     width: inherit;
     position: absolute;
     bottom: 0px;
@@ -65,7 +65,7 @@
 }
 
 .logoutButton:hover {
-    background-color: darkred;
+    background-color: var(--button-danger-hover);
     opacity: 0.8;
 }
 
