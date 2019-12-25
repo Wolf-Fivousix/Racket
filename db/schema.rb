@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_17_004429) do
+ActiveRecord::Schema.define(version: 2019_12_25_225831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 2019_12_17_004429) do
   create_table "channels", force: :cascade do |t|
     t.integer "server_id", null: false
     t.string "title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer "author_id", null: false
+    t.integer "channel_id", null: false
+    t.text "body", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
