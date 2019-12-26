@@ -8,7 +8,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_many :servers, foreign_key: :owner_id, dependent: :destroy
-  has_many :messages, foreign_key :author_id, dependent: :destroy
+  has_many :messages, foreign_key: :author_id, dependent: :destroy
 
   def self.find_by_credentials(email, password)
     @user = User.find_by(email: email)
