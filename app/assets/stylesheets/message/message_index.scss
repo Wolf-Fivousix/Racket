@@ -9,8 +9,14 @@
 
 .noChannelSelected {
     background-color: var(--background-primary);
+    color: var(--channels-default);
 }
 
 .chat {
     background-color: var(--background-tertiary);
+}
+
+.noChannelImage {
+    width: 272px;
+    height: 222px;
 }
