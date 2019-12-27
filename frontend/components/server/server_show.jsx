@@ -1,8 +1,10 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Route } from "react-router-dom";
 import UpdateServerContainer from "./update_server_container";
 import TemporaryComponent from "./temporary_component";
 import ChannelIndex from "../channel/channel_index";
+import MessageIndex from "../message/message_index";
+import MessageEmpty from "../message/message_empty";
 
 class ServerShow extends React.Component {
     constructor(props) {
@@ -52,9 +54,8 @@ class ServerShow extends React.Component {
                         DESTROY!
                     </button>
                 </div >
-                <div className="chat">
-                    <h1>Server messages</h1>
-                </div>
+                <MessageEmpty />
+                <Route path="/servers/:serverId/:channelId" component={MessageIndex}/>
             </div>
         );
     }
