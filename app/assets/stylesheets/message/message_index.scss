@@ -1,0 +1,16 @@
+.noChannelSelected,
+.chat {
+    position: absolute;
+    top: 0;
+    left: 312px;
+    right: 0;
+    bottom: 0;
+}
+
+.noChannelSelected {
+    background-color: var(--background-primary);
+}
+
+.chat {
+    background-color: var(--background-tertiary);
+}
