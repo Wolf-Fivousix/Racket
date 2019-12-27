@@ -6,16 +6,14 @@ import ChannelOptions from "./channel_options";
 
 export default function ChannelIndexItem (props) {
     const dispatch = useDispatch();
-    const { history }= useReactRouter();
+    const { history, match } = useReactRouter();
 
     function openOptionsPannel() {
         dispatch(openModal(() => <ChannelOptions channelId={props.channel.id}/>));
     }
 
     function selectChannel() {
-        console.log(props.channel.id);
-        console.log(history);
-        history.push(`/${props.channel.id}`);
+        history.push(`${match.url}/${props.channel.id}`);
     }
     
     return (
