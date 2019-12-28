@@ -12,13 +12,32 @@ This project was designed and implemented in 10 days, totalling 80h of work. And
 
 
 ## Technologies
-  * React/Redux on the Frontend
-  * Ruby on Rails on the Backend
+  * React/Redux on the Frontend.
+  * Ruby on Rails on the Backend.
   * PostgreSQL Data Base.
   
-Servers CRUD
+Servers, Channels, Messages are all CRUD
 CSS Pixel Perfect design
 Responsive
   ###### GIF of the website showing in different sizes.
 User Bootstraping and User Auth
   ###### Show errors displaying by field. Image of All Fields errors => Some field errors (use guest@guest.com to show already taken e-mail) - Eventually make it into a GIF.
+
+
+## Future Features
+  * Implement creation of messages.
+  * Add Online Profile Icon-Links to splash page.
+  * Style Channels.
+  * Style Messages.
+  * Implement Server Joining.
+  * Style Channels Options modal.
+  * Fix text overflow in Server Icon.
+  * Implement Real Time texting (Action Cables).
+  * Create Servers Options modal.
+  * Style Servers Options modal.
+  * Create user Banner on bottom of Channel list.
+  * Implement Server users Component.
+  * Implement Gif and Youtube video chat support.
+  * Implement AWS for user pictures.
+  * Implement Voice chatting.
+  * Implement Video chatting.
