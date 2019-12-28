@@ -1,8 +1,7 @@
 class Api::MessagesController < ApplicationController
     def index
-        debugger
-        @messages = Channel.find_by(id: params["serverId"].to_i).messages
-
+        @messages = Channel.find_by(id: params["channelId"].to_i).messages
+        
         render :messages
     end
 
