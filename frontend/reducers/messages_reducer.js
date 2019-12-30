@@ -1,5 +1,6 @@
 import {
-    RECEIVE_CHANNEL_MESSAGES
+    RECEIVE_CHANNEL_MESSAGES,
+    RECEIVE_NEW_MESSAGE
 } from "../actions/message_actions";
 
 const messagesReducer = (state = {}, action) => {
@@ -9,6 +10,9 @@ const messagesReducer = (state = {}, action) => {
         case RECEIVE_CHANNEL_MESSAGES:
             return Object.assign({}, action.messages);
 
+        case RECEIVE_NEW_MESSAGE:
+            return Object.assign({}, state, action.message);
+            
         default:
             return state;
     }
