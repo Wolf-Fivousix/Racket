@@ -6,14 +6,17 @@ import { getAllMessages } from "../../actions/message_actions";
 export default function MessageIndex(props) {
     const messages = useSelector(state => state.entities.messages);
     const dispatch = useDispatch();
-    const { history, match, location } = useReactRouter();
+    const { match } = useReactRouter();
 
     useEffect(() => {
         dispatch(getAllMessages(match.params.channelId));
     }, [match.params.channelId]);
 
     const messagesList = Object.values(messages).map((message, index) =>
-        <p>{message.body}</p>
+        <article className="textMessage">
+            <p className="author">{`${message.author}: `}</p>
+            <p>{message.body}</p>
+        </article>
     );
 
 
