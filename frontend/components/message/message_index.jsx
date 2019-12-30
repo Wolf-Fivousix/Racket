@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import useReactRouter from "use-react-router";
 import { getAllMessages } from "../../actions/message_actions";
+import MessageInput from "./message_input";
 
 export default function MessageIndex(props) {
     const messages = useSelector(state => state.entities.messages);
@@ -22,8 +23,11 @@ export default function MessageIndex(props) {
 
     return (
         <div className="chat">
-            <h1>Messages...</h1>
-            {messagesList}
+            <div className="messageHistory">
+                <h1>Messages...</h1>
+                {messagesList}
+            </div>
+            <MessageInput />
         </div>
     );
 };
