@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import useReactRouter from "use-react-router";
+import useReactRouter from 'use-react-router';
 import { getAllMessages } from "../../actions/message_actions";
 import MessageInput from "./message_input";
+import { matchPath } from "react-router-dom";
 
 export default function MessageIndex(props) {
     const messages = useSelector(state => state.entities.messages);
@@ -14,7 +15,7 @@ export default function MessageIndex(props) {
     }, [match.params.channelId]);
 
     const messagesList = Object.values(messages).map((message, index) =>
-        <article className="textMessage">
+        <article className="textMessage" key={index}>
             <p className="author">{`${message.author}: `}</p>
             <p>{message.body}</p>
         </article>
@@ -27,7 +28,7 @@ export default function MessageIndex(props) {
                 <h1>Messages...</h1>
                 {messagesList}
             </div>
-            <MessageInput />
+            <MessageInput channelId={match.params.channelId}/>
         </div>
     );
 };

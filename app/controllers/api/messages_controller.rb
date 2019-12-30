@@ -7,6 +7,7 @@ class Api::MessagesController < ApplicationController
 
     def create
         @message = Message.new(message_params)
+        @message.author = current_user
 
         if @message.save
             render :message
