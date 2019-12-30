@@ -2,3 +2,4 @@ node_modules/
 tmp/
 bundle.js*
 log/development.log
+.byebug_history
