@@ -1,7 +1,16 @@
 .messageInputBox {
     position: absolute;
+    display: flex;
+    align-items: center;
     bottom: 10px;
     left: 20px;
+    width: 90%;
+}
+
+.messageInput {
+    margin: 0px;
+    min-width: 100px;
+    width: 90%;
 }
 
 .messageButton {
