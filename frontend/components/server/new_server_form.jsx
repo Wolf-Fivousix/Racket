@@ -1,14 +1,20 @@
 import React from "react";
 import CreateServerFormContainer from "./create_server_form_container";
+import JoinServer from "./join_server_form";
 
 class NewServerForm extends React.Component {
   constructor(props) {
     super(props);
     this.addNewServer = this.addNewServer.bind(this);
+    this.joinServer = this.joinServer.bind(this);
   }
   
   addNewServer() {
     this.props.openModal(() => <CreateServerFormContainer />);
+  }
+
+  joinServer() {
+    this.props.openModal(() => <JoinServer />);
   }
 
   render() {
@@ -31,7 +37,9 @@ class NewServerForm extends React.Component {
             <img
               className="createServerImage"
               src="https://discordapp.com/assets/845d431ebfc24e13a0b31f7e64fc612b.png" alt="" />
-            <button className="joinAnExistingServerButton button">
+            <button
+              onClick={this.joinServer}
+              className="joinAnExistingServerButton button">
               Join a Server
             </button>
           </div>

@@ -1,12 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import NewServerFormContainer from "./new_server_form_container";
+import { openModal, closeModal } from "../../actions/modal_actions";
+import { joinServer } from "../../actions/member_actions";
 
 export default function JoinServer(props) {
+    const [id, setId] = useState("");
+    const dispatch = useDispatch();
 
+    function backToNewServerForm(e) {
+        e.preventDefault();
+        dispatch(openModal(() => <NewServerFormContainer />));
+    }
 
+    function handleInput(e) {
+        setId(e.target.value);
+    }
 
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(id);
+        dispatch(joinServer(id))
+            .then(response => console.log(response));
+        // dispatch(closeModal());
+    }
 
-
+    // handleSubmit(e) {
+    //     e.preventDefault();
+    //     this.props.createServer(this.state)
+    //         .then((response) => 
+    //             this.props.createChannel({
+    //                 title: "General",
+    //                 server_id: response.server.id
+    //             }))
+    //         .then(response => this.props.history.push(`/servers/${response.channel.server_id}`))
+    //         .then(() => this.props.closeModal())
+    // }
 
 
     let joinServerLabel = "serverNameLabel";
@@ -21,7 +50,7 @@ export default function JoinServer(props) {
         <div className="modalDefault">
         <form
             className="joinServerForm"
-            // onSubmit={this.handleSubmit}
+            onSubmit={handleSubmit}
             >
             <div>
                 <h1 className="joinServerMessage">JOIN A SERVER</h1>
@@ -34,13 +63,13 @@ export default function JoinServer(props) {
             <input
                 className="joinServerInputField"
                 type="text"
-                // onChange={this.handleInput("name")}
+                onChange={handleInput}
                 placeholder="Enter an ID" />
             <div className="joinServerFormButtonsBar">
                 <button
                     type="button"
                     className="goBackButton"
-                    // onClick={this.backToNewServerForm}
+                    onClick={backToNewServerForm}
                     >
                     <img
                         className="goBackButtonImage"

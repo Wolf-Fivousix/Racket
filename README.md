@@ -34,6 +34,7 @@ User Bootstraping and User Auth
   * Fix text overflow in Server Icon.
   * Fix the display layout for phone screens in the Media Query
   * Implement Real Time texting (Action Cables).
+  * Double check need for "getServer" server action
   * Create Servers Options modal.
   * Style Servers Options modal.
   * Create user Banner on bottom of Channel list.
