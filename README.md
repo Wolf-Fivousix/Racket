@@ -25,13 +25,14 @@ User Bootstraping and User Auth
 
 
 ## Future Features
-  * Implement creation of messages.
   * Add Online Profile Icon-Links to splash page.
   * Style Channels.
   * Style Messages.
   * Implement Server Joining.
+  * Implement message deletion.
   * Style Channels Options modal.
   * Fix text overflow in Server Icon.
+  * Fix the display layout for phone screens in the Media Query
   * Implement Real Time texting (Action Cables).
   * Create Servers Options modal.
   * Style Servers Options modal.
