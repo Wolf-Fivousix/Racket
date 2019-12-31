@@ -28,6 +28,7 @@ export default function MessageInput(props) {
                 placeholder="Write here"
                 className="defaultInput messageInput"
                 onChange={handleMessageChange}
+                value={message}
             />
             <button
                 className="messageButton button"
