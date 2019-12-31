@@ -1,0 +1,58 @@
+.joinServerForm {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-flow: column;   
+}
+
+.joinServerMessage {
+    color: #43b581;
+    font-weight: 900;
+    font-size: 18px;
+    text-align: center;
+}
+
+.joinServerSubMessage {
+    color: gray;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.serverNameLabel {
+    color: gray;
+    font-weight: 700;
+}
+
+.joinServerInputField {
+    box-sizing: border-box;
+    margin-top: 12px;
+    padding:10px 4px;
+    border-bottom: 2px solid gray;
+    width: 236px;
+}
+
+.joinServerFormButtonsBar {
+    box-sizing: border-box;
+    padding: 18px 40px;
+    width: 100%;
+    background: #f6f6f7;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.joinServerSubmitButton {
+    background-color: var(--button-secondary);
+    height: 38px;
+    width: 96px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.joinServerSubmitButton:hover {
+    background-color: var(--button-secondary-hover);
+}

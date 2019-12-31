@@ -34,4 +34,4 @@ export const updateServer = (serverId, name) => (
         url: `/api/servers/${serverId}`,
         data: { server: { name } }
     })
-)
+);
