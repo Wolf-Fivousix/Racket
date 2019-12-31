@@ -1,14 +1,13 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import useReactRouter from "use-react-router";
 
 export default function ServerIndexItem(props) {
     const server = props.server;
-    const dispatch = useDispatch();
-    const { history } = useReactRouter();
+    const { history, location } = useReactRouter();
 
     function handleClick() {
-        history.push(`/servers/${server.id}`);
+        const address = `/servers/${server.id}`;
+        if (!location.pathname.includes(address)) history.push(address);
     }
 
     return(
