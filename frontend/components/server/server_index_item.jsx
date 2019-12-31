@@ -1,28 +1,23 @@
-import React from 'react';
-import { Link, withRouter } from "react-router-dom";
+import React from "react";
+import { useDispatch } from "react-redux";
+import useReactRouter from "use-react-router";
 
-class ServerIndexItem extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
+export default function ServerIndexItem(props) {
+    const server = props.server;
+    const dispatch = useDispatch();
+    const { history } = useReactRouter();
+
+    function handleClick() {
+        history.push(`/servers/${server.id}`);
     }
 
-    handleClick() {
-        this.props.history.push(`/servers/${this.props.server.id}`);
-    }
-
-    render() {
-        const server = this.props.server;
-        return(
-            <div className="serverIndexItemBox">
-                <button
-                    className="serverIndexItemButton"
-                    onClick={this.handleClick}>
-                        {server.name}
-                </button>
-            </div>
-        );
-    }
-}
-
-export default withRouter(ServerIndexItem);
+    return(
+        <div className="serverIndexItemBox">
+            <button
+                className="serverIndexItemButton"
+                onClick={handleClick}>
+                    {server.name}
+            </button>
+        </div>
+    );
+};
