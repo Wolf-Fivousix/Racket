@@ -7,7 +7,7 @@ class Api::MembershipsController < ApplicationController
         @membership.member_id = current_user.id
 
         if @membership.save
-            render json: @membership
+            render :membership
         else
             render json: @membership.errors.full_messages, status: 404
         end
