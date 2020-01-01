@@ -7,8 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Server.destroy_all
+Channel.destroy_all
+Membership.destroy_all
 
 guestUser = User.create(email: "guest@guest.com", username: "Guest", password: "secretWord")
-Server.create(name: "First", owner_id: guestUser.id)
-Server.create(name: "#2", owner_id: guestUser.id)
-Server.create(name: "Terceiro", owner_id: guestUser.id)
