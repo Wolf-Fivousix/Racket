@@ -8,7 +8,7 @@ const receiveMembership = membership => ({
 });
 
 const receiveMembers = members => ({
-    type: RECEIVE_MEMBERSHIP,
+    type: RECEIVE_MEMBERS,
     members
 });
 
