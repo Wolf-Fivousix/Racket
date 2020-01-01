@@ -22,13 +22,15 @@ Responsive
   ###### GIF of the website showing in different sizes.
 User Bootstraping and User Auth
   ###### Show errors displaying by field. Image of All Fields errors => Some field errors (use guest@guest.com to show already taken e-mail) - Eventually make it into a GIF.
+Servers are shared by a joint membership table.
 
 
 ## Future Features
+  * Add Memberships to state when logging in.
+  * Implement Server Joining.
   * Add Online Profile Icon-Links to splash page.
   * Style Channels.
   * Style Messages.
-  * Implement Server Joining.
   * Implement message deletion.
   * Style Channels Options modal.
   * Fix text overflow in Server Icon.
@@ -43,3 +45,4 @@ User Bootstraping and User Auth
   * Implement AWS for user pictures.
   * Implement Voice chatting.
   * Implement Video chatting.
+  * Implement Server Joining by invite instead of ID.
