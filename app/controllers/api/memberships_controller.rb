@@ -1,5 +1,8 @@
 class Api::MembershipsController < ApplicationController
     def index
+        @memberships = Membership.where(server_id: params[:serverId])
+
+        render :memberships
     end
 
     def create

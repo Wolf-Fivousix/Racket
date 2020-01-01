@@ -1,1 +1,1 @@
-json.extract! @membership, :id, :server_id, :member_id
+json.partial! "api/memberships/membership", membership: @membership
