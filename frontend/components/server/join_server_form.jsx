@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import NewServerFormContainer from "./new_server_form_container";
 import { openModal, closeModal } from "../../actions/modal_actions";
-import { joinServer } from "../../actions/member_actions";
+// import { joinServer } from "../../actions/membership_actions";
 
 export default function JoinServer(props) {
     const [id, setId] = useState("");
@@ -20,8 +20,8 @@ export default function JoinServer(props) {
     function handleSubmit(e) {
         e.preventDefault();
         console.log(id);
-        dispatch(joinServer(id))
-            .then(response => console.log(response));
+        // dispatch(joinServer(id))
+        //     .then(response => console.log(response));
         // dispatch(closeModal());
     }
 

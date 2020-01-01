@@ -14,10 +14,14 @@ class CreateServerForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createServer(this.state)
-            .then((response) => 
+            .then(({ server }) => 
+                this.props.joinServer({
+                    server_id: server.id
+                }))
+            .then(({ membership }) => 
                 this.props.createChannel({
                     title: "General",
-                    server_id: response.server.id
+                    server_id: membership.server_id
                 }))
             .then(response => this.props.history.push(`/servers/${response.channel.server_id}`))
             .then(() => this.props.closeModal())
