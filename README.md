@@ -34,6 +34,7 @@ Servers are shared by a joint membership table.
   * Style Channels Options modal.
   * Fix text overflow in Server Icon.
   * Fix the display layout for phone screens in the Media Query
+  * Implement images, giffs and videos embedding.
   * Implement Real Time texting (Action Cables).
   * Double check need for "getServer" server action
   * Create Servers Options modal.

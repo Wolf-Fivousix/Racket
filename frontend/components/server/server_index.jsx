@@ -2,7 +2,7 @@ import React from "react";
 import ModalContainer from "../modal/modal_container";
 import NewServerFormContainer from "../server/new_server_form_container";
 import { Route, withRouter } from "react-router-dom";
-import serverShowContainer from "./server_show_container";
+import ServerShow from "./server_show";
 import ServerIndexItem from "./server_index_item";
 import temporaryComponent from "./temporary_component";
 
@@ -54,7 +54,7 @@ class ServerIndex extends React.Component {
                     </button>
                 </div>
                 <Route exact path="/servers/" component={temporaryComponent}/>
-                <Route path="/servers/:serverId" component={serverShowContainer}/>
+                <Route path="/servers/:serverId" component={ServerShow}/>
 
             </div>
         );

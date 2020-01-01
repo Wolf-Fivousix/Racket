@@ -1,64 +1,55 @@
 import React from "react";
-import { withRouter, Route } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { Route } from "react-router-dom";
+import useReactRouter from "use-react-router";
+import { getServer, deleteServer } from "../../actions/server_actions";
+import { openModal, closeModal } from "../../actions/modal_actions";
 import UpdateServerContainer from "./update_server_container";
 import TemporaryComponent from "./temporary_component";
 import ChannelIndex from "../channel/channel_index";
 import MessageIndex from "../message/message_index";
 import MessageEmpty from "../message/message_empty";
 
-class ServerShow extends React.Component {
-    constructor(props) {
-        super(props);
-        this.deleteSelf = this.deleteSelf.bind(this);
-        this.updateName = this.updateName.bind(this);
-        this.state = { name: "" };
+// Then whenever the server is swapped, it should fetch the memberships for this specific server.
+// Once they display correctly in the state, move to create the MEMBERS COMPONENT.
+export default function ServerShow(props) {
+    const servers = useSelector(state => state.entities.servers);
+    const dispatch = useDispatch();
+    const { match, history } = useReactRouter();
+    const serverId = match.params.serverId;
+
+    function updateName() {
+        dispatch(openModal(() => <UpdateServerContainer serverId={serverId} />));
     }
 
-    // This will probably be needed once Chatting functionality starts to kick in.
-    // componentDidUpdate(prevProps) {
-    //     if(this.props.match.params.serverId !== prevProps.match.params.serverId) {
-    //         this.props.getServer(this.props.match.params.serverId)
-    //             .then(() => this.setState({ name: this.props.servers[this.props.match.params.serverId].name}))
-    //     }
-    // }
-
-    updateName() {
-        const serverId = this.props.match.params.serverId;
-        this.props.openModal(() => <UpdateServerContainer serverId={serverId}/>);
-    }
-    
-    deleteSelf() {
-        this.props.deleteServer(this.props.match.params.serverId);
-        this.props.history.push("/servers/");
+    function deleteSelf() {
+        dispatch(deleteServer(serverId))
+            .then(() => history.push("/servers/"))
+            .fail(() => console.log("You don't own this server! Get OOOOOUT!"));
     }
 
-    render() {
-        if (!this.props.servers[this.props.match.params.serverId]) return <TemporaryComponent />;
+    if (!servers[serverId]) return <TemporaryComponent />;
 
-        return(
-            <div className="content">
-                <div className="channelList" >
-                    <h1 className="serverNameHeader">
-                        {this.props.servers[this.props.match.params.serverId].name}
-                    </h1>
-                    {/* <h1>{this.state.name}</h1> */}
-                    <ChannelIndex serverId={this.props.match.params.serverId}/>
-                    <button
-                        className="updateButton button"
-                        onClick={this.updateName}>
-                        New Name
-                    </button>
-                    <button
-                        className="deleteButton button"
-                        onClick={this.deleteSelf}>
-                        DESTROY!
-                    </button>
-                </div >
-                <MessageEmpty />
-                <Route path="/servers/:serverId/:channelId" component={MessageIndex}/>
-            </div>
-        );
-    }
-};
-
-export default withRouter(ServerShow);
+    return (
+        <div className="content">
+            <div className="channelList" >
+                <h1 className="serverNameHeader">
+                    {servers[serverId].name}
+                </h1>
+                <ChannelIndex serverId={serverId}/>
+                <button
+                    className="updateButton button"
+                    onClick={updateName}>
+                    New Name
+                </button>
+                <button
+                    className="deleteButton button"
+                    onClick={deleteSelf}>
+                    DESTROY!
+                </button>
+            </div >
+            <MessageEmpty />
+            <Route path="/servers/:serverId/:channelId" component={MessageIndex}/>
+        </div>
+    );
+}
