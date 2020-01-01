@@ -26,8 +26,7 @@ Servers are shared by a joint membership table.
 
 
 ## Future Features
-  * Add Memberships to state when logging in.
-  * Implement Server Joining.
+  * Add Memberships to state when selecting servers.
   * Add Online Profile Icon-Links to splash page.
   * Style Channels.
   * Style Messages.
