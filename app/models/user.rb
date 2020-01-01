@@ -9,6 +9,8 @@ class User < ApplicationRecord
 
   has_many :servers, foreign_key: :owner_id, dependent: :destroy
   has_many :messages, foreign_key: :author_id, dependent: :destroy
+  has_many :memberships, foreign_key: :member_id, dependent: :destroy
+  has_many :servers_membership, through: :memberships, source: :server
 
   def self.find_by_credentials(email, password)
     @user = User.find_by(email: email)
