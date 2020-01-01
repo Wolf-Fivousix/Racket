@@ -5,3 +5,11 @@ export const joinServer = serverId => (
         data: { membership: { server_id: serverId } }
     })
 );
+
+export const getMembers = serverId => (
+    $.ajax({
+        method: "GET",
+        url: "/api/memberships/",
+        data: { serverId }
+    })
+);
