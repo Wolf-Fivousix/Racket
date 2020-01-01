@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import useReactRouter from "use-react-router";
 import NewServerFormContainer from "./new_server_form_container";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import { joinServer } from "../../actions/membership_actions";
@@ -8,6 +9,7 @@ import { getServer } from "../../actions/server_actions";
 export default function JoinServer(props) {
     const [id, setId] = useState("");
     const dispatch = useDispatch();
+    const { history } = useReactRouter();
 
     function backToNewServerForm(e) {
         e.preventDefault();
@@ -22,21 +24,9 @@ export default function JoinServer(props) {
         e.preventDefault();
         dispatch(joinServer({ server_id: id }))
             .then(({ membership }) => dispatch(getServer(membership.server_id)))
+            .then(({ server }) => history.push( `/servers/${server.id}`))
             .then(() => dispatch(closeModal()));
     }
-
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     this.props.createServer(this.state)
-    //         .then((response) => 
-    //             this.props.createChannel({
-    //                 title: "General",
-    //                 server_id: response.server.id
-    //             }))
-    //         .then(response => this.props.history.push(`/servers/${response.channel.server_id}`))
-    //         .then(() => this.props.closeModal())
-    // }
-
 
     let joinServerLabel = "serverNameLabel";
     let joinServerErrorMessage = "";
