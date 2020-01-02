@@ -23,7 +23,7 @@ export default function JoinServer(props) {
     function handleSubmit(e) {
         e.preventDefault();
         dispatch(joinServer(id))
-            .then(({ membership }) => dispatch(getServer(membership.server_id)))
+            .then(({ membership }) => dispatch(getServer(Object.values(membership)[0].server_id)))
             .then(({ server }) => history.push( `/servers/${server.id}`))
             .then(() => dispatch(closeModal()));
     }

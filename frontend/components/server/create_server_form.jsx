@@ -15,7 +15,7 @@ class CreateServerForm extends React.Component {
         e.preventDefault();
         this.props.createServer(this.state)
             .then(({ server }) =>  this.props.joinServer(server.id))
-            .then(({ membership }) => this.props.createChannel({ title: "General", server_id: membership.server_id }))
+            .then(({ membership }) =>this.props.createChannel({ title: "General", server_id: Object.values(membership)[0].server_id }))
             .then(({ channel }) => this.props.history.push(`/servers/${channel.server_id}`))
             .then(() => this.props.closeModal())
     }

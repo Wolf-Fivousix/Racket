@@ -8,7 +8,7 @@ const channelsReducer = (state = {}, action) => {
     
     switch(action.type) {
         case RECEIVE_MEMBERSHIP:
-            return Object.assign({}, state, { [action.membership.id]: action.membership });
+            return Object.assign({}, state, action.membership);
 
         case RECEIVE_MEMBERS:
             return Object.assign({}, action.members);

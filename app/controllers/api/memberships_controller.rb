@@ -1,6 +1,6 @@
 class Api::MembershipsController < ApplicationController
     def index
-        @memberships = Membership.where(server_id: params[:serverId])
+        @memberships = Membership.where(server_id: params[:serverId]).includes(:member)
 
         render :memberships
     end
