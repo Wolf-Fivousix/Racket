@@ -26,10 +26,10 @@ Servers are shared by a joint membership table.
 
 
 ## Future Features
-  * Implement Server Members Component.
   * Add Online Profile Icon-Links to splash page.
   * Style Channels.
   * Style Messages.
+  * Style Members.
   * Implement message deletion.
   * Style Channels Options modal.
   * Fix text overflow in Server Icon.
