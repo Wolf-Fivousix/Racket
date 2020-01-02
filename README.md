@@ -26,7 +26,7 @@ Servers are shared by a joint membership table.
 
 
 ## Future Features
-  * Add Memberships to state when selecting servers.
+  * Implement Server Members Component.
   * Add Online Profile Icon-Links to splash page.
   * Style Channels.
   * Style Messages.
@@ -34,13 +34,12 @@ Servers are shared by a joint membership table.
   * Style Channels Options modal.
   * Fix text overflow in Server Icon.
   * Fix the display layout for phone screens in the Media Query
+  * Double check need for "getServer" server action
   * Implement images, giffs and videos embedding.
   * Implement Real Time texting (Action Cables).
-  * Double check need for "getServer" server action
   * Create Servers Options modal.
   * Style Servers Options modal.
   * Create user Banner on bottom of Channel list.
-  * Implement Server users Component.
   * Implement Gif and Youtube video chat support.
   * Implement AWS for user pictures.
   * Implement Voice chatting.

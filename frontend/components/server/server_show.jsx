@@ -10,9 +10,7 @@ import TemporaryComponent from "./temporary_component";
 import ChannelIndex from "../channel/channel_index";
 import MessageIndex from "../message/message_index";
 import MessageEmpty from "../message/message_empty";
-
-// Then whenever the server is swapped, it should fetch the memberships for this specific server.
-// Once they display correctly in the state, move to create the MEMBERS COMPONENT.
+import MembersIndex from "../members/members_index";
 
 export default function ServerShow(props) {
     const servers = useSelector(state => state.entities.servers);
@@ -22,8 +20,6 @@ export default function ServerShow(props) {
 
     useEffect(() => {
         dispatch(getMembers(serverId))
-            .then(() => console.log("yay!"))
-            .fail(() => console.log("ooooops"));
     }, [serverId]);
 
     function updateName() {
@@ -33,7 +29,6 @@ export default function ServerShow(props) {
     function deleteSelf() {
         dispatch(deleteServer(serverId))
             .then(() => history.push("/servers/"))
-            .fail(() => console.log("You don't own this server! Get OOOOOUT!"));
     }
 
     if (!servers[serverId]) return <TemporaryComponent />;
@@ -58,6 +53,7 @@ export default function ServerShow(props) {
             </div >
             <MessageEmpty />
             <Route path="/servers/:serverId/:channelId" component={MessageIndex}/>
+            <MembersIndex />
         </div>
     );
 }
