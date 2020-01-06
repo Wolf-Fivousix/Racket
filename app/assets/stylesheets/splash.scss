@@ -157,6 +157,22 @@
     background-color: var(--button-secondary-hover);
 }
 
+.leftSideNav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+.onlineProfileIcon {
+    fill: var(--channels-default);
+    height: 48px;
+}
+
+.onlineProfileIcon:hover {
+    fill: var(--text-normal);
+}
+
 .splashImages {
     box-sizing: border-box;
     padding-top: 40px;

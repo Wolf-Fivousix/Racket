@@ -26,7 +26,6 @@ Servers are shared by a joint membership table.
 
 
 ## Future Features
-  * Add Online Profile Icon-Links to splash page.
   * Style Channels.
   * Style Messages.
   * Style Members.
