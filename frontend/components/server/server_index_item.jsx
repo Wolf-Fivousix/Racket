@@ -23,7 +23,7 @@ export default function ServerIndexItem(props) {
     }
 
     return(
-        <div className="serverIndexItemBox" id={server.id}>
+        <div className="serverIndexItemBox">
             <button
                 className="serverIndexItemButton"
                 onClick={handleClick}>
