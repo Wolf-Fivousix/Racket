@@ -86,11 +86,26 @@
 }
 
 .serverIndexItemButton:hover,
-.serverIndexSystemButton:hover {
+.serverIndexSystemButton:hover,
+.selectedServer {
     cursor: pointer;
     border-radius: 15px;
     // border-left: 5px solid white;
 }
+
+.selectedServer {
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
 
 .serverIndexItemButton:hover {
     background-color: var(--logo-primary);
