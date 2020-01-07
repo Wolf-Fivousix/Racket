@@ -6,20 +6,11 @@ export default function ServerIndexItem(props) {
     const { history, location } = useReactRouter();
 
     function handleClick(e) {
-        removeSelectedClass();
+        console.log("add selected");
         e.target.className += " selectedServer";
 
         const address = `/servers/${server.id}`;
         if (!location.pathname.includes(address)) history.push(address);
-    }
-
-    function removeSelectedClass() {
-        let servers = document.getElementsByClassName("serverIndexItemButton");
-        for (let i = 0; i < servers.length; ++i) {
-            if(servers[i].className.includes(" selectedServer")) {
-                servers[i].className = servers[i].className.replace(" selectedServer", "");
-            }
-        }
     }
 
     return(

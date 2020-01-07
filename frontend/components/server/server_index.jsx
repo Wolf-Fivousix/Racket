@@ -10,6 +10,18 @@ class ServerIndex extends React.Component {
     constructor(props) {
         super(props);
         this.addServerRequest = this.addServerRequest.bind(this);
+        this.removeSelectedClass = this.removeSelectedClass.bind(this);
+    }
+
+    removeSelectedClass() {
+        console.log('startRemval');
+        let servers = document.getElementsByClassName("serverIndexItemButton");
+        for (let i = 0; i < servers.length; ++i) {
+            if(servers[i].className.includes(" selectedServer")) {
+                servers[i].className = servers[i].className.replace(" selectedServer", "");
+            }
+        }
+        console.log("finish removal");
     }
 
     addServerRequest() {
@@ -29,7 +41,7 @@ class ServerIndex extends React.Component {
         return (
             <div className="serverChatWrapper">
                 <ModalContainer />
-                <div className="serverBar">
+                <div className="serverBar" onClick={() => this.removeSelectedClass()}>
                     <button
                         onClick={(e) => {
                             this.props.history.push("/servers/")
