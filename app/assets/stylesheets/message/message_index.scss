@@ -16,16 +16,41 @@
     background-color: var(--background-tertiary);
 }
 
+.messageHistory {
+    overflow: scroll;
+}
+
 .noChannelImage {
     width: 272px;
     height: 222px;
 }
 
 .textMessage {
+    margin-left: 20px;
+}
+
+.messageHeader{
     display: flex;
 }
 
 .author {
-    margin-right: 20px;
     color: white;
+}
+
+.timeStamp {
+    font-size: 13px;
+    color: var(--text-muted);
+    display: block;
+    margin-left: 6px;
+}
+
+.messageBody {
+    color: var(--text-normal);
+}
+
+.messageDivider {
+    height: 1px;
+    background-color: var(--text-muted);
+    opacity: 0.2;
+    margin: 20px 0px;
 }
