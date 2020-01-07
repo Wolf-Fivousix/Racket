@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import useReactRouter from 'use-react-router';
 import { getAllMessages } from "../../actions/message_actions";
 import MessageInput from "./message_input";
-import { matchPath } from "react-router-dom";
 
 export default function MessageIndex(props) {
     const messages = useSelector(state => state.entities.messages);
