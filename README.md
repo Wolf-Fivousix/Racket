@@ -27,17 +27,19 @@ ServerItem Icon styled on click using Event Capturing and Bubbling.
 
 
 ## Future Features
-  * Style Channels.
   * Style Messages.
   * Style Members.
-  * Implement message deletion.
-  * Style Channels Options modal.
   * Fix text overflow in Server Icon.
+  * Create Servers dropdown menu.
+  * Create Channels dropdown menu.
+  * Create Servers Options modal.
+  * Style Channels Options modal.
   * Fix the display layout for phone screens in the Media Query
+  * Implement message deletion.
+  * Style Channel Selection on click (similar to server selection).
   * Double check need for "getServer" server action
   * Implement images, giffs and videos embedding.
   * Implement Real Time texting (Action Cables).
-  * Create Servers Options modal.
   * Style Servers Options modal.
   * Create user Banner on bottom of Channel list.
   * Implement Gif and Youtube video chat support.
