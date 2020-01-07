@@ -40,12 +40,20 @@
     cursor: pointer;
 }
 
+.channelGearIcon:hover {
+    fill: white;
+}
+
 .createChannel {
     align-self: center;
     cursor: pointer;
     color: var(--channel-normal);
     font-weight: bold;
     font-size: 24px;
+}
+
+.createChannel:hover {
+    color: white;
 }
 
 .channelModal {
