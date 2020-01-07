@@ -87,7 +87,8 @@
 
 .serverIndexItemButton:hover,
 .serverIndexSystemButton:hover,
-.selectedServer {
+.selectedServer,
+.selectedSystem {
     cursor: pointer;
     border-radius: 15px;
     // border-left: 5px solid white;
@@ -97,11 +98,13 @@
 .selectedServer {
     background-color: var(--logo-primary);
 }
-.serverIndexSystemButton:hover {
+.serverIndexSystemButton:hover,
+.selectedSystem {
     background-color: #43b581;
 }
 
-.serverIndexSystemButton:hover .addServerButtonText {
+.serverIndexSystemButton:hover .addServerButtonText,
+.selectedSystem .addServerButtonText{
     color: white;
 }
 

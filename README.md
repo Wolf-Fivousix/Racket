@@ -23,6 +23,7 @@ Responsive
 User Bootstraping and User Auth
   ###### Show errors displaying by field. Image of All Fields errors => Some field errors (use guest@guest.com to show already taken e-mail) - Eventually make it into a GIF.
 Servers are shared by a joint membership table.
+ServerItem Icon styled on click using Event Capturing and Bubbling.
 
 
 ## Future Features

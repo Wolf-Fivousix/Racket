@@ -6,7 +6,6 @@ export default function ServerIndexItem(props) {
     const { history, location } = useReactRouter();
 
     function handleClick(e) {
-        console.log("add selected");
         e.target.className += " selectedServer";
 
         const address = `/servers/${server.id}`;
