@@ -3,17 +3,22 @@
     flex-flow: column;
     justify-content: left;
     width: 100%;
-    margin: 1px 0px 1px 16px;
 }
 
 .channelPlate {
-    color: var(--channels-default);
+    color: var(--text-muted);
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1px 8px;
+    padding: 0px 8px;
+    height: 32px;
 }
 
 .channelPlate:hover {
     cursor: pointer;
     background: var(--channel-hover);
+    border-radius: 5px;
 }
 
 .channelIcon {
@@ -22,19 +27,22 @@
     margin-right: 6px;
 }
 
+.channelTextArea {
+    display: flex;
+    font-weight: bold;
+}
+
 .channelGearIcon {
-    position: absolute;
-    right: 10px;
-    margin-top: 3px;
-    fill: var(--channels-default);
+    fill: var(--channel-normal);
     height: 16px;
+    margin-left: 16px;
     cursor: pointer;
 }
 
 .createChannel {
     align-self: center;
     cursor: pointer;
-    color: var(--channels-default);
+    color: var(--channel-normal);
     font-weight: bold;
     font-size: 24px;
 }
@@ -43,5 +51,5 @@
     background: #36393f;
     height: 200px;
     width: 400px;
-    color: var(--channels-default);
+    color: var(--channel-normal);
 }
