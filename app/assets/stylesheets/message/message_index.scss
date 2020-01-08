@@ -49,9 +49,50 @@
     color: var(--text-normal);
 }
 
-.messageDivider {
+.messageDivider,
+.messageInputDivider {
     height: 1px;
     background-color: var(--text-muted);
     opacity: 0.2;
     margin: 20px 0px;
 }
+
+.messageInputDivider {
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+
+::-webkit-scrollbar {
+    width: 14px;
+}
+
+// What does this do???
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-clip: padding-box;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 7px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #202225;
+    border-color: #36393f;
+}
+
+::-webkit-scrollbar-track-piece {
+    background-color: #2f3136;
+    border: 3px solid #36393f;
+    border-radius: 7px;
+}
+
+/* Handle on hover */
+// ::-webkit-scrollbar-thumb:hover {
+//     background: #555; 
+// }
