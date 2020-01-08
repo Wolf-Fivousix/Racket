@@ -67,11 +67,6 @@
     width: 14px;
 }
 
-// What does this do???
-::-webkit-scrollbar-corner {
-    background-color: transparent;
-}
-
 /* Track */
 ::-webkit-scrollbar-track {
     background-clip: padding-box;
@@ -82,17 +77,15 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background-color: #202225;
-    border-color: #36393f;
-}
-
-::-webkit-scrollbar-track-piece {
-    background-color: #2f3136;
-    border: 3px solid #36393f;
+    background-color: var(--background-primary);
+    // background-color: skyblue;
+    border: 3px solid var(--background-tertiary);
     border-radius: 7px;
 }
 
-/* Handle on hover */
-// ::-webkit-scrollbar-thumb:hover {
-//     background: #555; 
-// }
+::-webkit-scrollbar-track-piece {
+    background-color: var(--background-secondary);
+    // background-color: orange;
+    border: 3px solid var(--background-tertiary);
+    border-radius: 7px;
+}
