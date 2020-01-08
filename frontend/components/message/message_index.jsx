@@ -15,13 +15,13 @@ export default function MessageIndex(props) {
 
     const messagesList = Object.values(messages).map((message, index) =>
         <div className="textMessage" key={index}>
+            {index ? <div className="messageDivider"></div> : <div></div>}
             <h2 className="messageHeader">
                 <p className="author">{`${message.author}`}</p>
                 <time className="timeStamp">{`${message.created_at}`}</time>
             </h2>
 
             <p className="messageBody">{message.body}</p>
-            <div className="messageDivider"></div>
         </div>
     );
 
