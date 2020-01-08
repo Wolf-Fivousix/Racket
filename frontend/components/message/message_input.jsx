@@ -20,13 +20,13 @@ export default function MessageInput(props) {
     }
 
     return (
-        <form className="messageInputBox"
+        <form className="messageInputForm"
             onSubmit={sendMessage}
             >
             <input
                 type="text"
-                placeholder="Write here"
-                className="defaultInput messageInput"
+                placeholder="NEXT THING TO BE UPDATED!! =D"
+                className="messageInput"
                 onChange={handleMessageChange}
                 value={message}
             />

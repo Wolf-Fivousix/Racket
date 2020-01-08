@@ -1,19 +1,38 @@
-.messageInputBox {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    bottom: 10px;
-    left: 20px;
+.messageInputForm {
+    // position: absolute;
+    // display: flex;
+    // align-items: center;
+    // bottom: 10px;
+    // left: 20px;
     width: 90%;
+    margin: 20px 20px 30px 20px;
 }
 
 .messageInput {
-    margin: 0px;
+    box-sizing: border-box;
     min-width: 100px;
     width: 90%;
+    height: 44px;
+    max-height: 144px;
+    background-color: var(--message-input-bg);
+    padding: 11px 10px;
+    caret-color: var(--text-normal);
+    border-radius: 8px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    resize: vertical;
 }
 
 .messageButton {
     margin-left: 20px;
     width: 50px;
 }
+
+// box-sizing: border-box;
+// margin-top: 8px;
+// background-color: rgba(0,0,0,0.1);
+// color: #dcddde;
+// border: 1px solid rgba(0,0,0,0.3);
+// height: 40px;
+// border-radius: 3px;
+// padding: 10px;
