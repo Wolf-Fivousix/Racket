@@ -67,7 +67,6 @@
     width: 14px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background-clip: padding-box;
     border-width: 3px;
@@ -75,17 +74,14 @@
     border-radius: 7px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background-color: var(--background-primary);
-    // background-color: skyblue;
     border: 3px solid var(--background-tertiary);
     border-radius: 7px;
 }
 
 ::-webkit-scrollbar-track-piece {
     background-color: var(--background-secondary);
-    // background-color: orange;
     border: 3px solid var(--background-tertiary);
     border-radius: 7px;
 }
