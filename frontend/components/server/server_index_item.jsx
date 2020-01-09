@@ -17,7 +17,7 @@ export default function ServerIndexItem(props) {
             <button
                 className="serverIndexItemButton"
                 onClick={handleClick}>
-                    {server.name}
+                    {server.name[0].toUpperCase()}
             </button>
         </li>
     );

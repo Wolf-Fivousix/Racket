@@ -27,7 +27,6 @@ ServerItem Icon styled on click using Event Capturing and Bubbling.
 
 
 ## Future Features
-  * Fix text overflow in Server Icon.
   * Create Servers dropdown menu.
   * Create Channels dropdown menu.
   * Create Servers Options modal.
