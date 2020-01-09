@@ -9,6 +9,7 @@
 }
 
 .serverBar {
+    box-sizing: content-box;
     background-color: var(--background-primary);
     color: white;
     position: absolute;
@@ -20,7 +21,6 @@
     width: 72px;
     display: flex;
     flex-flow: column;
-    align-items: center;
     overflow-x: hidden;
     overflow-y: scroll;
 }
@@ -50,14 +50,13 @@
 }
 
 .logoutButton {
-    box-sizing: border-box;
     padding: 1px;
     text-align: center;
     color: black;
     font-weight: 700;
     background-color: var(--button-danger);
     width: inherit;
-    position: absolute;
+    position: relative;
     bottom: 0px;
     left: 0px;
 }
@@ -76,12 +75,11 @@
 }
 
 .serverIndexItemBox {
-    // width: 72px;
+    margin-left: 10px;
 }
 
 .serverIndexItemButton,
 .serverIndexSystemButton {
-    // margin-right: 8px;
     margin-bottom: 8px;
     height: 48px;
     width: 48px;
@@ -98,7 +96,6 @@
 .selectedSystem {
     cursor: pointer;
     border-radius: 15px;
-    // border-left: 5px solid white;
 }
 
 .serverIndexItemButton:hover,
@@ -129,11 +126,12 @@
 }
 
 .menuSeparator {
-    height: 2px;
+    min-height: 2px;
     width: 32px;
     border-radius: 1px;
     background: #36393f;
     opacity: 0.6;
+    margin-left: 19px;
     margin-bottom: 8px;
 }
 

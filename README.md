@@ -46,3 +46,4 @@ ServerItem Icon styled on click using Event Capturing and Bubbling.
   * Implement Video chatting.
   * Implement Server Joining by invite instead of ID.
   * Implement Server Index invisible scrolling.
+  * Refactor Server Show components and styling from absolute.

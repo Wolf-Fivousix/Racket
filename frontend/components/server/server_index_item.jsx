@@ -13,12 +13,12 @@ export default function ServerIndexItem(props) {
     }
 
     return(
-        <div className="serverIndexItemBox">
+        <li className="serverIndexItemBox">
             <button
                 className="serverIndexItemButton"
                 onClick={handleClick}>
                     {server.name}
             </button>
-        </div>
+        </li>
     );
 };

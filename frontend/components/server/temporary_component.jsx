@@ -1,8 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const temporaryComponent = () => (
-    // {/* This will go inside the next component. */ }
     <div className="content">
         <div className="channelList" >
             <h1 className="serverNameHeader">
