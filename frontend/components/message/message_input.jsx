@@ -20,21 +20,24 @@ export default function MessageInput(props) {
     }
 
     return (
-        <form className="messageInputForm"
-            onSubmit={sendMessage}
-            >
-            <input
-                type="text"
-                placeholder="NEXT THING TO BE UPDATED!! =D"
-                className="messageInput"
-                onChange={handleMessageChange}
-                value={message}
-            />
-            <button
-                className="messageButton button"
+        <div className="messageInputContainer">
+            <div className="messageInputDivider"></div>
+            <form className="messageInputForm"
+                onSubmit={sendMessage}
                 >
-                Send
-            </button>
-        </form>
+                <input
+                    type="text"
+                    placeholder="NEXT THING TO BE UPDATED!! =D"
+                    className="messageInput"
+                    onChange={handleMessageChange}
+                    value={message}
+                />
+                <button
+                    className="messageButton button"
+                    >
+                    Send
+                </button>
+            </form>
+        </div>
     );
 }

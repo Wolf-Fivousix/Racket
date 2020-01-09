@@ -3,7 +3,7 @@
     position: absolute;
     top: 0;
     left: 240px;
-    right: 0;
+    right: 140px;
     bottom: 0;
 }
 
@@ -17,7 +17,11 @@
 }
 
 .messageHistory {
-    height: 90%;
+    position: absolute;
+    top: 0px;
+    bottom: 95px;
+    left: 0px;
+    right: 0px;
     overflow-y: scroll;
 }
 
@@ -28,6 +32,7 @@
 
 .textMessage {
     margin-left: 20px;
+    margin-bottom: 20px;
 }
 
 .messageHeader{
@@ -55,11 +60,6 @@
     background-color: var(--text-muted);
     opacity: 0.2;
     margin: 20px 0px;
-}
-
-.messageInputDivider {
-    margin-left: 20px;
-    margin-right: 30px;
 }
 
 

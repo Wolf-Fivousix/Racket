@@ -31,7 +31,6 @@ export default function MessageIndex(props) {
                 <h1>Messages...</h1>
                 {messagesList}
             </div>
-            <div className="messageInputDivider"></div>
             <MessageInput channelId={match.params.channelId}/>
         </div>
     );
