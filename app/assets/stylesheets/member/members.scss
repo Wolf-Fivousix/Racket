@@ -11,7 +11,7 @@
 }
 
 .memberName {
-    
+    user-select: none;
     box-sizing: border-box;
     font-weight: bold;
     color: var(--text-muted);
