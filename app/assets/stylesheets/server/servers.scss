@@ -21,10 +21,11 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    // overflow-y: scroll;
+    overflow-y: scroll;
 }
 
 .content {
+    background-color: var(--background-tertiary);
     position: absolute;
     top: 0;
     right: 0;
