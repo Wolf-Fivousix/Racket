@@ -16,11 +16,12 @@
     left: 0;
     bottom: 0;
     right: 0;
-    padding: 12px 0 0;
+    padding: 12px 14px 0px 0px;
     width: 72px;
     display: flex;
     flex-flow: column;
     align-items: center;
+    overflow-x: hidden;
     overflow-y: scroll;
 }
 
