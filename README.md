@@ -27,8 +27,6 @@ ServerItem Icon styled on click using Event Capturing and Bubbling.
 
 
 ## Future Features
-  * Style Messages.
-  * Style Members.
   * Fix text overflow in Server Icon.
   * Create Servers dropdown menu.
   * Create Channels dropdown menu.
@@ -47,3 +45,4 @@ ServerItem Icon styled on click using Event Capturing and Bubbling.
   * Implement Voice chatting.
   * Implement Video chatting.
   * Implement Server Joining by invite instead of ID.
+  * Implement Server Index invisible scrolling.

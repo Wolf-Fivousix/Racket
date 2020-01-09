@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 export default function MembersIndex() {
     const members = Object.values(useSelector(state => state.entities.memberships))
                         .map((member, index) =>
-                            <li key={index}>{member.name}</li>
+                            <li className="memberName" key={index}>{member.name}</li>
                         );
 
     return (
