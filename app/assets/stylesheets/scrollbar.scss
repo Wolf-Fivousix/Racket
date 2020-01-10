@@ -1,53 +1,66 @@
-.serverChatWrapper ::-webkit-scrollbar {
+.serverBar::-webkit-scrollbar,
+.messageHistory::-webkit-scrollbar {
     width: 14px;
 }
 
-.serverChatWrapper ::-webkit-scrollbar-track {
+.serverBar::-webkit-scrollbar-track,
+.messageHistory::-webkit-scrollbar-track {
     background-clip: padding-box;
     border-width: 3px;
     border-style: solid;
     border-radius: 7px;
 }
 
-.serverChatWrapper ::-webkit-scrollbar-thumb {
+.serverBar::-webkit-scrollbar-thumb,
+.messageHistory::-webkit-scrollbar-thumb {
     background-color: var(--background-primary);
     border: 3px solid var(--background-tertiary);
     border-radius: 7px;
 }
 
-.serverChatWrapper ::-webkit-scrollbar-track-piece {
+.serverBar::-webkit-scrollbar-track-piece,
+.messageHistory::-webkit-scrollbar-track-piece {
     background-color: var(--background-secondary);
     border: 3px solid var(--background-tertiary);
     border-radius: 7px;
 }
 
-.serverChatWrapper ::-webkit-scrollbar-corner {
+.serverBar::-webkit-scrollbar-corner,
+.messageHistory::-webkit-scrollbar-corner {
     background-color: transparent;
 }
 
-.membersList::-webkit-scrollbar {
-    width: 8px;
+.membersList::-webkit-scrollbar,
+.channelIndex::-webkit-scrollbar {
+    width: 7px;
+    display: hidden;
 }
 
-.membersList::-webkit-scrollbar-track {
+.membersList::-webkit-scrollbar-track,
+.channelIndex::-webkit-scrollbar-track {
     background-clip: padding-box;
     border-width: 3px;
     border-style: solid;
     border-radius: 7px;
 }
 
-.membersList::-webkit-scrollbar-thumb {
-    background-color: var(--background-primary);
-    border: 3px solid var(--background-tertiary);
+.membersList::-webkit-scrollbar-thumb,
+.channelIndex::-webkit-scrollbar-thumb {
+    // background-color: var(--background-primary);
+    background-color: green;
+    border: 2px solid var(--background-secondary);
+    // border: 2px solid skyblue;
     border-radius: 7px;
 }
 
-.membersList::-webkit-scrollbar-track-piece {
+.membersList::-webkit-scrollbar-track-piece,
+.channelIndex::-webkit-scrollbar-track-piece {
     background-color: var(--background-secondary);
-    border: 3px solid var(--background-tertiary);
+    border: 3px solid var(--background-secondary);
     border-radius: 7px;
 }
 
-.membersList::-webkit-scrollbar-corner {
+.membersList::-webkit-scrollbar-corner,
+.channelIndex::-webkit-scrollbar-corner {
     background-color: transparent;
 }
