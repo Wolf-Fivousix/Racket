@@ -24,9 +24,18 @@ User Bootstraping and User Auth
   ###### Show errors displaying by field. Image of All Fields errors => Some field errors (use guest@guest.com to show already taken e-mail) - Eventually make it into a GIF.
 Servers are shared by a joint membership table.
 ServerItem Icon styled on click using Event Capturing and Bubbling.
+Multiple differently styled scroll bars.
 
 
 ## Future Features
+  * Finish styling message input bar.
+  * Remove horizontal bar from channels.
+  * Crop too long of channel names.
+  * Remove small squigles by the scroll bars.
+  * Try applying the channel onClick event as a componentDidMount.
+  * Only allow OWNER of server to add channels.
+  * Add Channel Title component to top of messageHistory.
+
   * Create Servers dropdown menu.
   * Create Channels dropdown menu.
   * Create Servers Options modal.
