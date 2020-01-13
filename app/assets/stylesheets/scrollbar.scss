@@ -30,18 +30,19 @@
     background-color: transparent;
 }
 
+/////////////////////////////////////////////////////////
+// .membersList
+// .channelIndex
+/////////////////////////////////////////////////////////
+
 .membersList::-webkit-scrollbar,
 .channelIndex::-webkit-scrollbar {
     width: 7px;
-    display: hidden;
 }
 
 .membersList::-webkit-scrollbar-track,
 .channelIndex::-webkit-scrollbar-track {
-    background-clip: padding-box;
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 7px;
+    display: none;
 }
 
 .membersList::-webkit-scrollbar-thumb,
@@ -49,8 +50,13 @@
     // background-color: var(--background-primary);
     background-color: green;
     border: 2px solid var(--background-secondary);
-    // border: 2px solid skyblue;
     border-radius: 7px;
+    display: none;
+}
+
+.membersList:hover::-webkit-scrollbar-thumb,
+.channelIndex:hover::-webkit-scrollbar-thumb {
+    display: block;
 }
 
 .membersList::-webkit-scrollbar-track-piece,
