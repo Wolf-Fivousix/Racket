@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import useReactRouter from 'use-react-router';
 import { openModal } from "../../actions/modal_actions";
 import ChannelOptions from "./channel_options";
@@ -7,6 +7,8 @@ import ChannelOptions from "./channel_options";
 export default function ChannelIndexItem (props) {
     const dispatch = useDispatch();
     const { history, match } = useReactRouter();
+    const userId = useSelector(state => Number(Object.keys(state.entities.user)[0]));
+    const serverOwner = useSelector(state => state.entities.servers[props.channel.server_id].owner_id);
 
     function openOptionsPannel() {
         dispatch(openModal(() => <ChannelOptions channelId={props.channel.id}/>));
@@ -17,7 +19,9 @@ export default function ChannelIndexItem (props) {
     }
     
     const title = props.channel.title.length < 19 ? props.channel.title : `${props.channel.title.slice(0, 16)}...`
-    
+    const optionsButton = userId === serverOwner
+                    ? <svg onClick={openOptionsPannel} className="channelGearIcon" viewBox="0 0 16 16"><path d="M14 7V9C14 9 12.5867 9 12.5733 9.00667C12.42 9.58667 12.1733 10.1267 11.84 10.6067L12.74 11.5067L11.4933 12.7533L10.5933 11.8533C10.1133 12.1867 9.57334 12.44 8.99334 12.5867V14H6.99334V12.58C6.41334 12.4333 5.87334 12.18 5.39334 11.8467L4.49333 12.7467L3.24667 11.5L4.14667 10.6C3.81333 10.1267 3.56 9.58 3.41333 9H2V7H3.41333C3.56 6.42 3.81333 5.88 4.14667 5.4L3.24667 4.5L4.5 3.24667L5.4 4.14667C5.87334 3.81333 6.42 3.56 7 3.41333V2H9V3.41333C9.58 3.56667 10.12 3.81333 10.6 4.14667L11.5067 3.25333L12.7533 4.5L11.8533 5.4C12.1867 5.87334 12.44 6.42 12.5867 7H14ZM8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z"></path></svg>
+                    : <div></div>
     return (
         <div className="channelPlate" onClick={selectChannel}>
             <div className="channelTextArea">
@@ -25,7 +29,7 @@ export default function ChannelIndexItem (props) {
                 <p>{title}</p>
             </div>
             <div>
-                <svg onClick={openOptionsPannel} className="channelGearIcon" viewBox="0 0 16 16"><path d="M14 7V9C14 9 12.5867 9 12.5733 9.00667C12.42 9.58667 12.1733 10.1267 11.84 10.6067L12.74 11.5067L11.4933 12.7533L10.5933 11.8533C10.1133 12.1867 9.57334 12.44 8.99334 12.5867V14H6.99334V12.58C6.41334 12.4333 5.87334 12.18 5.39334 11.8467L4.49333 12.7467L3.24667 11.5L4.14667 10.6C3.81333 10.1267 3.56 9.58 3.41333 9H2V7H3.41333C3.56 6.42 3.81333 5.88 4.14667 5.4L3.24667 4.5L4.5 3.24667L5.4 4.14667C5.87334 3.81333 6.42 3.56 7 3.41333V2H9V3.41333C9.58 3.56667 10.12 3.81333 10.6 4.14667L11.5067 3.25333L12.7533 4.5L11.8533 5.4C12.1867 5.87334 12.44 6.42 12.5867 7H14ZM8 10C9.10457 10 10 9.10457 10 8C10 6.89543 9.10457 6 8 6C6.89543 6 6 6.89543 6 8C6 9.10457 6.89543 10 8 10Z"></path></svg>
+                {optionsButton}
             </div>
         </div>
     );
