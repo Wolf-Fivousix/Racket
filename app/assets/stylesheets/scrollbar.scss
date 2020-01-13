@@ -47,8 +47,7 @@
 
 .membersList::-webkit-scrollbar-thumb,
 .channelIndex::-webkit-scrollbar-thumb {
-    // background-color: var(--background-primary);
-    background-color: green;
+    background-color: var(--background-primary);
     border: 2px solid var(--background-secondary);
     border-radius: 7px;
     display: none;
