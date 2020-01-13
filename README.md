@@ -29,11 +29,7 @@ Multiple differently styled scroll bars.
 
 ## Future Features
   * Finish styling message input bar.
-  * Remove horizontal bar from channels.
-  * Crop too long of channel names.
-  * Remove small squigles by the scroll bars.
   * Try applying the channel onClick event as a componentDidMount.
-  * Only allow OWNER of server to add channels.
   * Add Channel Title component to top of messageHistory.
 
   * Create Servers dropdown menu.
