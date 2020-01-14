@@ -6,8 +6,7 @@
 .serverBar::-webkit-scrollbar-track,
 .messageHistory::-webkit-scrollbar-track {
     background-clip: padding-box;
-    border-width: 3px;
-    border-style: solid;
+    border: 3px solid transparent;
     border-radius: 7px;
 }
 
