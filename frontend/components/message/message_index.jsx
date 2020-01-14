@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import useReactRouter from 'use-react-router';
 import { getAllMessages } from "../../actions/message_actions";
 import MessageInput from "./message_input";
+import MembersIndex from "../members/members_index";
 
 export default function MessageIndex(props) {
     const messages = useSelector(state => state.entities.messages);
@@ -30,11 +31,12 @@ export default function MessageIndex(props) {
 
     return (
         <div className="chat">
-            <h1>{channelName}</h1>
+            <nav className="chatTitleHeader">{channelName}</nav>
             <div className="messageHistory">
                 {messagesList}
             </div>
             <MessageInput channelId={match.params.channelId} channelName={channelName}/>
+            {/* <MembersIndex /> */}
         </div>
     );
 };

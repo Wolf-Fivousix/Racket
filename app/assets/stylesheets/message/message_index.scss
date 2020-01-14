@@ -1,10 +1,10 @@
 .noChannelSelected,
 .chat {
     position: absolute;
-    top: 0;
+    top: 0px;
     left: 240px;
     right: 240px;
-    bottom: 0;
+    bottom: 0px;
 }
 
 .noChannelSelected {
@@ -16,9 +16,24 @@
     background-color: var(--background-tertiary);
 }
 
-.messageHistory {
+.chatTitleHeader {
     position: absolute;
     top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    min-height: 48px;
+    // border: 1px solid skyblue;
+    box-shadow: var(--elevation-low);
+    padding: 0px 16px;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.messageHistory {
+    position: absolute;
+    top: 50px;
     bottom: 95px;
     left: 0px;
     right: 0px;
