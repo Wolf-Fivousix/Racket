@@ -52,3 +52,4 @@ Multiple differently styled scroll bars.
   * Implement Server Joining by invite instead of ID.
   * Refactor Server Show components and styling from absolute.
   * On Page Refresh do not push default channel.
+  * Add online counter for members.

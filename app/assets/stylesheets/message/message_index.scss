@@ -3,7 +3,7 @@
     position: absolute;
     top: 0px;
     left: 240px;
-    right: 240px;
+    right: 0px;
     bottom: 0px;
 }
 
@@ -21,9 +21,10 @@
     top: 0px;
     left: 0px;
     right: 0px;
+    z-index: 2;
+    background-color: var(--background-tertiary);
     width: 100%;
     min-height: 48px;
-    // border: 1px solid skyblue;
     box-shadow: var(--elevation-low);
     padding: 0px 16px;
     font-size: 24px;
@@ -33,11 +34,12 @@
 
 .messageHistory {
     position: absolute;
-    top: 50px;
+    top: 48px;
     bottom: 95px;
     left: 0px;
-    right: 0px;
+    right: 240px;
     overflow-y: scroll;
+    padding-top: 2px;
 }
 
 .noChannelImage {

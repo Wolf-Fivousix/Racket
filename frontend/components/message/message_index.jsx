@@ -36,7 +36,7 @@ export default function MessageIndex(props) {
                 {messagesList}
             </div>
             <MessageInput channelId={match.params.channelId} channelName={channelName}/>
-            {/* <MembersIndex /> */}
+            <MembersIndex />
         </div>
     );
 };

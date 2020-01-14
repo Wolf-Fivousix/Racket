@@ -10,7 +10,6 @@ import TemporaryComponent from "./temporary_component";
 import ChannelIndex from "../channel/channel_index";
 import MessageIndex from "../message/message_index";
 import MessageEmpty from "../message/message_empty";
-import MembersIndex from "../members/members_index";
 
 export default function ServerShow(props) {
     const servers = useSelector(state => state.entities.servers);
@@ -53,7 +52,6 @@ export default function ServerShow(props) {
             </div >
             <MessageEmpty />
             <Route path="/servers/:serverId/:channelId" component={MessageIndex}/>
-            <MembersIndex />
         </div>
     );
 }
