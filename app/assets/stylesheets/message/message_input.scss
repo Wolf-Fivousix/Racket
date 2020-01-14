@@ -14,16 +14,14 @@
 .messageInput {
     box-sizing: border-box;
     min-width: 100px;
-    width: 90%;
+    width: 100%;
     height: 44px;
     max-height: 144px;
     background-color: var(--message-input-bg);
     padding: 11px 10px;
     caret-color: var(--text-normal);
     border-radius: 8px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    resize: vertical;
+    color: var(--text-normal);
 }
 
 .messageButton {
@@ -34,12 +32,3 @@
 .messageInputDivider {
     margin: 0px 30px 0px 20px;
 }
-
-// box-sizing: border-box;
-// margin-top: 8px;
-// background-color: rgba(0,0,0,0.1);
-// color: #dcddde;
-// border: 1px solid rgba(0,0,0,0.3);
-// height: 40px;
-// border-radius: 3px;
-// padding: 10px;

@@ -29,6 +29,7 @@ Multiple differently styled scroll bars.
 
 ## Future Features
   * Finish styling message input bar.
+  * Auto bottom-scrolling for message history.
   * Try applying the channel onClick event as a componentDidMount.
   * Add Channel Title component to top of messageHistory.
 
@@ -51,3 +52,4 @@ Multiple differently styled scroll bars.
   * Implement Video chatting.
   * Implement Server Joining by invite instead of ID.
   * Refactor Server Show components and styling from absolute.
+  * On Page Refresh do not push default channel.

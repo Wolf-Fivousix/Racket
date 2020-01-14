@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { createMessage } from "../../actions/message_actions";
 
 export default function MessageInput(props) {
     const [message, setMessage] = useState("");
     const dispatch = useDispatch();
+    const channels = useSelector(state => state.entities.channels);
+    const channelName = channels[props.channelId] ? channels[props.channelId].title : "";
 
     function handleMessageChange(e) {
         setMessage(e.target.value);
@@ -27,16 +29,11 @@ export default function MessageInput(props) {
                 >
                 <input
                     type="text"
-                    placeholder="NEXT THING TO BE UPDATED!! =D"
+                    placeholder={`Message #${channelName}`}
                     className="messageInput"
                     onChange={handleMessageChange}
                     value={message}
                 />
-                <button
-                    className="messageButton button"
-                    >
-                    Send
-                </button>
             </form>
         </div>
     );
