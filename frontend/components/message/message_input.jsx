@@ -5,20 +5,18 @@ import { createMessage } from "../../actions/message_actions";
 export default function MessageInput(props) {
     const [message, setMessage] = useState("");
     const dispatch = useDispatch();
-    const channels = useSelector(state => state.entities.channels);
-    const channelName = channels[props.channelId] ? channels[props.channelId].title : "";
-
+    
     function handleMessageChange(e) {
         setMessage(e.target.value);
     }
-
+    
     function sendMessage() {
         const fullMessage = {
             channel_id: props.channelId,
             body: message
         };
         dispatch(createMessage(fullMessage))
-            .then(() => setMessage(""));
+        .then(() => setMessage(""));
     }
 
     return (
@@ -29,7 +27,7 @@ export default function MessageInput(props) {
                 >
                 <input
                     type="text"
-                    placeholder={`Message #${channelName}`}
+                    placeholder={`Message #${props.channelName}`}
                     className="messageInput"
                     onChange={handleMessageChange}
                     value={message}

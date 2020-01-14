@@ -28,10 +28,9 @@ Multiple differently styled scroll bars.
 
 
 ## Future Features
-  * Finish styling message input bar.
+  * Add Channel Title component to top of messageHistory.
   * Auto bottom-scrolling for message history.
   * Try applying the channel onClick event as a componentDidMount.
-  * Add Channel Title component to top of messageHistory.
 
   * Create Servers dropdown menu.
   * Create Channels dropdown menu.

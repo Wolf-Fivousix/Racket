@@ -25,13 +25,16 @@ export default function MessageIndex(props) {
         </div>
     );
 
+    const channels = useSelector(state => state.entities.channels);
+    const channelName = channels[match.params.channelId] ? channels[match.params.channelId].title : "";
+
     return (
         <div className="chat">
+            <h1>{channelName}</h1>
             <div className="messageHistory">
-                <h1>Messages...</h1>
                 {messagesList}
             </div>
-            <MessageInput channelId={match.params.channelId}/>
+            <MessageInput channelId={match.params.channelId} channelName={channelName}/>
         </div>
     );
 };
