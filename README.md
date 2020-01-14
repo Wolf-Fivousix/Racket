@@ -28,8 +28,6 @@ Multiple differently styled scroll bars.
 
 
 ## Future Features
-  * Add Channel Title component to top of messageHistory.
-  * Auto bottom-scrolling for message history.
   * Try applying the channel onClick event as a componentDidMount.
 
   * Create Servers dropdown menu.
@@ -53,3 +51,4 @@ Multiple differently styled scroll bars.
   * Refactor Server Show components and styling from absolute.
   * On Page Refresh do not push default channel.
   * Add online counter for members.
+  * Add "Start of history" message on newly created channels.

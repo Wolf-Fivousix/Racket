@@ -14,6 +14,12 @@ export default function MessageIndex(props) {
         dispatch(getAllMessages(match.params.channelId));
     }, [match.params.channelId]);
 
+    // Keeps the scroll bar at the most recent message.
+    useEffect(() => {
+        let scroller = document.getElementById("messageHistoryBox");
+        if (scroller) scroller.scrollTop = scroller.scrollHeight;
+    });
+
     const messagesList = Object.values(messages).map((message, index) =>
         <div className="textMessage" key={index}>
             {index ? <div className="messageDivider"></div> : <div></div>}
@@ -37,7 +43,7 @@ export default function MessageIndex(props) {
                     <h1>{channelName}</h1>
                 </div>
             </nav>
-            <div className="messageHistory">
+            <div className="messageHistory" id="messageHistoryBox">
                 {messagesList}
             </div>
             <MessageInput channelId={match.params.channelId} channelName={channelName}/>
