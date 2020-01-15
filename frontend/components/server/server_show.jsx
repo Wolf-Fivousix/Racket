@@ -31,12 +31,13 @@ export default function ServerShow(props) {
     }
 
     if (!servers[serverId]) return <TemporaryComponent />;
+    const title = servers[serverId].name.length < 24 ? servers[serverId].name : `${servers[serverId].name.slice(0,20)}...`;
 
     return (
         <div className="content">
             <div className="channelList" >
                 <h1 className="serverNameHeader">
-                    {servers[serverId].name}
+                    {title}
                 </h1>
                 <ChannelIndex serverId={serverId}/>
                 <button
