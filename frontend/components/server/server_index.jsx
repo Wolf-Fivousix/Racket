@@ -16,6 +16,7 @@ class ServerIndex extends React.Component {
     removeSelectedClass() {
         let servers = document.getElementsByClassName("serverIndexItemButton");
         for (let i = 0; i < servers.length; ++i) {
+            // "/ selected\w{6}/" will match seletecServer and selectedSystem
             if(servers[i].className.search(/ selected\w{6}/) >= 0) {
                 servers[i].className = servers[i].className.replace(/ selected\w{6}/, "");
             }
@@ -30,6 +31,7 @@ class ServerIndex extends React.Component {
     componentDidMount() {
         this.props.getUserServers(this.props.userId);
     }
+
 
     render() {
         const serverList = Object.values(this.props.servers)

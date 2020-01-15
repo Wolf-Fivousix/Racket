@@ -6,16 +6,19 @@ export default function ServerIndexItem(props) {
     const { history, location } = useReactRouter();
 
     function handleClick(e) {
-        e.target.className += " selectedServer";
-
         const address = `/servers/${server.id}`;
         if (!location.pathname.includes(address)) history.push(address);
     }
 
+    let classes = "serverIndexItemButton";
+    const idsArray = location.pathname.match(/\d+/g);
+    const id = idsArray ? Number(idsArray[0]) : false;
+    if (id === server.id) classes += " selectedServer";
+
     return(
         <li className="serverIndexItemBox">
             <button
-                className="serverIndexItemButton"
+                className={classes}
                 onClick={handleClick}>
                     {server.name[0].toUpperCase()}
             </button>
