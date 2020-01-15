@@ -28,8 +28,6 @@ Multiple differently styled scroll bars.
 
 
 ## Future Features
-  * Try applying the channel onClick event as a componentDidMount.
-
   * Create Servers dropdown menu.
   * Create Channels dropdown menu.
   * Create Servers Options modal.

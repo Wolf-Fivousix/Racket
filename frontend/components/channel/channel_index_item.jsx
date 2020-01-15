@@ -12,8 +12,9 @@ export default function ChannelIndexItem (props) {
         dispatch(openModal(() => <ChannelOptions channelId={props.channel.id}/>));
     }
 
-    function selectChannel() {
+    function selectChannel(e) {
         history.push(`${match.url}/${props.channel.id}`);
+        e.currentTarget.className += " selectedChannel";
     }
     
     const title = props.channel.title.length < 19 ? props.channel.title : `${props.channel.title.slice(0, 16)}...`
