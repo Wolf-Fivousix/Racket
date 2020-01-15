@@ -13,6 +13,13 @@ export default function ChannelIndexItem (props) {
     }
 
     function selectChannel(e) {
+        // Remove channel selection.
+        const channels = document.getElementsByClassName("channelPlate");
+        for (let i = 0; i < channels.length; ++i) {
+            channels[i].className = channels[i].className.replace(" selectedChannel", "");
+        }
+        
+
         history.push(`${match.url}/${props.channel.id}`);
         e.currentTarget.className += " selectedChannel";
     }
