@@ -35,7 +35,6 @@ Multiple differently styled scroll bars.
   * Fix the display layout for phone screens in the Media Query
   * Implement message deletion.
   * Style Channel Selection on click (similar to server selection).
-  * Fix Server de-selection on system buttom click.
   * Double check need for "getServer" server action
   * Implement images, giffs and videos embedding.
   * Implement Real Time texting (Action Cables).
@@ -50,3 +49,4 @@ Multiple differently styled scroll bars.
   * On Page Refresh do not push default channel.
   * Add online counter for members.
   * Add "Start of history" message on newly created channels.
+  * Display channel gear only on hover for non selected channels.

@@ -33,11 +33,14 @@
     color: white;
     display: flex;
     align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .chatTitleText {
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .messageHistory {
@@ -89,6 +92,6 @@
 
 .channelTitleIcon {
     fill: var(--text-muted);
-    width: 24px;
+    min-width: 24px;
     margin-right: 6px;
 }
