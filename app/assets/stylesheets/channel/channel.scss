@@ -19,15 +19,15 @@
 
 .channelPlate:hover {
     cursor: pointer;
-    background: var(--channel-hover);
     border-radius: 5px;
     color: var(--channel-normal);
+    background: var(--channel-hover);
 }
 
 .channelIcon {
-    fill: var(--text-muted);
     width: 20px;
     margin-right: 6px;
+    fill: var(--text-muted);
 }
 
 .channelTextArea {
@@ -36,10 +36,11 @@
 }
 
 .channelGearIcon {
-    fill: var(--channel-normal);
+    pointer-events: visible;
+    cursor: pointer;
     height: 16px;
     margin-left: 16px;
-    cursor: pointer;
+    fill: var(--channel-normal);
 }
 
 .channelGearIcon:hover {
@@ -47,8 +48,8 @@
 }
 
 .createChannel {
-    align-self: center;
     cursor: pointer;
+    align-self: center;
     color: var(--channel-normal);
     font-weight: bold;
     font-size: 24px;
@@ -63,4 +64,13 @@
     height: 200px;
     width: 400px;
     color: var(--channel-normal);
+}
+
+.selectedChannel,
+.selectedChannel:hover {
+    background: var(--channel-selected);
+    pointer-events: none;
+    user-select: none;
+    border-radius: 5px;
+    color: white;
 }
