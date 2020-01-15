@@ -1,5 +1,6 @@
 import React from "react";
 import NewServerFormContainer from "./new_server_form_container";
+import * as helper from "../../util/helper_methods";
 
 class CreateServerForm extends React.Component {
     constructor(props) {
@@ -14,6 +15,8 @@ class CreateServerForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         let serverId = null;
+        helper.removeSelected();
+
         this.props.createServer(this.state)
             .then(({ server }) =>  { serverId = server.id; return this.props.joinServer(serverId)})
             .then(() => this.props.createChannel({ title: "General", server_id: serverId }))
