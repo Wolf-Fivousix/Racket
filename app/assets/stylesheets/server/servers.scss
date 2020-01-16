@@ -206,4 +206,13 @@
     width: 18px;
     height: 18px;
     stroke-width: 2px;
+    transition: all .2s ease-out;
+    stroke-dasharray: 7;
+    stroke-dashoffset: 1;
+    transform: translateY(5px);
+}
+
+.serverMenuCheckBox:checked ~ label .serverMenuIcon {
+    transform: rotate(-90deg) translateX(-1px);
+    stroke-dasharray: 14;
 }
