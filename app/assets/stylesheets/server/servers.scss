@@ -186,4 +186,12 @@
     border-radius: 4px;
     box-shadow: 0px 8px 16px RGBA(0,0,0,0.24);
     background: black;
+    max-height: 0px;
+    overflow: none;
+    z-index: -1;
+}
+
+.serverMenuCheckBox:checked ~ .serverOptionsDropDown {
+    max-height: fit-content;
+    z-index: 1;
 }

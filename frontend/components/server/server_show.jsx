@@ -38,7 +38,7 @@ export default function ServerShow(props) {
             <div className="channelList" >
                 <div className="serverNameHeader">
                     <h1>{title}</h1>
-                    <input type="checkbox"/>
+                    <input  className="serverMenuCheckBox" type="checkbox"/>
                     <ul className="serverOptionsDropDown">
                         <li>um</li>
                         <li>dois</li>
