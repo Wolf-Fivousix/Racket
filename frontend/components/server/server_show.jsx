@@ -32,6 +32,7 @@ export default function ServerShow(props) {
 
     function toggleMenu() {
         document.getElementById("serverMenuCheckBox").checked = !document.getElementById("serverMenuCheckBox").checked
+        document.getElementsByClassName("serverNameHeader")[0].classList.toggle("openedDropDown");
     }
 
     if (!servers[serverId]) return <TemporaryComponent />;
@@ -42,8 +43,8 @@ export default function ServerShow(props) {
             <div className="channelList" >
                 <div className="serverNameHeader" onClick={toggleMenu}>
                     <h1>{title}</h1>
-                    <input  className="serverMenuCheckBox" id="serverMenuCheckBox" type="checkbox"/>
-                    <svg class="serverMenuIcon"><path d="M0 0h18v18H0"></path><path stroke="currentColor" d="M4.5 4.5l9 9" stroke-linecap="round"></path><path stroke="currentColor" d="M13.5 4.5l-9 9" stroke-linecap="round"></path></svg>
+                    <input className="serverMenuCheckBox" id="serverMenuCheckBox" type="checkbox"/>
+                    <svg className="serverMenuIcon"><path d="M0 0h18v18H0"></path><path stroke="currentColor" d="M4.5 4.5l9 9"></path><path stroke="currentColor" d="M13.5 4.5l-9 9"></path></svg>
                     <ul className="serverOptionsDropDown">
                         <li>um</li>
                         <li>dois</li>
