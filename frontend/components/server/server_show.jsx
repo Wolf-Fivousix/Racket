@@ -30,16 +30,20 @@ export default function ServerShow(props) {
             .then(() => history.push("/servers/"))
     }
 
+    function toggleMenu() {
+        document.getElementById("serverMenuCheckBox").checked = !document.getElementById("serverMenuCheckBox").checked
+    }
+
     if (!servers[serverId]) return <TemporaryComponent />;
     const title = servers[serverId].name.length < 24 ? servers[serverId].name : `${servers[serverId].name.slice(0,20)}...`;
 
     return (
         <div className="content">
             <div className="channelList" >
-                <div className="serverNameHeader">
+                <div className="serverNameHeader" onClick={toggleMenu}>
                     <h1>{title}</h1>
                     <input  className="serverMenuCheckBox" id="serverMenuCheckBox" type="checkbox"/>
-                    <label htmlFor="serverMenuCheckBox"><svg class="serverMenuIcon"><path d="M0 0h18v18H0"></path><path stroke="currentColor" d="M4.5 4.5l9 9" stroke-linecap="round"></path><path stroke="currentColor" d="M13.5 4.5l-9 9" stroke-linecap="round"></path></svg></label>
+                    <svg class="serverMenuIcon"><path d="M0 0h18v18H0"></path><path stroke="currentColor" d="M4.5 4.5l9 9" stroke-linecap="round"></path><path stroke="currentColor" d="M13.5 4.5l-9 9" stroke-linecap="round"></path></svg>
                     <ul className="serverOptionsDropDown">
                         <li>um</li>
                         <li>dois</li>

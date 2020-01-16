@@ -212,7 +212,7 @@
     transform: translateY(5px);
 }
 
-.serverMenuCheckBox:checked ~ label .serverMenuIcon {
+.serverMenuCheckBox:checked ~ .serverMenuIcon {
     transform: rotate(-90deg) translateX(-1px);
     stroke-dasharray: 14;
 }
