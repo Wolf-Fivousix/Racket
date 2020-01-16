@@ -36,9 +36,16 @@ export default function ServerShow(props) {
     return (
         <div className="content">
             <div className="channelList" >
-                <h1 className="serverNameHeader">
-                    {title}
-                </h1>
+                <div className="serverNameHeader">
+                    <h1>{title}</h1>
+                    <input type="checkbox"/>
+                    <ul className="serverOptionsDropDown">
+                        <li>um</li>
+                        <li>dois</li>
+                        <li>tres</li>
+                    </ul>
+
+                </div>
                 <ChannelIndex serverId={serverId}/>
                 <button
                     className="updateButton button"
