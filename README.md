@@ -29,15 +29,14 @@ Multiple differently styled scroll bars.
 
 ## Future Features
   * Create Servers dropdown menu.
+  * Implement images, giffs and videos embedding.
+  * Implement Real Time texting (Action Cables).
   * Create Channels dropdown menu.
   * Create Servers Options modal.
   * Style Channels Options modal.
   * Fix the display layout for phone screens in the Media Query
   * Implement message deletion.
-  * Style Channel Selection on click (similar to server selection).
   * Double check need for "getServer" server action
-  * Implement images, giffs and videos embedding.
-  * Implement Real Time texting (Action Cables).
   * Style Servers Options modal.
   * Create user Banner on bottom of Channel list.
   * Implement Gif and Youtube video chat support.
