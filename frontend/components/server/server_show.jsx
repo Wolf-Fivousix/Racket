@@ -38,7 +38,8 @@ export default function ServerShow(props) {
             <div className="channelList" >
                 <div className="serverNameHeader">
                     <h1>{title}</h1>
-                    <input  className="serverMenuCheckBox" type="checkbox"/>
+                    <input  className="serverMenuCheckBox" id="serverMenuCheckBox" type="checkbox"/>
+                    <label htmlFor="serverMenuCheckBox"><svg class="serverMenuIcon"><path d="M0 0h18v18H0"></path><path stroke="currentColor" d="M4.5 4.5l9 9" stroke-linecap="round"></path><path stroke="currentColor" d="M13.5 4.5l-9 9" stroke-linecap="round"></path></svg></label>
                     <ul className="serverOptionsDropDown">
                         <li>um</li>
                         <li>dois</li>

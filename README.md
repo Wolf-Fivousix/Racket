@@ -29,6 +29,8 @@ Multiple differently styled scroll bars.
 
 ## Future Features
   * Create Servers dropdown menu.
+    - On click slight change of color.
+    - Whole header is clickable, not just the SVG.
   * Implement images, giffs and videos embedding.
   * Implement Real Time texting (Action Cables).
   * Create Channels dropdown menu.

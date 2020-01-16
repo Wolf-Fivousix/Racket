@@ -150,6 +150,7 @@
     font-weight: bold;
     color: white;
     box-shadow: var(--elevation-low);
+    white-space: nowrap;
 }
 
 .updateButton,
@@ -191,7 +192,18 @@
     z-index: -1;
 }
 
+.serverMenuCheckBox {
+    display: none;
+}
+
 .serverMenuCheckBox:checked ~ .serverOptionsDropDown {
     max-height: fit-content;
     z-index: 1;
+}
+
+.serverMenuIcon {
+    fill: none;
+    width: 18px;
+    height: 18px;
+    stroke-width: 2px;
 }
