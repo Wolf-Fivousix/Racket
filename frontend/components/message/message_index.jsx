@@ -4,6 +4,7 @@ import useReactRouter from 'use-react-router';
 import { getAllMessages } from "../../actions/message_actions";
 import MessageInput from "./message_input";
 import MembersIndex from "../members/members_index";
+import AvatarImage from "../members/avatar_img";
 
 export default function MessageIndex(props) {
     const messages = useSelector(state => state.entities.messages);
@@ -24,6 +25,7 @@ export default function MessageIndex(props) {
         <div className="textMessage" key={index}>
             {index ? <div className="messageDivider"></div> : <div></div>}
             <h2 className="messageHeader">
+                <AvatarImage id={message.author_id}/>
                 <p className="author">{`${message.author}`}</p>
                 <time className="timeStamp">{`${message.created_at}`}</time>
             </h2>

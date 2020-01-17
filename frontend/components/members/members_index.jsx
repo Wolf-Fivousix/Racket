@@ -7,7 +7,7 @@ export default function MembersIndex() {
     const members = Object.values(useSelector(state => state.entities.memberships))
                         .map((member, index) =>
                             <li className="memberPlate" key={index}>
-                                <AvatarImage id={member.member_id % 5}/>
+                                <AvatarImage id={member.member_id}/>
                                 <p className="memberName">{member.name.slice(0, 14) + `${member.name.length > 14 ? "..." : ""}`}</p>
                             </li>
                         );

@@ -10,6 +10,6 @@ export default function AvatarImage(props) {
     ]
 
     return (
-        <img className="avatarImage" src={avatars[props.id]} alt="Member Avatar"/>
+        <img className="avatarImage" src={avatars[props.id % 5]} alt="Member Avatar"/>
     );
 }
