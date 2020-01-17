@@ -10,18 +10,24 @@
     overflow-y: scroll;
 }
 
-.memberName {
-    user-select: none;
-    box-sizing: border-box;
-    font-weight: bold;
-    color: var(--text-muted);
-    padding: 10px 10px;
-    margin: 0px 10px;
-
+.memberPlate {
+    padding: 8px 8px;
+    margin: 0px 4px 0px 8px;
+    display: flex;
+    align-items: center;
 }
 
-.memberName:hover {
+.memberName {
+    user-select: none;
+    font-weight: bold;
+    color: var(--text-muted);
+}
+
+.memberPlate:hover {
     background: var(--channel-hover);
-    color: var(--text-normal);
     border-radius: 5px;
+}
+
+.memberPlate:hover .memberName {
+    color: var(--text-normal);
 }
