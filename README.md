@@ -49,3 +49,4 @@ Multiple differently styled scroll bars.
   * Add "Start of history" message on newly created channels.
   * Display channel gear only on hover for non selected channels.
   * Change server drop down menu to a modal that will close on outer clicks.
+  * Once channel is deleted, push first channel to history.
