@@ -167,14 +167,25 @@
     width: 220px;
     border-radius: 4px;
     box-shadow: 0px 8px 16px RGBA(0,0,0,0.24);
-    background: black;
+    background: #18191c;
     max-height: 0px;
     overflow: none;
     z-index: -1;
+    padding: 6px 4px;
+    transition: max-height 0.2s ease-out;
 }
 
-.serverOptionsDropDown li:hover {
-    background: skyblue;
+.serverDropDownMenuEntry {
+    margin: 2px 4px;
+    padding: 4px 8px;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.serverDropDownMenuEntry:hover {
+    background: RGBA(79,84,92,0.16);
+    color: var(--text-normal);
 }
 
 .serverMenuCheckBox {
@@ -182,7 +193,7 @@
 }
 
 .serverMenuCheckBox:checked ~ .serverOptionsDropDown {
-    max-height: fit-content;
+    max-height: 240px;
     z-index: 1;
 }
 
