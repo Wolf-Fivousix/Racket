@@ -27,7 +27,8 @@ class UpdateServer extends React.Component {
                         <input
                             type="text"
                             className="updateServerInput defaultInput"
-                            onChange={this.handleInput("name")}/>
+                            onChange={this.handleInput("name")}
+                            autoFocus/>
                     </label>
 
                     <button

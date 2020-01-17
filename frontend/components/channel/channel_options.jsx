@@ -17,7 +17,7 @@ export default function ChannelOptions(props) {
                 className="deleteChannelButton button"
                 onClick={deleteChannel}
                 >
-                DELETE
+                {`DELETE channel ${props.channelName}`}
             </button>
         </div>
         

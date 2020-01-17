@@ -28,6 +28,7 @@ export default function CreateChannel(props) {
                     type="text"
                     placeholder="Enter a name"
                     onChange={handleNameChange}
+                    autoFocus
                 />
                 <button
                     className="createChannelButton button"

@@ -9,7 +9,7 @@ export default function ChannelIndexItem (props) {
     const { history, location, match } = useReactRouter();
 
     function openOptionsPannel() {
-        dispatch(openModal(() => <ChannelOptions channelId={props.channel.id}/>));
+        dispatch(openModal(() => <ChannelOptions channelId={props.channel.id} channelName={props.channel.title}/>));
     }
 
     function selectChannel(e) {
