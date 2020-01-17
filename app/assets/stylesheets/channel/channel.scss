@@ -5,6 +5,7 @@
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
+    user-select: none;
 }
 
 .channelPlate {
@@ -49,6 +50,7 @@
 
 .createChannel {
     cursor: pointer;
+    user-select: none;
     align-self: center;
     color: var(--channel-normal);
     font-weight: bold;
