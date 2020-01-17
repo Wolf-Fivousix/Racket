@@ -18,6 +18,7 @@
 }
 
 .memberName {
+    white-space: nowrap;
     user-select: none;
     font-weight: bold;
     color: var(--text-muted);

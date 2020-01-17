@@ -7,7 +7,7 @@ export default function MembersIndex() {
                         .map((member, index) =>
                             <li className="memberPlate">
                                 <AvatarImage />
-                                <p className="memberName" key={index}>{member.name.slice(0, 19)}</p>
+                                <p className="memberName" key={index}>{member.name.slice(0, 14) + `${member.name.length > 14 ? "..." : ""}`}</p>
                             </li>
                         );
  
