@@ -46,23 +46,12 @@ export default function ServerShow(props) {
                     <input className="serverMenuCheckBox" id="serverMenuCheckBox" type="checkbox"/>
                     <svg className="serverMenuIcon"><path d="M0 0h18v18H0"></path><path stroke="currentColor" d="M4.5 4.5l9 9"></path><path stroke="currentColor" d="M13.5 4.5l-9 9"></path></svg>
                     <ul className="serverOptionsDropDown">
-                        <li>um</li>
-                        <li>dois</li>
-                        <li>tres</li>
+                        <li>{title}</li>
+                        <li onClick={updateName}>New Name</li>
+                        <li onClick={deleteSelf}>Delete this Server</li>
                     </ul>
-
                 </div>
                 <ChannelIndex serverId={serverId}/>
-                <button
-                    className="updateButton button"
-                    onClick={updateName}>
-                    New Name
-                </button>
-                <button
-                    className="deleteButton button"
-                    onClick={deleteSelf}>
-                    DESTROY!
-                </button>
             </div >
             <MessageEmpty />
             <Route path="/servers/:serverId/:channelId" component={MessageIndex}/>

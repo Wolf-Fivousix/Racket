@@ -75,7 +75,7 @@
 }
 
 .serverIndexItemBox {
-    margin-left: 10px;
+    margin-left: 12px;
 }
 
 .serverIndexItemButton,
@@ -160,32 +160,6 @@
     background-color: #33353a;
 }
 
-.updateButton,
-.deleteButton {
-    width: 70%;
-    position: absolute;
-    right: 0;
-}
-
-.updateButton {
-    background-color: var(--button-secondary);
-    bottom: 80px;
-}
-
-.deleteButton {
-    background: rgb(65, 65, 65);
-    bottom: 30px;
-    right: 40px;
-}
-
-.updateButton:hover {
-    background-color: var(--button-secondary-hover);
-}
-
-.deleteButton:hover {
-    background: rgb(32, 32, 32);
-}
-
 .serverOptionsDropDown {
     position: absolute;
     top: 56px;
@@ -197,6 +171,10 @@
     max-height: 0px;
     overflow: none;
     z-index: -1;
+}
+
+.serverOptionsDropDown li:hover {
+    background: skyblue;
 }
 
 .serverMenuCheckBox {

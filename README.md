@@ -28,9 +28,6 @@ Multiple differently styled scroll bars.
 
 
 ## Future Features
-  * Create Servers dropdown menu.
-    - On click slight change of color.
-    - Whole header is clickable, not just the SVG.
   * Implement images, giffs and videos embedding.
   * Implement Real Time texting (Action Cables).
   * Create Channels dropdown menu.
@@ -51,3 +48,4 @@ Multiple differently styled scroll bars.
   * Add online counter for members.
   * Add "Start of history" message on newly created channels.
   * Display channel gear only on hover for non selected channels.
+  * Change server drop down menu to a modal that will close on outer clicks.

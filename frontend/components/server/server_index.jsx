@@ -12,8 +12,7 @@ class ServerIndex extends React.Component {
         this.addServerRequest = this.addServerRequest.bind(this);
     }
 
-    addServerRequest(e) {
-        e.currentTarget.className += " selectedSystem";
+    addServerRequest() {
         this.props.openModal(() => <NewServerFormContainer />);
     }
     
