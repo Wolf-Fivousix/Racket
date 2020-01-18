@@ -30,6 +30,7 @@ Multiple differently styled scroll bars.
 ## Future Features
   * Implement images, giffs and videos embedding.
   * Implement Real Time texting (Action Cables).
+  * Update Home Page component.
   * Create Channels dropdown menu.
   * Create Servers Options modal.
   * Style Channels Options modal.
@@ -50,3 +51,4 @@ Multiple differently styled scroll bars.
   * Display channel gear only on hover for non selected channels.
   * Change server drop down menu to a modal that will close on outer clicks.
   * Once channel is deleted, push first channel to history.
+  * Fix "no channel" component styling.

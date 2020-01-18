@@ -50,6 +50,7 @@
     left: 0px;
     right: 240px;
     overflow-y: scroll;
+    overflow-x: hidden;
     padding-top: 2px;
 }
 
@@ -59,12 +60,12 @@
 }
 
 .textMessage {
-    margin-left: 20px;
     margin-bottom: 20px;
 }
 
 .messageHeader{
     display: flex;
+    white-space: nowrap;
 }
 
 .author {
@@ -80,6 +81,7 @@
 
 .messageBody {
     color: var(--text-normal);
+    word-wrap: break-word;
 }
 
 .messageDivider,
@@ -87,11 +89,15 @@
     height: 1px;
     background-color: var(--text-muted);
     opacity: 0.2;
-    margin: 20px 0px;
+    margin: 20px 20px;
 }
 
 .channelTitleIcon {
     fill: var(--text-muted);
     min-width: 24px;
     margin-right: 6px;
+}
+
+.messageMeat {
+    display: flex;
 }

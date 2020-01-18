@@ -8,8 +8,11 @@ export default function AvatarImage(props) {
         "https://discordapp.com/assets/1cbd08c76f8af6dddce02c5138971129.png",
         "https://discordapp.com/assets/dd4dbc0016779df1378e7812eabaa04d.png"
     ]
+    let avatarClass = "avatarImage";
+    if (props.chat) avatarClass = "avatarChatImage";
+    console.log(props.chat, avatarClass);
 
     return (
-        <img className="avatarImage" src={avatars[props.id % 5]} alt="Member Avatar"/>
+        <img className={avatarClass} src={avatars[props.id % 5]} alt="Member Avatar"/>
     );
 }

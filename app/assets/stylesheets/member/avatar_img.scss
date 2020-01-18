@@ -1,5 +1,17 @@
-.avatarImage {
-    width: 32px;
+.avatarImage,
+.avatarChatImage {
     border-radius: 100px;
+}
+
+.avatarImage {
+    min-width: 32px;
+    max-width: 32px;
     margin-right: 12px;
+}
+
+.avatarChatImage {
+    min-width: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    margin: 0px 20px 20px 20px;
 }
