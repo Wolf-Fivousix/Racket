@@ -25,16 +25,15 @@ User Bootstraping and User Auth
 Servers are shared by a joint membership table.
 ServerItem Icon styled on click using Event Capturing and Bubbling.
 Multiple differently styled scroll bars.
-
+Video and image embedding.
 
 ## Future Features
-  * Implement images, giffs and videos embedding.
   * Implement Real Time texting (Action Cables).
   * Update Home Page component.
+  * Fix the display layout for phone screens in the Media Query
   * Create Channels dropdown menu.
   * Create Servers Options modal.
   * Style Channels Options modal.
-  * Fix the display layout for phone screens in the Media Query
   * Implement message deletion.
   * Double check need for "getServer" server action
   * Style Servers Options modal.
@@ -53,3 +52,4 @@ Multiple differently styled scroll bars.
   * Once channel is deleted, push first channel to history.
   * Fix "no channel" component styling.
   * Auto Scrolling not working properly with video and image embedding.
+  * Make text links actual link elements.
