@@ -23,9 +23,20 @@ export default function MessageIndex(props) {
     });
 
     function youtubeParser(url) {
-        const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
-        const match = url.match(regExp);
+        const match = url.match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/);
         return (match && match[7].length == 11) ? match[7] : false;
+    }
+
+    function imageParser(url) {
+        const formats = ["jpg", "jpeg", "png", "gif"];
+        for (let i = 0; i < formats.length; ++i) {
+            if (url.endsWith(formats[i])) {
+                const regex = new RegExp("http[s]?:\/\/.+\." + formats[i], "g");
+                const imageAddress = url.match(regex);
+                return (<img src={imageAddress} alt="" className="embedPreview"/>);
+            }
+        }
+        return false;
     }
 
     const messagesList = Object.values(messages).map((message, index) =>
@@ -39,7 +50,8 @@ export default function MessageIndex(props) {
                         <time className="timeStamp">{`${message.created_at}`}</time>
                     </h2>
                     <p className="messageBody">{message.body}</p>
-                    {youtubeParser(message.body) && <Youtube videoId={youtubeParser(message.body)} containerClassName={"youtubePreview"}/>}
+                    {imageParser(message.body)}
+                    {youtubeParser(message.body) && <Youtube videoId={youtubeParser(message.body)} containerClassName={"embedPreview"}/>}
                 </div>
             </div>
         </div>

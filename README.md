@@ -52,3 +52,4 @@ Multiple differently styled scroll bars.
   * Change server drop down menu to a modal that will close on outer clicks.
   * Once channel is deleted, push first channel to history.
   * Fix "no channel" component styling.
+  * Auto Scrolling not working properly with video and image embedding.
