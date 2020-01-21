@@ -10,7 +10,6 @@ export default function AvatarImage(props) {
     ]
     let avatarClass = "avatarImage";
     if (props.chat) avatarClass = "avatarChatImage";
-    console.log(props.chat, avatarClass);
 
     return (
         <img className={avatarClass} src={avatars[props.id % 5]} alt="Member Avatar"/>

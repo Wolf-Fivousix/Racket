@@ -5,6 +5,7 @@ import { getAllMessages } from "../../actions/message_actions";
 import MessageInput from "./message_input";
 import MembersIndex from "../members/members_index";
 import AvatarImage from "../members/avatar_img";
+import Youtube from "react-youtube";
 
 export default function MessageIndex(props) {
     const messages = useSelector(state => state.entities.messages);
@@ -21,6 +22,12 @@ export default function MessageIndex(props) {
         if (scroller) scroller.scrollTop = scroller.scrollHeight;
     });
 
+    function youtubeParser(url) {
+        const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+        const match = url.match(regExp);
+        return (match && match[7].length == 11) ? match[7] : false;
+    }
+
     const messagesList = Object.values(messages).map((message, index) =>
         <div className="textMessage" key={index}>
             {index ? <div className="messageDivider"></div> : <div></div>}
@@ -32,6 +39,7 @@ export default function MessageIndex(props) {
                         <time className="timeStamp">{`${message.created_at}`}</time>
                     </h2>
                     <p className="messageBody">{message.body}</p>
+                    {youtubeParser(message.body) && <p className="messageBody">YUHUUUUU</p>}
                 </div>
             </div>
         </div>
@@ -39,7 +47,7 @@ export default function MessageIndex(props) {
 
     const channels = useSelector(state => state.entities.channels);
     const channelName = channels[match.params.channelId] ? channels[match.params.channelId].title : "";
-
+    
     return (
         <div className="chat">
             <nav className="chatTitleHeader">
