@@ -51,7 +51,7 @@ export default function MessageIndex(props) {
                     </h2>
                     <p className="messageBody">{message.body}</p>
                     {imageParser(message.body)}
-                    {youtubeParser(message.body) && <Youtube videoId={youtubeParser(message.body)} containerClassName={"embedPreview"}/>}
+                    {youtubeParser(message.body) && <Youtube videoId={youtubeParser(message.body)} opts={{height: "260", width: "426"}} containerClassName={"embedPreview"}/>}
                 </div>
             </div>
         </div>
