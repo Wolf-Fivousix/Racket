@@ -30,15 +30,12 @@ Video and image embedding.
 ## Future Features
   * Implement Real Time texting (Action Cables).
   * Update Home Page component.
+  * Fix "no channels" component styling.
   * Fix the display layout for phone screens in the Media Query
-  * Create Channels dropdown menu.
-  * Create Servers Options modal.
-  * Style Channels Options modal.
+  * Create errors reducer for joining server.
   * Implement message deletion.
   * Double check need for "getServer" server action
-  * Style Servers Options modal.
   * Create user Banner on bottom of Channel list.
-  * Implement Gif and Youtube video chat support.
   * Implement AWS for user pictures.
   * Implement Voice chatting.
   * Implement Video chatting.
@@ -48,8 +45,7 @@ Video and image embedding.
   * Add online counter for members.
   * Add "Start of history" message on newly created channels.
   * Display channel gear only on hover for non selected channels.
-  * Change server drop down menu to a modal that will close on outer clicks.
+  * Implement server drop down menu closing on outer clicks.
   * Once channel is deleted, push first channel to history.
-  * Fix "no channel" component styling.
   * Auto Scrolling not working properly with video and image embedding.
   * Make text links actual link elements.
