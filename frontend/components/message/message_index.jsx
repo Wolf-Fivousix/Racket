@@ -39,7 +39,7 @@ export default function MessageIndex(props) {
                         <time className="timeStamp">{`${message.created_at}`}</time>
                     </h2>
                     <p className="messageBody">{message.body}</p>
-                    {youtubeParser(message.body) && <Youtube videoId={youtubeParser(message.body)}/>}
+                    {youtubeParser(message.body) && <Youtube videoId={youtubeParser(message.body)} containerClassName={"youtubePreview"}/>}
                 </div>
             </div>
         </div>
