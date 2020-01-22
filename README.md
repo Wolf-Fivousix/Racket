@@ -47,5 +47,4 @@ Video and image embedding.
   * Display channel gear only on hover for non selected channels.
   * Implement server drop down menu closing on outer clicks.
   * Once channel is deleted, push first channel to history.
-  * Auto Scrolling not working properly with video and image embedding.
   * Make text links actual link elements.
