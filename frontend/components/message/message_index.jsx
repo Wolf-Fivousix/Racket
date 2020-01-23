@@ -60,6 +60,15 @@ export default function MessageIndex(props) {
     const channels = useSelector(state => state.entities.channels);
     const channelName = channels[match.params.channelId] ? channels[match.params.channelId].title : "";
     
+    App.messages = App.cable.subscriptions.create({
+        channel: "messages",
+        discussion: `what is this?`
+    }, {
+        received: function(data) {
+        console.log("cable Data: ", data);
+    }
+    });
+
     return (
         <div className="chat">
             <nav className="chatTitleHeader">
