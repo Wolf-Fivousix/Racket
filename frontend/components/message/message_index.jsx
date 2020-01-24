@@ -66,9 +66,9 @@ export default function MessageIndex(props) {
         channelId: `${match.params.channelId}`
     }, {
         howl: function() { console.log("Howwwlllinnng") },
-        // received: function(data) { dispatch(receiveMessage(data.message)); }
+        received: function(data) { dispatch(receiveMessage(data.message)); }
         // received: function(data) { setMess(data.message); }
-        received: function(data) { console.log(data.message.body); }
+        // received: function(data) { console.log(data.message.body); }
     });
 
     return (

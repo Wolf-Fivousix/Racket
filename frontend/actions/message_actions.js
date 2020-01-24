@@ -26,6 +26,5 @@ export const createMessage = message => dispatch => (
 );
 
 export const receiveMessage = message => dispatch => (
-    dispatch(receiveNewMessage(message))
-    .fail(errors => console.log("newMessage Errors: "))
+    dispatch(receiveNewMessage({ [message.id]: message }))
 );
