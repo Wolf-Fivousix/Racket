@@ -7,7 +7,8 @@ This project was designed and implemented in 10 days, totalling 80h of work. And
 
 ## Table of Contents
 * [Technologies](#technologies)
-* [Code Snipets](#code snipets)
+* [Highlights](#hightlights)
+* [Code Snipets](#code%20snipets)
 
 
 ## Technologies
@@ -18,18 +19,23 @@ This project was designed and implemented in 10 days, totalling 80h of work. And
     * Live chatting with Web Sockets implemented by Action Cable.
   * PostgreSQL Data Base.
 
+## Highlights
+### Responsive
+  GIF of the website showing in different sizes.
+
 ## Code Snipets
 Servers, Channels, Messages are all CRUD
 CSS Pixel Perfect design
-Responsive
-  ###### GIF of the website showing in different sizes.
 User Bootstraping and User Auth
   ###### Show errors displaying by field. Image of All Fields errors => Some field errors (use guest@guest.com to show already taken e-mail) - Eventually make it into a GIF.
 Servers are shared by a joint membership table.
 Multiple differently styled scroll bars.
+
 ### Video and image embedding.
 Every message is analysed for YouTube videos and JPG, JPEG, PNG and GIF images. Anytime these components are present the URL is extracted from the message and a matching component is created. The component is them attached to the original message and rendered as one single message by the client.
 ```JavaScript
+// frontend/components/message/message_index.jsx
+
     function youtubeParser(url) {
         const match = url.match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/);
         return (match && match[7].length == 11) ? match[7] : false;
@@ -51,6 +57,8 @@ Every message is analysed for YouTube videos and JPG, JPEG, PNG and GIF images. 
 ### Real time chat communication with Action Cable and WebSockets.
 Channels are mounted with a subscription private to that channel, allowing for users to communicate in real time. Any new message broadcasted by the server is automatically added to the global local state and React handles the re-rendering logic on the client machine in order to display it.
 ```JavaScript
+// frontend/components/message/message_index.jsx
+
     useEffect(() => {
         dispatch(getAllMessages(match.params.channelId));
         App.messages = App.cable.subscriptions.create(
@@ -67,6 +75,7 @@ Channels are mounted with a subscription private to that channel, allowing for u
 
 ## Future Features
   * Update Home Page component.
+  * Subscribe channels to action cable.
   * Fix "no channels" component styling.
   * Fix the display layout for phone screens in the Media Query
   * Create errors reducer for joining server.
@@ -85,3 +94,4 @@ Channels are mounted with a subscription private to that channel, allowing for u
   * Implement server drop down menu closing on outer clicks.
   * Once channel is deleted, push first channel to history.
   * Make text links actual link elements.
+  * Fix channel push on page refresh (and check first message log-in page refresh behavior).
