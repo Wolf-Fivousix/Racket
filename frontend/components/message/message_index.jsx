@@ -42,7 +42,7 @@ export default function MessageIndex(props) {
             if (url.endsWith(formats[i])) {
                 const regex = new RegExp("http[s]?:\/\/.+\." + formats[i], "g");
                 const imageAddress = url.match(regex);
-                return (<img src={imageAddress} alt="" className="embedPreview"/>);
+                return (<img src={imageAddress} alt="User Image" className="embedPreview"/>);
             }
         }
         return false;

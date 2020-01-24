@@ -7,8 +7,7 @@ This project was designed and implemented in 10 days, totalling 80h of work. And
 
 ## Table of Contents
 * [Technologies](#technologies)
-* Highlights
-* Code Snipets
+* [Code Snipets](#code snipets)
 
 
 ## Technologies
@@ -18,7 +17,8 @@ This project was designed and implemented in 10 days, totalling 80h of work. And
   * Ruby on Rails on the Backend.
     * Live chatting with Web Sockets implemented by Action Cable.
   * PostgreSQL Data Base.
-  
+
+## Code Snipets
 Servers, Channels, Messages are all CRUD
 CSS Pixel Perfect design
 Responsive
@@ -27,7 +27,27 @@ User Bootstraping and User Auth
   ###### Show errors displaying by field. Image of All Fields errors => Some field errors (use guest@guest.com to show already taken e-mail) - Eventually make it into a GIF.
 Servers are shared by a joint membership table.
 Multiple differently styled scroll bars.
-Video and image embedding.
+### Video and image embedding.
+Every message is analysed for YouTube videos and JPG, JPEG, PNG and GIF images. Anytime these components are present the URL is extracted from the message and a matching component is created. The component is them attached to the original message and rendered as one single message by the client.
+```JavaScript
+    function youtubeParser(url) {
+        const match = url.match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/);
+        return (match && match[7].length == 11) ? match[7] : false;
+    }
+
+    function imageParser(url) {
+        const formats = ["jpg", "jpeg", "png", "gif"];
+        for (let i = 0; i < formats.length; ++i) {
+            if (url.endsWith(formats[i])) {
+                const regex = new RegExp("http[s]?:\/\/.+\." + formats[i], "g");
+                const imageAddress = url.match(regex);
+                return (<img src={imageAddress} alt="User Image" className="embedPreview"/>);
+            }
+        }
+        return false;
+    }
+```
+
 ### Real time chat communication with Action Cable and WebSockets.
 Channels are mounted with a subscription private to that channel, allowing for users to communicate in real time. Any new message broadcasted by the server is automatically added to the global local state and React handles the re-rendering logic on the client machine in order to display it.
 ```JavaScript
