@@ -13,7 +13,10 @@ This project was designed and implemented in 10 days, totalling 80h of work. And
 
 ## Technologies
   * React/Redux on the Frontend.
+    * React Hooks for simplified logic.
+    * YouTube video embedding with React-Youtube.
   * Ruby on Rails on the Backend.
+    * Live chatting with Web Sockets implemented by Action Cable.
   * PostgreSQL Data Base.
   
 Servers, Channels, Messages are all CRUD
@@ -23,12 +26,26 @@ Responsive
 User Bootstraping and User Auth
   ###### Show errors displaying by field. Image of All Fields errors => Some field errors (use guest@guest.com to show already taken e-mail) - Eventually make it into a GIF.
 Servers are shared by a joint membership table.
-ServerItem Icon styled on click using Event Capturing and Bubbling.
 Multiple differently styled scroll bars.
 Video and image embedding.
+### Real time chat communication with Action Cable and WebSockets.
+Channels are mounted with a subscription private to that channel, allowing for users to communicate in real time. Any new message broadcasted by the server is automatically added to the global local state and React handles the re-rendering logic on the client machine in order to display it.
+```JavaScript
+    useEffect(() => {
+        dispatch(getAllMessages(match.params.channelId));
+        App.messages = App.cable.subscriptions.create(
+            {
+                channel: "MessagesChannel",
+                channelId: `${match.params.channelId}`
+            }, 
+            {
+                received: function(data) { dispatch(receiveMessage(data.message)); }
+            }
+        );
+    }, [match.params.channelId]);
+```
 
 ## Future Features
-  * Implement Real Time texting (Action Cables).
   * Update Home Page component.
   * Fix "no channels" component styling.
   * Fix the display layout for phone screens in the Media Query
