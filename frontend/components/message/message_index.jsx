@@ -14,6 +14,16 @@ export default function MessageIndex(props) {
 
     useEffect(() => {
         dispatch(getAllMessages(match.params.channelId));
+        App.messages = App.cable.subscriptions.create(
+            {
+                channel: "MessagesChannel",
+                channelId: `${match.params.channelId}`
+            }, 
+            {
+                // received: function(data) { dispatch(receiveMessage(data.message)); }
+                received: function(data) { console.log(data.message); }
+            }
+        );
     }, [match.params.channelId]);
 
     // Keeps the scroll bar at the most recent message.
@@ -60,15 +70,7 @@ export default function MessageIndex(props) {
     const channels = useSelector(state => state.entities.channels);
     const channelName = channels[match.params.channelId] ? channels[match.params.channelId].title : "";
     
-    App.messages = App.cable.subscriptions.create(
-        {
-            channel: "MessagesChannel",
-            channelId: `${match.params.channelId}`
-        }, 
-        {
-            received: function(data) { dispatch(receiveMessage(data.message)); }
-        }
-    );
+    
 
     return (
         <div className="chat">
