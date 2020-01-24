@@ -20,8 +20,7 @@ export default function MessageIndex(props) {
                 channelId: `${match.params.channelId}`
             }, 
             {
-                // received: function(data) { dispatch(receiveMessage(data.message)); }
-                received: function(data) { console.log(data.message); }
+                received: function(data) { dispatch(receiveMessage(data.message)); }
             }
         );
     }, [match.params.channelId]);

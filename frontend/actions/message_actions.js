@@ -26,5 +26,5 @@ export const createMessage = message => dispatch => (
 );
 
 export const receiveMessage = message => dispatch => (
-    dispatch(receiveNewMessage({ [message.id]: message }))
+    dispatch(receiveNewMessage(message))
 );

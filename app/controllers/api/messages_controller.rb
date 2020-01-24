@@ -10,23 +10,14 @@ class Api::MessagesController < ApplicationController
         @message.author = current_user
 
         if @message.save
-            # ActionCable.server.broadcast(
-            #     "messages#{@message.channel_id}",
-            #     message: ApplicationController.render(
-            #         partial: "api/messages/message",
-            #         locals: { message: @message }
-            #     )
-            # )
             ActionCable.server.broadcast(
-                "messages#{@message.channel_id}", message: {
-                    id: @message.id,
-                    channel_id: @message.channel_id,
-                    author_id: @message.author_id,
-                    body: @message.body,
-                    created_at: "#{@message.created_at.month}/#{@message.created_at.day}/#{@message.created_at.year}",
-                    author: @message.author.username
-                }
+                "messages#{@message.channel_id}",
+                message: JSON.parse(ApplicationController.render(
+                    partial: "api/messages/message",
+                    locals: { message: @message }
+                ))
             )
+
             render :message
         else
             render json: @message.errors.full_messages, status: 404
