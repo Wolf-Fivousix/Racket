@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import useReactRouter from 'use-react-router';
 import { getAllMessages, receiveMessage } from "../../actions/message_actions";
@@ -9,7 +9,6 @@ import Youtube from "react-youtube";
 
 export default function MessageIndex(props) {
     const messages = useSelector(state => state.entities.messages);
-    const [mess, setMess] = useState(useSelector(state => state.entities.messages));
     const dispatch = useDispatch();
     const { match } = useReactRouter();
 
@@ -61,15 +60,15 @@ export default function MessageIndex(props) {
     const channels = useSelector(state => state.entities.channels);
     const channelName = channels[match.params.channelId] ? channels[match.params.channelId].title : "";
     
-    App.messages = App.cable.subscriptions.create({
-        channel: "MessagesChannel",
-        channelId: `${match.params.channelId}`
-    }, {
-        howl: function() { console.log("Howwwlllinnng") },
-        received: function(data) { dispatch(receiveMessage(data.message)); }
-        // received: function(data) { setMess(data.message); }
-        // received: function(data) { console.log(data.message.body); }
-    });
+    App.messages = App.cable.subscriptions.create(
+        {
+            channel: "MessagesChannel",
+            channelId: `${match.params.channelId}`
+        }, 
+        {
+            received: function(data) { dispatch(receiveMessage(data.message)); }
+        }
+    );
 
     return (
         <div className="chat">
