@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import useReactRouter from 'use-react-router';
-import { getAllMessages } from "../../actions/message_actions";
+import { getAllMessages, receiveMessage } from "../../actions/message_actions";
 import MessageInput from "./message_input";
 import MembersIndex from "../members/members_index";
 import AvatarImage from "../members/avatar_img";
@@ -9,6 +9,7 @@ import Youtube from "react-youtube";
 
 export default function MessageIndex(props) {
     const messages = useSelector(state => state.entities.messages);
+    const [mess, setMess] = useState(useSelector(state => state.entities.messages));
     const dispatch = useDispatch();
     const { match } = useReactRouter();
 
@@ -62,11 +63,12 @@ export default function MessageIndex(props) {
     
     App.messages = App.cable.subscriptions.create({
         channel: "MessagesChannel",
-        discussion: `what is this?`
+        channelId: `${match.params.channelId}`
     }, {
-        received: function(data) {
-        console.log("cable Data: ", data);
-    }
+        howl: function() { console.log("Howwwlllinnng") },
+        // received: function(data) { dispatch(receiveMessage(data.message)); }
+        // received: function(data) { setMess(data.message); }
+        received: function(data) { console.log(data.message.body); }
     });
 
     return (

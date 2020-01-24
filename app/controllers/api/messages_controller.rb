@@ -10,7 +10,7 @@ class Api::MessagesController < ApplicationController
         @message.author = current_user
 
         if @message.save
-            ActionCable.server.broadcast("messages", body: @message)
+            ActionCable.server.broadcast("messages#{@message.channel_id}", message: @message)
             render :message
         else
             render json: @message.errors.full_messages, status: 404
