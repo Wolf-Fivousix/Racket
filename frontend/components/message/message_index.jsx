@@ -70,6 +70,7 @@ export default function MessageIndex(props) {
     const channelName = channels[match.params.channelId] ? channels[match.params.channelId].title : "";
     
     
+    if (Object.values(channels).length === 0) return null;
 
     return (
         <div className="chat">

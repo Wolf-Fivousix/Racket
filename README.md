@@ -76,7 +76,6 @@ Channels are mounted with a subscription private to that channel, allowing for u
 ## Future Features
   * Update Home Page component.
   * Subscribe channels to action cable.
-  * Fix "no channels" component styling.
   * Fix the display layout for phone screens in the Media Query
   * Create errors reducer for joining server.
   * Implement message deletion.
