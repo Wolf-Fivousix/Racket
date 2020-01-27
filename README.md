@@ -93,4 +93,7 @@ Channels are mounted with a subscription private to that channel, allowing for u
   * Implement server drop down menu closing on outer clicks.
   * Once channel is deleted, push first channel to history.
   * Make text links actual link elements.
-  * Fix channel push on page refresh (and check first message log-in page refresh behavior).
+  * Fix first channel push on page refresh (and check first message log-in page refresh behavior).
+  * Make server dropdown menu display "leave server" for non-owners.
+  * Subscribe members in server.
+  * Subscribe server name.
