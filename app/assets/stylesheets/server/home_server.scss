@@ -1,0 +1,26 @@
+.walrusGameImage {
+    background-image: url("https://discordapp.com/assets/131dcaaa628405e6d0ebee7708111c7a.svg");
+    width: 404px;
+    height: 202px;
+    background-repeat: no-repeat;
+
+}
+
+.noChat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding: 0px 100px;
+}
+
+.welcomeMessage {
+    margin-top: 20px;
+    color: var(--text-muted);
+    font-size: 24px;
+    text-align: center;
+}
+
+.homePageMenuHeader:hover {
+    cursor: initial;
+}
