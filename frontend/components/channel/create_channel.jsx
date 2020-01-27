@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import {  useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import useReactRouter from "use-react-router";
 import { createChannel } from "../../actions/channel_actions";
 import { closeModal } from "../../actions/modal_actions";
 
 export default function CreateChannel(props) {
     const [channelName, setChannelName] = useState("");
     const dispatch = useDispatch();
+    const channels = useSelector(state => state.entities.channels);
+    const { history } = useReactRouter();
 
     function handleNameChange(e) {
         setChannelName(e.target.value);
@@ -16,6 +19,7 @@ export default function CreateChannel(props) {
             title: channelName,
             server_id: Number(props.serverId)
         }))
+            .then(({ channel }) => Object.values(channels).length ? null : history.push(`/servers/${props.serverId}/${channel.id}`))
             .then(() => dispatch(closeModal()));
     }
 
