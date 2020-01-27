@@ -25,6 +25,7 @@ export default function ServerIndexItem(props) {
                 onClick={handleClick}>
                     {server.name[0].toUpperCase()}
             </button>
+            {/* <p className="serverIndexItemName">{server.name}</p> */}
         </li>
     );
 };

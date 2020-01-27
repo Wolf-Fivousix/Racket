@@ -74,7 +74,6 @@ Channels are mounted with a subscription private to that channel, allowing for u
 ```
 
 ## Future Features
-  * Update Home Page component.
   * Subscribe channels to action cable.
   * Fix the display layout for phone screens in the Media Query
   * Create errors reducer for joining server.
@@ -86,12 +85,12 @@ Channels are mounted with a subscription private to that channel, allowing for u
   * Implement Video chatting.
   * Implement Server Joining by invite instead of ID.
   * Refactor Server Show components and styling from absolute.
+  * Implement server drop down menu closing on outer clicks.
+  * Server names on hover of server item. (To do this the absolute positions needs to be changed first.)
   * On Page Refresh do not push default channel.
   * Add online counter for members.
   * Add "Start of history" message on newly created channels.
   * Display channel gear only on hover for non selected channels.
-  * Implement server drop down menu closing on outer clicks.
-  * Once channel is deleted, push first channel to history.
   * Make text links actual link elements.
   * Fix first channel push on page refresh (and check first message log-in page refresh behavior).
   * Make server dropdown menu display "leave server" for non-owners.
