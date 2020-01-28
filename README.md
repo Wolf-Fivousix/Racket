@@ -74,19 +74,19 @@ Channels are mounted with a subscription private to that channel, allowing for u
 ```
 
 ## Future Features
+  * Refactor Server Show components and styling from absolute.
+  * Implement server drop down menu closing on outer clicks.
+  * Server names on hover of server item. (To do this the absolute positions needs to be changed first.)
   * Subscribe channels to action cable.
   * Fix the display layout for phone screens in the Media Query
   * Create errors reducer for joining server.
-  * Implement message deletion.
   * Double check need for "getServer" server action
+  * Implement message deletion.
   * Create user Banner on bottom of Channel list.
   * Implement AWS for user pictures.
   * Implement Voice chatting.
   * Implement Video chatting.
   * Implement Server Joining by invite instead of ID.
-  * Refactor Server Show components and styling from absolute.
-  * Implement server drop down menu closing on outer clicks.
-  * Server names on hover of server item. (To do this the absolute positions needs to be changed first.)
   * On Page Refresh do not push default channel.
   * Add online counter for members.
   * Add "Start of history" message on newly created channels.
