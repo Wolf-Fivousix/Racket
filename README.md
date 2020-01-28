@@ -26,7 +26,7 @@ Racket is a real time chatting plataform pixel perfect tribute to Discord. Racke
 #### GIF GRID
 
 ### Responsive
-  #### GIF of the website showing in different sizes.
+  ![Responsive Design Gif](app/assets/images/responsiveDesign.gif?raw=true "Responsive Design Gif")
 
 ## Code Snipets
 ### User Authentication
