@@ -5,7 +5,7 @@ Racket is a real time chatting plataform pixel perfect tribute to Discord. Racke
 ## Table of Contents
 * [Technologies](#technologies)
 * [Highlights](#highlights)
-* [Code Snipets](#Code%20Snipets)
+* [Code Snipets](#code-snipets)
 
 
 ## Technologies
