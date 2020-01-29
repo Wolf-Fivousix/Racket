@@ -16,7 +16,7 @@ Racket is a real time chatting plataform pixel perfect tribute to Discord. Racke
   * **Web Sockets -** for Live chatting implemented by Action Cable.
   * **PostgreSQL -** Data Base.
   * **Heroku -** application hosting.
-  * **JSON -** API endpoints ensure standarsized web responses.
+  * **JSON -** API endpoints ensure standardized web responses.
   * **CSS3 -** Makes the internet look nice.
   * **HTML5 -** You know what this is for.
 
@@ -52,6 +52,7 @@ Channels are mounted with a subscription private to that channel, allowing for u
 ```
 ### Video and image embedding.
 Every message is analysed for YouTube videos and JPG, JPEG, PNG and GIF images. Anytime these components are present the URL is extracted from the message and a matching component is created. The component is them attached to the original message and rendered as one single message by the client.
+![Image and Video Embedding](app/assets/images/embed.gif?raw=true "Image and Video embedding Chat")
 ```JavaScript
 // frontend/components/message/message_index.jsx
 
