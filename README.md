@@ -1,6 +1,5 @@
 # [Racket](https://racket-discord.herokuapp.com/)
-
-##### GIF OF SPLASH PAGE
+![Racket Snapshot](app/assets/images/racket.gif?raw=true "Racket Snapshot Chat")
 Racket is a real time chatting plataform pixel perfect tribute to Discord. Racket allows you to create private/invite-only servers to send and receive messages through a RESTful application.
 
 ## Table of Contents
@@ -20,17 +19,62 @@ Racket is a real time chatting plataform pixel perfect tribute to Discord. Racke
   * **CSS3 -** Makes the internet look nice.
   * **HTML5 -** You know what this is for.
 
-  <!-- * **React-Youtube -** allows video embedding.
-  * **React Hooks -** for simplified component logic. -->
 ## Highlights
-#### GIF GRID
+#### GIF GRID Coming Soon...
 
 ### Responsive
-  ![Responsive Design Gif](app/assets/images/responsiveDesign.gif?raw=true "Responsive Design Gif")
+  ![Responsive Design gif](app/assets/images/responsiveDesign.gif?raw=true "Responsive Design Gif")
 
 ## Code Snipets
 ### User Authentication
-  ###### GIF user Auth errors in registering and then using demo login.
+![User Authentication gif](app/assets/images/userAuth.gif?raw=true "User Authentication gif Chat")
+User authentication is an important part of modern applications and web services. To protect users data I used BCrypt to hash and salt the input password before storing it into the database.
+```Ruby
+# app/controllers/application_controller.rb
+  def current_user
+    return nil unless session[:session_token]
+    @current_user ||= User.find_by(session_token: session[:session_token])
+  end
+
+  def require_login
+    unless current_user
+      render json: { base: ['invalid credentials'] }, status: 401
+    end
+  end
+
+  def login(user)
+    user.reset_session_token!
+    session[:session_token] = user.reset_session_token!
+    @current_user = user
+  end
+```
+Alied with a session token users can retun to the application without having to log-in every time as well as utilize log-in protected functionalities. For convinience there is a Guest Login button with a default user already created.
+```Ruby
+# app/models/user.rb
+  def self.find_by_credentials(email, password)
+    @user = User.find_by(email: email)
+    @user && @user.is_password?(password) ? @user : nil
+  end
+
+  def password=(password)
+    self.password_digest = BCrypt::Password.create(password)
+    @password = password
+  end
+
+  def is_password?(password)
+    BCrypt::Password.new(self.password_digest).is_password?(password)
+  end
+
+  def reset_session_token!
+    self.session_token = SecureRandom.urlsafe_base64(16)
+    self.save!
+    self.session_token
+  end
+
+  def ensure_session_token
+    self.session_token ||= SecureRandom.urlsafe_base64(16)
+  end
+```
 
 ### Real time chat communication with Action Cable and WebSockets.
 Channels are mounted with a subscription private to that channel, allowing for users to communicate in real time. Any new message broadcasted by the server is automatically added to the global local state and React handles the re-rendering logic on the client machine in order to display it.
@@ -51,8 +95,8 @@ Channels are mounted with a subscription private to that channel, allowing for u
     }, [match.params.channelId]);
 ```
 ### Video and image embedding.
-Every message is analysed for YouTube videos and JPG, JPEG, PNG and GIF images. Anytime these components are present the URL is extracted from the message and a matching component is created. The component is them attached to the original message and rendered as one single message by the client.
 ![Image and Video Embedding](app/assets/images/embed.gif?raw=true "Image and Video embedding Chat")
+Every message is analysed for YouTube videos and JPG, JPEG, PNG and GIF images. Anytime these components are present the URL is extracted from the message and a matching component is created. The component is them attached to the original message and rendered as one single message by the client.
 ```JavaScript
 // frontend/components/message/message_index.jsx
 
