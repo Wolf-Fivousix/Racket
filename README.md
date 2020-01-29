@@ -5,6 +5,7 @@ Racket is a real time chatting plataform pixel perfect tribute to Discord. Racke
 ## Table of Contents
 * [Technologies](#technologies)
 * [Highlights](#highlights)
+* [Responsive Design](#responsive-design)
 * [Code Snipets](#code-snipets)
 
 
@@ -20,10 +21,11 @@ Racket is a real time chatting plataform pixel perfect tribute to Discord. Racke
   * **HTML5 -** You know what this is for.
 
 ## Highlights
-#### GIF GRID Coming Soon...
+ GIF GRID Coming Soon...
 
-### Responsive
-  ![Responsive Design gif](app/assets/images/responsiveDesign.gif?raw=true "Responsive Design Gif")
+## Responsive Design
+![Responsive Design gif](app/assets/images/responsiveDesign.gif?raw=true "Responsive Design Gif")
+Responsive design allows for the application to adapt to any screen size and device, providing a seemless experience to the user. This effect is accomplished by implementing media queries and a mobile first design approach.
 
 ## Code Snipets
 ### User Authentication
@@ -77,6 +79,7 @@ Alied with a session token users can retun to the application without having to 
 ```
 
 ### Real time chat communication with Action Cable and WebSockets.
+![Live Chat gif](app/assets/images/liveChat.gif?raw=true "Live Chat Gif")
 Channels are mounted with a subscription private to that channel, allowing for users to communicate in real time. Any new message broadcasted by the server is automatically added to the global local state and React handles the re-rendering logic on the client machine in order to display it.
 ```JavaScript
 // frontend/components/message/message_index.jsx
@@ -119,6 +122,8 @@ Every message is analysed for YouTube videos and JPG, JPEG, PNG and GIF images. 
 ```
 
 ## Future Features
+  * Fix action cable multi channel subscription.
+  * Fix first post reload behavior.
   * Refactor Server Show components and styling from absolute.
   * Implement server drop down menu closing on outer clicks.
   * Server names on hover of server item. (To do this the absolute positions needs to be changed first.)
