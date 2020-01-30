@@ -28,8 +28,52 @@ Racket is a real time chatting plataform pixel perfect tribute to Discord. Racke
 Responsive design allows for the application to adapt to any screen size and device, providing a seemless experience to the user. This effect is accomplished by implementing media queries and a mobile first design approach.
 
 ## Code Snipets
+### Real time chat communication.
+![Live Chat gif](app/assets/images/liveChat.gif?raw=true "Live Chat Gif")
+Utilizing Ruby Action Cables to manage Web Sockets, messages and channels consumers are subscribed to the corresponding channels, allowing for users to communicate in real time. Any new message broadcasted by the server is automatically added to the global local state and React handles the re-rendering logic on the client machine in order to display it.
+```JavaScript
+// frontend/components/message/message_index.jsx
+
+    useEffect(() => {
+        dispatch(getAllMessages(match.params.channelId));
+        App.messages = App.cable.subscriptions.create(
+            {
+                channel: "MessagesChannel",
+                channelId: `${match.params.channelId}`
+            }, 
+            {
+                received: function(data) { dispatch(receiveMessage(data.message)); }
+            }
+        );
+    }, [match.params.channelId]);
+```
+
+### Video and image embedding.
+![Image and Video Embedding](app/assets/images/embed.gif?raw=true "Image and Video embedding Chat")
+Every message is analysed for YouTube videos, JPG, JPEG, PNG and GIF images. Anytime these components are present the URL is extracted from the message and a matching component is created. The component is them attached to the original message and rendered as one single message by the client.
+```JavaScript
+// frontend/components/message/message_index.jsx
+
+    function youtubeParser(url) {
+        const match = url.match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/);
+        return (match && match[7].length == 11) ? match[7] : false;
+    }
+
+    function imageParser(url) {
+        const formats = ["jpg", "jpeg", "png", "gif"];
+        for (let i = 0; i < formats.length; ++i) {
+            if (url.endsWith(formats[i])) {
+                const regex = new RegExp("http[s]?:\/\/.+\." + formats[i], "g");
+                const imageAddress = url.match(regex);
+                return (<img src={imageAddress} alt="User Image" className="embedPreview"/>);
+            }
+        }
+        return false;
+    }
+```
 ### User Authentication
 ![User Authentication gif](app/assets/images/userAuth.gif?raw=true "User Authentication gif Chat")
+User errors are returned from the backend and handled individually depending on the field. Errors and analysed and incorrect elements are re-styled to display the error in a visual way.
 User authentication is an important part of modern applications and web services. To protect users data I used BCrypt to hash and salt the input password before storing it into the database.
 ```Ruby
 # app/controllers/application_controller.rb
@@ -76,49 +120,6 @@ Alied with a session token users can retun to the application without having to 
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
-```
-
-### Real time chat communication with Action Cable and WebSockets.
-![Live Chat gif](app/assets/images/liveChat.gif?raw=true "Live Chat Gif")
-Channels are mounted with a subscription private to that channel, allowing for users to communicate in real time. Any new message broadcasted by the server is automatically added to the global local state and React handles the re-rendering logic on the client machine in order to display it.
-```JavaScript
-// frontend/components/message/message_index.jsx
-
-    useEffect(() => {
-        dispatch(getAllMessages(match.params.channelId));
-        App.messages = App.cable.subscriptions.create(
-            {
-                channel: "MessagesChannel",
-                channelId: `${match.params.channelId}`
-            }, 
-            {
-                received: function(data) { dispatch(receiveMessage(data.message)); }
-            }
-        );
-    }, [match.params.channelId]);
-```
-### Video and image embedding.
-![Image and Video Embedding](app/assets/images/embed.gif?raw=true "Image and Video embedding Chat")
-Every message is analysed for YouTube videos and JPG, JPEG, PNG and GIF images. Anytime these components are present the URL is extracted from the message and a matching component is created. The component is them attached to the original message and rendered as one single message by the client.
-```JavaScript
-// frontend/components/message/message_index.jsx
-
-    function youtubeParser(url) {
-        const match = url.match(/^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/);
-        return (match && match[7].length == 11) ? match[7] : false;
-    }
-
-    function imageParser(url) {
-        const formats = ["jpg", "jpeg", "png", "gif"];
-        for (let i = 0; i < formats.length; ++i) {
-            if (url.endsWith(formats[i])) {
-                const regex = new RegExp("http[s]?:\/\/.+\." + formats[i], "g");
-                const imageAddress = url.match(regex);
-                return (<img src={imageAddress} alt="User Image" className="embedPreview"/>);
-            }
-        }
-        return false;
-    }
 ```
 
 ## Future Features
