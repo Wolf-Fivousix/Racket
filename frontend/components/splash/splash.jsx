@@ -181,10 +181,12 @@ class Splash extends React.Component {
                         <ul className="skillsList">
                             <li className="footerTitle">Features</li>
                             
+                            <li className="footerEntry">Real Time Chatting</li>
+                            <li className="footerEntry">Image & Video Embedding</li>
                             <li className="footerEntry">User Authentication</li>
                             <li className="footerEntry">User Bootstrapping</li>
                             <li className="footerEntry">Responsive Design</li>
-                            <li className="footerEntry">CRUD Server Funcionality</li>
+                            <li className="footerEntry">CRUD Funcionality</li>
                         </ul>
                         <ul>
                             <li className="footerTitle">Technologies</li>
@@ -193,7 +195,11 @@ class Splash extends React.Component {
                             <li className="footerEntry">Redux</li>
                             <li className="footerEntry">JavaScript</li>
                             <li className="footerEntry">Ruby on Rails</li>
+                            <li className="footerEntry">Web Sockets</li>
                             <li className="footerEntry">PostgreSQL</li>
+                            <li className="footerEntry">jQuery</li>
+                            <li className="footerEntry">HTML5</li>
+                            <li className="footerEntry">CSS3</li>
                         </ul>
                     </div>
                     <div className="splashFooterSeparator"></div>
