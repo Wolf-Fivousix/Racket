@@ -1,6 +1,6 @@
 # [Racket](https://racket-discord.herokuapp.com/)
 ![Racket Snapshot](app/assets/images/racket.gif?raw=true "Racket Snapshot Chat")
-Racket is a real time chatting plataform pixel perfect tribute to Discord. Racket allows you to create private/invite-only servers to send and receive messages through a RESTful application.
+Racket is a real time chatting platform pixel perfect tribute to Discord. Racket allows you to create private/invite-only servers to send and receive messages through a RESTful application.
 
 ## Table of Contents
 * [Technologies](#technologies)
