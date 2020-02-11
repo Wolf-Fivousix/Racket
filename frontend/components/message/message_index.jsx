@@ -26,6 +26,9 @@ export default function MessageIndex(props) {
                 }
             }
         );
+
+        return () => App.messages.unsubscribe();
+
     }, [channelId]);
 
     // Keeps the scroll bar at the most recent message.
