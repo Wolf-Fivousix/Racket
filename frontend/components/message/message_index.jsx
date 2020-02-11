@@ -11,19 +11,22 @@ export default function MessageIndex(props) {
     const messages = useSelector(state => state.entities.messages);
     const dispatch = useDispatch();
     const { match } = useReactRouter();
+    const channelId = Number(match.params.channelId);
 
     useEffect(() => {
-        dispatch(getAllMessages(match.params.channelId));
+        dispatch(getAllMessages(channelId));
         App.messages = App.cable.subscriptions.create(
             {
                 channel: "MessagesChannel",
-                channelId: `${match.params.channelId}`
-            }, 
+                channelId: `${channelId}`
+            },  
             {
-                received: function(data) { dispatch(receiveMessage(data.message)); }
+                received: function(data) {
+                    dispatch(receiveMessage(data.message));
+                }
             }
         );
-    }, [match.params.channelId]);
+    }, [channelId]);
 
     // Keeps the scroll bar at the most recent message.
     useEffect(() => {
@@ -67,7 +70,7 @@ export default function MessageIndex(props) {
     );
 
     const channels = useSelector(state => state.entities.channels);
-    const channelName = channels[match.params.channelId] ? channels[match.params.channelId].title : "";
+    const channelName = channels[channelId] ? channels[channelId].title : "";
     
     
     if (Object.values(channels).length === 0) return null;
@@ -83,7 +86,7 @@ export default function MessageIndex(props) {
             <div className="messageHistory" id="messageHistoryBox">
                 {messagesList}
             </div>
-            <MessageInput channelId={match.params.channelId} channelName={channelName}/>
+            <MessageInput channelId={channelId} channelName={channelName}/>
             <MembersIndex />
         </div>
     );
