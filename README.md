@@ -33,19 +33,25 @@ Responsive design allows for the application to adapt to any screen size and dev
 Utilizing Ruby Action Cables to manage Web Sockets, messages and channels consumers are subscribed to the corresponding channels, allowing for users to communicate in real time. Any new message broadcasted by the server is automatically added to the global local state and React handles the re-rendering logic on the client machine in order to display it.
 ```JavaScript
 // frontend/components/message/message_index.jsx
+    const channelId = Number(match.params.channelId);
 
     useEffect(() => {
-        dispatch(getAllMessages(match.params.channelId));
+        dispatch(getAllMessages(channelId));
         App.messages = App.cable.subscriptions.create(
             {
                 channel: "MessagesChannel",
-                channelId: `${match.params.channelId}`
-            }, 
+                channelId: `${channelId}`
+            },  
             {
-                received: function(data) { dispatch(receiveMessage(data.message)); }
+                received: function(data) {
+                    dispatch(receiveMessage(data.message));
+                }
             }
         );
-    }, [match.params.channelId]);
+
+        return () => App.messages.unsubscribe();
+
+    }, [channelId]);
 ```
 
 ### Video and image embedding.
