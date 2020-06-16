@@ -18,7 +18,11 @@ export default function ServerShow(props) {
     const serverId = match.params.serverId;
 
     useEffect(() => {
-        dispatch(getMembers(serverId))
+        dispatch(getMembers(serverId));
+
+        return () => {
+            if (document.getElementById("serverMenuCheckBox").checked) toggleMenu();
+        };
     }, [serverId]);
 
     function updateName() {
